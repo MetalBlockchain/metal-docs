@@ -57,7 +57,7 @@ const sidebars = {
     // 'quickstart/tools-list',
     // 'quickstart/integrate-exchange-with-avalanche'
   ],
-  /*
+  
   dapps: [
     'dapps/launch-your-ethereum-dapp',
     {
