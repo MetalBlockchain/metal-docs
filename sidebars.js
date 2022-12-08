@@ -60,7 +60,7 @@ const sidebars = {
 
   dapps: [
     'dapps/launch-your-ethereum-dapp',
-      /*{
+  /*  {
       type: 'category',
       label: 'Smart Contract',
       collapsed: false,
@@ -70,9 +70,10 @@ const sidebars = {
           dirName: 'dapps/smart-contracts',
         },
       ],
-    },
+    },*/
   ],
-  /* subnets: [
+
+/*   subnets: [
     'subnets/README',
     {
       type: 'category',
