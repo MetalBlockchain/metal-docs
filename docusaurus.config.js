@@ -71,14 +71,14 @@ const config = {
             sidebarId: 'quickStart',
             label: 'Quick Start',
           },
-          /* {
+           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'dapps',
             label: 'DApps',
           },
 
-          {
+        /*  {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'subnets',
@@ -122,11 +122,11 @@ const config = {
             items: [
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/metalpaysme',
+                href: 'https://twitter.com/MetalBlockchain',
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/metalpaysme',
+                href: 'https://t.me/metalblockchain',
               }
             ],
           },
