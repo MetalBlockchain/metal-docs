@@ -59,19 +59,9 @@ const sidebars = {
   ],
 
   dapps: [
-    'dapps/launch-your-ethereum-dapp'
-    // 'quickstart/README',
-    // 'quickstart/create-a-local-test-network',
-    // 'quickstart/fund-a-local-test-network',
-    // 'quickstart/fuji-workflow',
-    // 'quickstart/cross-chain-transfers',
-    // 'quickstart/multisig-utxos-with-avalanchejs',
-    // 'quickstart/transaction-fees',
-    // 'quickstart/adjusting-gas-price-during-high-network-activity',
-    // 'quickstart/sending-transactions-with-dynamic-fees-using-javascript',
-    // 'quickstart/tools-list',
-    // 'quickstart/integrate-exchange-with-avalanche'
+      'dapps/launch-your-ethereum-dapp'
   ],
+
 
 //  dapps: [
 //    'dapps/launch-your-ethereum-dapp'
