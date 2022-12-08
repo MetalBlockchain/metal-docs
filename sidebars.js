@@ -59,7 +59,7 @@ const sidebars = {
   ],
 
   dapps: [
-    'dapps/launch-your-ethereum-dapp',
+    'dapps/launch-your-ethereum-dapp'
   //  {
     //  type: 'category',
       // label: 'Smart Contract',
