@@ -12,7 +12,7 @@ const config = {
   },
 
   title: 'Metal Docs',
-  tagline: 'Documentation and Tutorials for Metal',
+  tagline: 'Documentation and Tutorials for Metal Blockchain',
   url: 'https://docs.metalblockchain.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -49,8 +49,8 @@ const config = {
       metadata: [
         {name: 'twitter:card', content: 'summary_large_image'},
         {name: 'twitter:description', content: 'Metal is a new blockchain initiative built to power the new era of finance.'},
-        {name: 'twitter:title', content:'Developer Documentation and Tutorials for Metal'},
-        {name: 'keywords', content: 'Developer Documentation and Tutorials for Metal'}
+        {name: 'twitter:title', content:'Developer Documentation and Tutorials for Metal Blockchain'},
+        {name: 'keywords', content: 'Developer Documentation and Tutorials for Metal Blockchain'}
       ],
       navbar: {
         title: '',
@@ -70,13 +70,13 @@ const config = {
             position: 'left',
             sidebarId: 'quickStart',
             label: 'Quick Start',
-          },     
+          },
           /* {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'dapps',
             label: 'DApps',
-          },  
+          },
 
           {
             type: 'docSidebar',
@@ -89,13 +89,13 @@ const config = {
             position: 'left',
             sidebarId: 'apis',
             label: 'APIs',
-          }, 
+          },
           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'nodes',
             label: 'Nodes',
-          }, 
+          },
           {
             type: 'docSidebar',
             position: 'left',
@@ -140,7 +140,7 @@ const config = {
             ],
           },
           {
-            
+
           }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Metallicus, Inc.`,
