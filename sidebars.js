@@ -61,7 +61,7 @@ const sidebars = {
   dapps: [
       'dapps/launch-your-ethereum-dapp'
   ],
-
+},
 
 //  dapps: [
 //    'dapps/launch-your-ethereum-dapp'
