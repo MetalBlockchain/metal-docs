@@ -27,8 +27,6 @@ npm start
 
 If everything works as expected, you should be able to load "http://localhost:3000/" on your browser, click on the "Connect Avalanche" button on the page as below:
 
-![](/img/connect-core.jpeg)
-
 Check out the [README](https://github.com/ava-labs/avalanche-dapp-sdks/tree/alpha-release/packages/avalanche-connector-example#readme) to see details how this works and use it to fit your needs.
 
 This [Google Drive](https://drive.google.com/drive/folders/1pQ98mIs65ET9JBGThzAAlGKv85BuQCAu?usp=sharing) has the assets needed to create a Connect with Core button.
