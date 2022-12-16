@@ -9,11 +9,11 @@ Staking is the process of locking up tokens to support a network while receiving
 
 ## How Does Proof-of-stake Work?
 
-To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Avalanche, the scarce resource is the native token, [METAL](../../overview/getting-started/intro.md#metal). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Avalanche, it must stake METAL.
+To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Avalanche, the scarce resource is the native token, [METAL](../../overview/getting-started/intro.md#metal). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Metal Blockchain, it must stake METAL.
 
-## Staking Parameters on Avalanche
+## Staking Parameters on Metal Blockchain
 
-When a validator is done validating the [Primary Network](http://support.avalabs.org/en/articles/4135650-what-is-the-primary-network), it receives back the METAL tokens it staked. It may receive a reward for helping to secure the network. A validator only receives a [validation reward](http://support.avalabs.org/en/articles/4587396-what-are-validator-staking-rewards) if it is sufficiently responsive and correct during the time it validates. Read the [Avalanche token whitepaper](https://www.avalabs.org/whitepapers) to learn more about METAL and the mechanics of staking.
+When a validator is done validating the [Primary Network](http://support.avalabs.org/en/articles/4135650-what-is-the-primary-network), it receives back the METAL tokens it staked. It may receive a reward for helping to secure the network. A validator only receives a [validation reward](http://support.avalabs.org/en/articles/4587396-what-are-validator-staking-rewards) if it is sufficiently responsive and correct during the time it validates. Read the [Metal Blockchain Litepaper](https://metalblockchain.org/litepaper-v0.01.pdf) to learn more about METAL and the mechanics of staking.
 
 :::caution
 Staking rewards are sent to your wallet address at the end of the staking term **as long as all of these parameters are met**.
@@ -31,14 +31,14 @@ Staking rewards are sent to your wallet address at the end of the staking term *
 A validator will receive a staking reward if they are online and response for more than 80% of their validation period, as measured by a majority of validators, weighted by stake. **You should aim for your validator be online and responsive 100% of the time.**
 
 You can call API method `info.uptime` on your node to learn its weighted uptime and what percentage of the network currently thinks your node has an uptime high enough to reveive a staking reward. See [here.](../../apis/metalgo/apis/info.md#infouptime)
-You can get another opinion on your node's uptime from Avalanche's [Validator Health dashboard](https://stats.avax.network/dashboard/validator-health-check/).
+You can get another opinion on your node's uptime from the Validators tab on the Metal Blockchain Explorer's [Subnets page](https://explorer.metalblockchain.org/subnets?tab=validators).
 If your reported uptime is not close to 100%, there may be something wrong with your node setup, which may jeopardize your staking reward.
 If this is the case, please see [here](#why-is-my-uptime-low).
 Note that only checking the uptime of your validator as measured by non-staking nodes, validators with small stake, or validators that have not been online for the full duration of your validation period can provide an inaccurate view of your node's true uptime.
 
 ## Validators
 
-**Validators** secure Avalanche, create new blocks/vertices, and process transactions. To achieve consensus, validators repeatedly sample each other. The probability that a given validator is sampled is proportional to its stake.
+**Validators** secure Metal Blockchain, create new blocks/vertices, and process transactions. To achieve consensus, validators repeatedly sample each other. The probability that a given validator is sampled is proportional to its stake.
 
 When you add a node to the validator set, you specify:
 
@@ -70,7 +70,7 @@ You should disable all APIs you will not use via command-line arguments. You sho
 
 #### Why Is My Uptime Low?
 
-Every validator on Avalanche keeps track of the uptime of other validators. Every validator has a weight (i.e. the amount staked on it.) The more weight a validator has, the more influence they have when validators vote on whether your node should receive a staking reward. You can call API method `info.uptime` on your node to learn its weighted uptime and what percentage of the network stake currently thinks your node has an uptime high enough to receive a staking reward.
+Every validator on Metal Blockchain keeps track of the uptime of other validators. Every validator has a weight (i.e. the amount staked on it.) The more weight a validator has, the more influence they have when validators vote on whether your node should receive a staking reward. You can call API method `info.uptime` on your node to learn its weighted uptime and what percentage of the network stake currently thinks your node has an uptime high enough to receive a staking reward.
 
 You can also see the connections a node has by calling `info.peers`, as well as the uptime of each connection. **This is only one node’s point of view**. Other nodes may perceive the uptime of your node differently. Just because one node perceives your uptime as being low does not mean that you will not receive staking rewards.
 
@@ -117,9 +117,9 @@ When you issue the transaction to delegate tokens, the staked tokens and transac
 
 ## FAQ
 
-### Is There a Tool to Check the Health of a Validator?
+### Is There a Tool to Check if a Validator is up and running?
 
-Yes, enter your node ID [here](https://stats.avax.network/dashboard/validator-health-check).
+Yes, enter your node ID [here](https://explorer.metalblockchain.org/subnets?tab=validators).
 
 ### How Is It Determined Whether a Validator Receives a Staking Reward?
 
