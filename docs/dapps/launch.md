@@ -10,9 +10,9 @@ The purpose of this document is to help you with launching your existing dapp on
 
 ## Platform Basics
 
-Metal Blockchain  is a [network of networks](../overview/getting-started/intro.md). It means that it is not a single chain running a single, uniform type of blocks. It contains multiple Subnets, each running one of more heterogeneous chains. But, to run an Ethereum dapp on a low-fee, fast network with instant finality, we don't need to concern ourselves with that right now. Using the link above you can find out more if you wish, but all you need to know right now is that one of the chains running on Metal Blockchain Primary Network is the C-Chain (contract chain).
+Metal Blockchain  is a [network of networks](../overview/getting-started/intro.md). It means that it is not a single chain running a single, uniform type of blocks. It contains multiple Subnets, each running one of more heterogeneous chains. But, to run an Ethereum dapp on a low-fee, fast network with instant finality, we don't need to concern ourselves with that right now. Using the link above you can find out more if you wish, but all you need to know right now is that one of the chains running on the Metal Blockchain Primary Network is the C-Chain (contract chain).
 
-C-Chain runs a fork of [go-ethereum](https://geth.ethereum.org/docs/rpc/server) called [coreth](https://github.com/MetalBlockchain/coreth) that has the networking and consensus portions replaced with Metal Blockchain equivalents. What's left is the Ethereum VM, which runs Solidity smart contracts and manages data structures and blocks on the chain. As a result, you get a blockchain that can run all the Solidity smart contracts from Ethereum, but with much greater transaction bandwidth and instant finality that [Metal Blockchain's revolutionary consensus](../overview/getting-started/avalanche-consensus.md) enables.
+C-Chain runs a fork of [go-ethereum](https://geth.ethereum.org/docs/rpc/server) called [coreth](https://github.com/MetalBlockchain/coreth) that has the networking and consensus portions replaced with Metal Blockchain equivalents. What's left is the Ethereum VM, which runs Solidity smart contracts and manages data structures and blocks on the chain. As a result, you get a blockchain that can run all the Solidity smart contracts from Ethereum, but with much greater transaction bandwidth and instant finality that the [Avalanche consensus](../overview/getting-started/avalanche-consensus.md) enables.
 
 Coreth is loaded as a plugin into [MetalGo](https://github.com/MetalBlockchain/metalgo), the client node application used to run Metal Blockchain network.
 
@@ -23,6 +23,10 @@ As far as your dapp is concerned, it will be running the same as on Ethereum, ju
 C-Chain exposes the [same API](../apis/metalgo/apis/c-chain.md) as go-ethereum, so you can use all the familiar APIs that are available on Ethereum for interaction with the platform.
 
 There are multiple ways of working with the C-Chain.
+
+### Through any Ethereum wallet
+
+You can easily add the Metal Blockchain network to any Ethereum wallet by visiting [ChainList](https://chainlist.org/?search=metal) and clicking on the "Connect Wallet" button under the Metal C-Chain option for mainnet. Select Metal Tahoe C-Chain for testnet.
 
 ### Through MetaMask
 
@@ -36,7 +40,7 @@ You can access C-Chain through MetaMask, by defining a custom network. Go to Met
 - **Symbol**: `METAL`
 - **Explorer**: [https://metalscan.io/](https://metalscan.io/)
 
-#### **Metal Blockchain TAHOE Testnet Settings:**
+#### **Metal Blockchain Tahoe Testnet Settings:**
 
 - **Network Name**: Metal Tahoe C-Chain
 - **New RPC URL**: [https://tahoe.metalblockchain.org/ext/bc/C/rpc](https://tahoe.metalblockchain.org/ext/bc/C/rpc)
@@ -65,7 +69,7 @@ For development and experimental purposes, [here](../nodes/build/run-metal-node-
 
 ### Node Configuration
 
-Node configuration options are explained [here](../nodes/maintain/avalanchego-config-flags.md). But unless you have specific needs, you can mostly leave the main node config options at their default values.
+Unless you have specific needs, you can mostly leave the main node config options at their default values.
 
 On the other hand, you will most likely need to adjust C-Chain configuration to suit your intended use. You can look up complete configuration options for C-Chain [here](../nodes/maintain/chain-config-flags.md#c-chain-configs) as well as the default configuration. Note that only the options that are different from their default values need to be included in the config file.
 
@@ -196,4 +200,4 @@ If you need the log filtering functionality, you should use a websocket connecti
 
 ## Support
 
-Using this tutorial you should be able to quickly get up to speed on Avalanche, deploy, and test your dapps. If you have questions, problems, or just want to chat with us, you can reach us on our public [Telegram](https://chat.avalabs.org/) server. We'd love to hear from you and find out what you're building on Metal Blockchain!
+Using this tutorial you should be able to quickly get up to speed on the Metal Blockchain, deploy, and test your dapps. If you have questions, problems, or just want to chat with us, you can reach us on our public [Telegram](https://t.me/metaldevelopers) chat. We'd love to hear from you and find out what you're building on Metal Blockchain!
