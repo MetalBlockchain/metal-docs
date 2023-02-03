@@ -102,6 +102,7 @@ const sidebars = {
 
   subnets: [
     'subnets/README',
+    'subnets/subnet-faq',
     {
       type: 'category',
      label: 'Are Subnets Right For You?',
@@ -111,53 +112,96 @@ const sidebars = {
        'subnets/subnet-development-lifecycle',
      ],
    },
-  //    type: 'category',
-//      label: 'Build',
-  //    collapsed: false,
-  //    items: [
-    //    'subnets/create-a-local-subnet',
-    //    'subnets/create-a-fuji-subnet',
-    //    'subnets/deploying-subnets-on-prod',
-    //    'subnets/setup-dfk-node',
-    //    'subnets/deploy-a-smart-contract-on-your-evm',
-    //    'subnets/create-a-evm-blockchain-on-subnet-with-avalanchejs',
-    //    'subnets/create-a-fuji-subnet-subnet-cli'
-  //    ],
-  //  },
-    {
-  //    type: 'category',
-  //    label: 'Customize',
-  //    collapsed: false,
-  //    items: [
-  //      'subnets/customize-a-subnet',
-  //      'subnets/create-a-virtual-machine-vm',
-    //  ],
+   {
+     type: 'category',
+      label: 'Build',
+      collapsed: false,
+      items: [
+        'subnets/install-metal-cli',
+        'subnets/build-first-subnet',
+        'subnets/create-a-tahoe-subnet',
+        'subnets/create-a-mainnet-subnet',
+        'subnets/create-a-custom-subnet',
+        'subnets/deploy-a-smart-contract-on-your-evm',
+        'subnets/create-a-evm-blockchain-on-subnet-with-metaljs',
+        'subnets/create-a-tahoe-subnet-subnet-cli'
+      ],
     },
+    {
+      type: 'category',
+      label: 'How to Use Metal-CLI',
+      collapsed: false,
+      items: [
+        'subnets/create-evm-subnet-config',
+        'subnets/create-a-local-subnet',
+        'subnets/multisig-deploy',
+        'subnets/how-to-pause-and-resume-subnets',
+        'subnets/how-to-list-and-describe',
+        'subnets/how-to-delete-subnet',
+        'subnets/how-to-run-cli-with-docker',
+        'subnets/how-to-import-subnet',
+        'subnets/troubleshoot-deployments'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Customize',
+      collapsed: false,
+      items: [
+        'subnets/customize-a-subnet',
+        'subnets/hello-world-precompile-tutorial',
+        'subnets/introduction-to-vm',
+        'subnets/create-a-vm-timestampvm',
+        'subnets/create-a-vm-blobvm',
+        'subnets/create-a-simple-rust-vm',
+      ],
+    },
+    {
+          type: 'category',
+          label: 'Deploy',
+          collapsed: false,
+          items: [
+            'subnets/deploying-subnets-on-prod',
+            'subnets/setup-dfk-node',
+          ],
+        },
+        {
+    type: 'category',
+    label: 'Upgrade',
+    collapsed: false,
+    items: [
+      'subnets/subnet-upgrade',
+      'subnets/case-study-wagmi-upgrade'
+    ]
+  },
     {
       type: 'category',
       label: 'Tools',
       collapsed: false,
       items: [
-    //    'subnets/avalanche-subnet-faucet',
-  //      'subnets/subnet-cli',
-    //    'subnets/deploying-cross-chain-evm-bridge',
-        'subnets/network-runner',
-    //    'subnets/deploy-a-gnosis-safe-on-your-evm',
+        'subnets/metal-subnet-faucet',
+        'subnets/subnet-cli',
+        'subnets/deploying-cross-chain-evm-bridge',
+        'subnets/metal-network-runner',
+        'subnets/deploy-a-gnosis-safe-on-your-evm',
       ],
     },
     {
-//      type: 'category',
-//      label: 'Examples',
-  //    collapsed: false,
-    //  items: [
-  //        'subnets/spaces',
-  //        'subnets/wagmi',
-//      ],
+      type: 'category',
+      label: 'Examples',
+      collapsed: false,
+      items: [
+        //  'subnets/spaces',
+          'subnets/wagmi',
+      ],
     },
     {
-  //    type: 'link',
-  //    label: 'Subnet FAQ',
-  //    href: 'https://support.avax.network/en/articles/6158840-subnet-faq',
+      type: 'category',
+      label: 'Technical Reference',
+      collapsed: false,
+      items: [
+        'subnets/reference-cli-commands',
+      ],
     },
   ],
 

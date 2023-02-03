@@ -20,9 +20,9 @@ You've completed [Run an Avalanche Node](../build/run-metal-node-manually.md) an
 
 In order to ensure your node is well-connected, make sure that your node can receive and send TCP traffic on the staking port (`9651` by default) and that you started your node with config flag `--public-ip=[YOUR NODE'S PUBLIC IP HERE]`. Failing to do either of these may jeopardize your staking reward.
 
-## Add a Validator with Avalanche Wallet
+## Add a Validator with Metal Wallet
 
-First, we show you how to add your node as a validator by using [Avalanche Wallet](https://wallet.metalblockchain.org).
+First, we show you how to add your node as a validator by using [Metal Wallet](https://wallet.metalblockchain.org).
 
 ### Retrieve the Node ID
 

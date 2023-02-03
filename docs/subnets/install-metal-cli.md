@@ -1,151 +1,52 @@
-# Subnets Overview
+# Install Metal-CLI
 
-A **Subnet** is a sovereign network which defines its own rules regarding its
-membership and token economics. It is composed of a dynamic subset of Avalanche
-validators working together to achieve consensus on the state of one or more
-blockchains. Each blockchain is validated by exactly one Subnet, and a Subnet
-can have many blockchains. A validator may be a member of many Subnets.
+## Compatibility
 
-Avalanche's 4 built-in blockchains: Platform Chain (P-Chain), Contract Chain
-(C-Chain), Proton Chain (A-Chain) and Exchange Chain (X-Chain) are validated and secured by all the
-Metal validators which compose a special Subnet and is referred as the
-Primary Network.
+Metal-CLI runs on Linux and Mac. Windows is currently not supported.
 
-By definition, all Subnet validators must also validate the Metal Primary Network.
+## Instructions
 
-![image](/img/subnet-validators.png)
+To download a binary for the latest release, run:
 
-Subnets are independent, they specify their own execution logic, determine their
-own fee regime, maintain their own state, facilitate their own networking, and
-provide their own security. They don’t share execution thread, storage[^1] or
-networking with other Subnets including the Primary Network, effectively
-allowing the network to scale up easily while enabling lower latency, higher
-transactions per second (TPS), and lower transaction costs provided by the
-Avalanche Consensus.
+```shell
+curl -sSfL https://raw.githubusercontent.com/MetalBlockchain/metal-cli/main/scripts/install.sh | sh -s
+```
 
-## Advantages
+The script installs the binary inside the `~/bin` directory. If the directory doesn't exist,
+it will be created.
 
-A Subnet manages its own membership, it can create its own token economics and
-rules, and may require that its constituent validators have certain properties.
+## Adding Metal-CLI to Your PATH
 
-### Independent Token Economics
+To call the `avalanche` binary from anywhere, you'll need to add it to your system path. If you installed
+the binary into the default location, you can run the following snippet to add it to your path.
 
-Subnets can have their own token economics with their own native tokens and fee
-markets. They can launch their own blockchains with customized virtual machines.
-See [Customize a Subnet](../subnets/customize-a-subnet.md) for more details.
+```shell
+export PATH=~/bin:$PATH
+```
 
-### Compliance
+To add it to your path permanently, add an export command to your shell initialization script. If
+you run `bash`, use `.bashrc`. If you run `zsh`, use `.zshrc`.
 
-Metal’s Subnet architecture makes regulatory compliance manageable. As
-mentioned above, a Subnet may require validators to meet a set of requirements.
+For example:
 
-Some examples of requirements include:
+```shell
+export PATH=~/bin:$PATH >> .bashrc
+```
 
-- Validators must be located in a given country
-- Validators must pass a KYC/AML checks
-- Validators must hold a certain license
+## Checking Your Installation
 
-(To be abundantly clear, the above examples are just that: examples. These
-requirements do not apply to the Metal Primary Network.)
+You can test your installation by running `avalanche --version`. The tool should print the running version.
 
-### Application-Specific Requirements
+## Updating
 
-Different blockchain-based applications may require validators to have certain
-properties. Suppose there is an application that requires large amounts of RAM
-or CPU power. A Subnet could require that validators meet certain [hardware
-requirements](../nodes/build/run-metal-node-manually.md#requirements) so
-that the application doesn’t suffer from low performance due to slow validators.
+To update your installation, you need to delete your current binary and download the latest version
+using the preceding steps.
 
-### Support for Private Blockchains
+## Building from Source
 
-You can create a Subnet where only certain pre-defined validators may join and
-create a private Subnet where the contents of the blockchains would be visible
-only to those validators. This is ideal for organizations interested in keeping
-their information private. See
-[here](../nodes/maintain/subnet-configs.md#private-subnet) for more info.
+The source code is available in this [GitHub repository](https://github.com/MetalBlockchain/metal-cli).
 
-### Separation of Concerns
+After you've cloned the repository, checkout the tag you'd like to run. You can compile the code by
+running `./scripts/build.sh` from the top level directory.
 
-In a heterogeneous network of blockchains, some validators will not want to
-validate certain blockchains because they simply have no interest in those
-blockchains. The Subnet model allows validators to only concern themselves with
-blockchains that they care about. This reduces the burden on validators.
-
-## Validators
-
-Incentives are provided by Subnet owners in order to attract Metal
-validators to validate their Subnet, and this incentive can be customized by the
-Subnet. Validators must also take security and resource concerns into
-consideration when deciding whether to validate a given Subnet.
-
-## Virtual Machines
-
-A **Virtual Machine** (VM) defines the application-level logic of a blockchain.
-In technical terms, it specifies the blockchain’s state, state transition
-function, transactions, and the API through which users can interact with the
-blockchain. Every blockchain on Metal Blockchain is an instance of a VM.
-
-When you write a VM, you don't need to concern yourself with lower-level logic
-like networking, consensus, and the structure of the blockchain. Metal Blockchain does
-this behind the scenes so you can focus on the thing you would like to build.
-
-Think of a VM as a blueprint for a blockchain; you can use the same VM to create
-many blockchains, each of which follows the same rule-set but is logically
-independent of other blockchains.
-
-### Why Virtual Machines?
-
-At first, blockchain networks had one Virtual Machine (VM) with a pre-defined,
-static set of functionality. This rigid, monolithic design limited what
-blockchain-based applications one could run on such networks.
-
-People who wanted custom decentralized applications had to create their own,
-entirely new blockchain network from scratch. Doing so required a great deal of
-time and effort, offered limited security, and generally resulted in a bespoke,
-fragile blockchain that never got off the ground.
-
-Ethereum made a step toward solving this problem with smart contracts.
-Developers didn’t need to worry about networking and consensus, but creating
-decentralized applications was still hard. The Ethereum VM has low performance
-and imposes restrictions on smart contract developers. Solidity and the other
-few languages for writing Ethereum smart contracts are unfamiliar to most
-programmers.
-
-Metal Virtual Machines make it easy to define a blockchain-based decentralized
-application. Rather than new, limited languages like Solidity, developers can
-write VMs in Go (other languages will be supported in the future).
-
-### Example Virtual Machines
-
-The following VMs were built using Go
-
-- [Coreth](https://github.com/MetalBlockchain/coreth)
-- [Subnet-EVM](https://github.com/MetalBlockchain/subnet-evm)
-- [SpacesVM](https://github.com/MetalBlockchain/spacesvm)
-- [BlobVM](https://github.com/MetalBlockchain/blobvm)
-- [TimestampVM](https://github.com/MetalBlockchain/timestampvm)
-- [XSVM](https://github.com/MetalBlockchain/xsvm)
-
-More info:
-
-- [How to Build a Simple Golang VM](https://docs.avax.network/subnets/create-a-vm-timestampvm)
-- [How to Build a Complex Golang VM](https://docs.avax.network/subnets/create-a-vm-blobvm)
-
-The following VMs were built using Rust via the [Metal RustSDK](https://crates.io/crates/avalanche-types)
-
-- [TimestampVM RS](https://github.com/MetalBlockchain/timestampvm-rs)
-- [SpacesVM RS](https://github.com/MetalBlockchain/spacesvm-rs)
-- [BulletproofVM](https://github.com/usmaneth/BulletproofVM)
-
-More info:
-
-- [How to Build a Simple Rust VM](https://docs.avax.network/subnets/create-a-simple-rust-vm)
-
-## Developing Your Own Subnet
-
-Please check out documents listed on the left panel to develop your own Subnets
-with customized virtual machines and blockchains.
-
-[^1]: Subnets do not share storage in logical level (keys/values) with other
-    Subnets, but they share storage on disk level (LevelDB) and store their data
-    into same database/folder in operating system.
+The build script names the binary `./bin/avalanche`.
