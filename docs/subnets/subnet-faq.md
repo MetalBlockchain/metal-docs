@@ -6,7 +6,7 @@ A Subnet, or Subnetwork, is a dynamic set of validators working together to achi
 
 ## How much does it cost to start a Subnet?
 
-To create the Subnet, it costs 1 AVAX. Initial fees are available here on the following page so you can determine the costs of starting your specific Subnet.
+To create the Subnet, it costs 1 METAL. Initial fees are available here on the following page so you can determine the costs of starting your specific Subnet.
 
 https://docs.metalblockchain.org/quickstart/transaction-fees#fee-schedule
 
