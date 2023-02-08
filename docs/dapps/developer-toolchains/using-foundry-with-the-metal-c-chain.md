@@ -32,7 +32,7 @@ command-line.
 [MetalGo](https://github.com/MetalBlockchain/metalgo) is an Metal node
 implementation written in Go.
 
-[Metal Network Runner](../../subnets/network-runner.md) is a tool to quickly
+[Metal Network Runner](../../subnets/tools/network-runner.md) is a tool to quickly
 deploy local test networks. Together, you can deploy local test networks and run
 tests on them.
 
@@ -237,7 +237,7 @@ export PRIVATE_KEY=<YOUR-PRIVATE-KEY>
 
 The Tahoe testnet workflow above can be adapted to a Local Network by doing following:
 
-In a new terminal navigate to your [Metal Network Runner](../../subnets/network-runner.md) directory.
+In a new terminal navigate to your [Metal Network Runner](../../subnets/tools/network-runner.md) directory.
 
 ```zsh
 cd /path/to/Metal-Network-Runner

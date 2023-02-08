@@ -1,7 +1,7 @@
 # Metal Network Runner
 
 The Metal Network Runner **(MNR)** allows a user to define, create and interact with a network
-of Avalanche nodes. It can be used for development and testing.
+of Metal Blockchain nodes. It can be used for development and testing.
 
 Developing P2P systems is hard, and blockchains are no different. A developer can't just focus on
 the functionality of a node, but needs to consider the dynamics of the network, the interaction of
@@ -9,7 +9,7 @@ nodes and emergent system properties. A lot of testing can't be addressed by uni
 a special kind of integration testing, where the code runs in interaction with other nodes,
 attempting to simulate real network scenarios.
 
-In the context of Metal, **[Subnets](../subnets/README.md)** are a special focus which requires
+In the context of Metal, **[Subnets](../../subnets/README.md)** are a special focus which requires
 new tooling and support for playing, working and testing with this unique feature of the Metal
 ecosystem.
 
@@ -162,7 +162,7 @@ array for each blockchain, with the following possible fields:
    "genesis": path to a file containing the genesis for your blockchain (must be a valid path)
 ```
 
-See the [Metal-CLI documentation](../subnets/create-a-local-subnet.md) for details about how to
+See the [Metal-CLI documentation](../../subnets/create-a-local-subnet.md) for details about how to
 create and run Subnets with our _Metal-CLI_ tool.
 
 The network-runner supports MetalGo node configuration at different levels.
@@ -334,7 +334,7 @@ It's also possible to provide individual node config parameters:
 ```
 
 `--node-config` allows to specify specific MetalGo config parameters to the new node.
-See [here](../nodes/maintain/metalgo-config-flags.md) for the reference of supported flags.
+See [here](../../nodes/maintain/metalgo-config-flags.md) for the reference of supported flags.
 
 **Note**: The following parameters will be _ignored_ if set in `--node-config`, because the network
 runner needs to set its own in order to function properly: `--log-dir` `--db-dir`
@@ -361,10 +361,10 @@ metal-network-runner control stop \
 
 ## Subnets
 
-For general Subnet documentation, please refer to [Subnets](../subnets). MNR can be a great helper
+For general Subnet documentation, please refer to [Subnets](../../subnets). MNR can be a great helper
 working with Subnets, and can be used to develop and test new Subnets before deploying them in
 public networks. However, for a smooth and guided experience, we recommend using
-[Metal-CLI](../subnets/create-a-local-subnet.md) These examples expect a basic understanding of
+[Metal-CLI](../../subnets/create-a-local-subnet.md) These examples expect a basic understanding of
 what Subnets are and their usage.
 
 ### RPC Server Subnet-EVM Example
@@ -380,9 +380,9 @@ infrastructure. See [Subnet-EVM](https://github.com/MetalBlockchain/subnet-evm) 
 
 ### Subnet-CLI
 
-**MNR requires an additional tool, such as [`subnet-cli`](../subnets/subnet-cli.md), to be able to**
+**MNR requires an additional tool, such as [`subnet-cli`](../../subnets/subnet-cli.md), to be able to**
 **create the necessary configuration to deploy a Subnet in a local custom test-network. For a smoother**
-**experience, we recommend using [Metal-CLI](../subnets/create-a-local-subnet.md) though, as it**
+**experience, we recommend using [Metal-CLI](../../subnets/create-a-local-subnet.md) though, as it**
 **hides all this complexity away!**
 
 Install and start the RPC server just as in [start the server](#start-the-server)

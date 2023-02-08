@@ -4,7 +4,7 @@
 
 Tahoe is the Metal network's test network. You can use it to test your dapp
 or smart contract after you've developed it locally. (You can use [Metal
-Network Runner](../subnets/network-runner.md) to test things locally.) Tahoe is
+Network Runner](../subnets/tools/network-runner.md) to test things locally.) Tahoe is
 typically on the same version as the Metal Mainnet, but sometimes it is
 running an unreleased version of MetalGo. In general, you can expect Tahoe's
 behavior to be about the same as Metal Mainnet. Tools such as a explorers
@@ -32,7 +32,7 @@ be used. We'll do the following:
 ## Generate a Mnemonic
 
 To begin, we'll create a mnemonic phrase with
-[MetalJS](../apis/metaljs/README.md). Mnemonics enable us to encode
+[MetalJS](https://www.npmjs.com/package/@metalblockchain/metaljs). Mnemonics enable us to encode
 strong security into a human-readable phrase. MetalJS supports 10 languages
 including English, Japanese, Spanish, Italian, French, Korean, Czech,
 Portuguese, Chinese Simplified and Chinese Traditional.

@@ -56,7 +56,7 @@ cd metalgo
 
 Running the below command will create an `metalgo` binary inside the `build/` directory and will
 install the Coreth `evm` binary inside the `build/plugins` directory. For more information on
-running a node, please refer [this](../nodes/build/run-avalanche-node-manually.md).
+running a node, please refer [this](../nodes/build/run-metal-node-manually.md).
 
 ```bash
 ./scripts/build.sh
@@ -90,7 +90,7 @@ location as the argument.
 ## Setting up Local Metal Network
 
 For the development purpose, we can use [**Metal Network Runner
-(MNR)**](../subnets/network-runner.md). It helps us in simulating the actual network. For this
+(MNR)**](../subnets/tools/network-runner.md). It helps us in simulating the actual network. For this
 tutorial, we will be installing MNR binary and will interact with the network through RPCs.
 
 ### Install MNR Binary

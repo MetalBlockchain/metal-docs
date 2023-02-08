@@ -235,7 +235,7 @@ with [Remix](https://remix.ethereum.org/), [Hardhat](https://hardhat.org/), or
 Subnet by addingprecompiles or adjusting the airdrop.
 
 Once you've developed a stable Subnet you like, see
-[Create an EVM Subnet on Tahoe Testnet](./create-a-Tahoe-subnet.md) to take your Subnet one step
+[Create an EVM Subnet on Tahoe Testnet](./create-a-tahoe-subnet.md) to take your Subnet one step
 closer to production.
 
 Good Subnetting!

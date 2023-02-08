@@ -12,8 +12,7 @@ Metal Blockchain's C-Chain, which is an instance of the EVM.
 
 You've completed [Run an Metal
 Node](../../nodes/build/run-metal-node-manually.md) and are familiar with
-[Metal's
-architecture](../../overview/getting-started/metal-platform.md). You've also
+Metal's architecture. You've also
 performed a cross-chain swap via this [this
 tutorial](https://metalstaking.com/how-to-transfer-cross-chain-in-the-metal-wallet)
 to get funds to your C-Chain address.
@@ -59,7 +58,7 @@ mkdir truffle; cd truffle
 
 Use `npm` to install [web3](https://web3js.readthedocs.io), which is a library
 through which we can talk to the EVM and
-[MetalJS](../../apis/metaljs/README.md) which is used for cross chain
+[MetalJS](https://www.npmjs.com/package/@metalblockchain/metaljs) which is used for cross chain
 swaps.
 
 ```text

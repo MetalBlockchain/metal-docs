@@ -47,7 +47,7 @@ Once the image and metadata files are ready, we can prepare to deploy a smart co
 You'll need the MetaMask Extension installed on whatever browser you're using to
 be able to fund the deployment of the smart contract. If you've not done so
 already, download MetaMask and [add the Tahoe network to
-MetaMask](../launch-your-ethereum-dapp.md#tahoe-testnet-settings). Create or
+MetaMask](../launch.md#tahoe-testnet-settings). Create or
 import a Fuji account as necessary.
 
 ### Getting Testnet Funds
@@ -230,6 +230,6 @@ you see that your NFT was created!
 
 All of the above steps can be used on Mainnet except the following changes:
 
-- Make sure that you [connect to the Mainnet with MetaMask](../launch-your-ethereum-dapp.md#metal-mainnet-settings).
+- Make sure that you [connect to the Mainnet with MetaMask](../launch.md#metal-mainnet-settings).
 - Make sure that you have METAL tokens in your account to cover transaction costs.
 - You should use the Mainnet version of [MetalScan Explorer](https://metalscan.io/) to view transactions.

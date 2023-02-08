@@ -6,7 +6,7 @@ This tutorial explains several methods of creating a local test network.
 
 There are currently two options to launch such a local network:
 
-- Using the [Metal Network Runner](../subnets/network-runner.md) (recommended)
+- Using the [Metal Network Runner](../subnets/tools/network-runner.md) (recommended)
 - Manually starting each MetalGo node (not recommended)
 
 ## Metal Network Runner
@@ -222,7 +222,7 @@ Response
 
 Now you have a 5-nodes network with HTTP ports (where API calls should be sent) `30301`, `31072`, `37730`, `40108` , and `64470`.
 
-Please refer to the dedicated [Metal Network Runner documentation](../subnets/network-runner.md) for more information.
+Please refer to the dedicated [Metal Network Runner documentation](../subnets/tools/network-runner.md) for more information.
 
 ## Manually
 
