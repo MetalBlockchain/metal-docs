@@ -36,6 +36,6 @@ The [P-Chain API](../../apis/metalgo/apis/p-chain.md) allows clients to create S
 
 The **X-Chain** acts as a decentralized platform for creating and trading digital smart assets, a representation of a real-world resource (e.g., equity, bonds) with a set of rules that govern its behavior, like "can’t be traded until tomorrow" or "can only be sent to US citizens."
 
-One asset traded on the X-Chain is METAL. When you issue a transaction to a blockchain on Avalanche, you pay a fee denominated in METAL.
+One asset traded on the X-Chain is METAL. When you issue a transaction to a blockchain on Metal Blockchain, you pay a fee denominated in METAL.
 
 The X-Chain is an instance of the Avalanche Virtual Machine (AVM). The [X-Chain API](../../apis/metalgo/apis/x-chain.md) allows clients to create and trade assets on the X-Chain and other instances of the AVM.
