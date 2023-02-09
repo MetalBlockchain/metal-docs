@@ -71,12 +71,12 @@ const config = {
             sidebarId: 'quickStart',
             label: 'Quick Start',
           },
-           {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'dapps',
-            label: 'DApps',
-          },
+          //  {
+          //   type: 'docSidebar',
+          //   position: 'left',
+          //   sidebarId: 'dapps',
+          //   label: 'DApps',
+          // },
 
           // {
           //   type: 'docSidebar',
