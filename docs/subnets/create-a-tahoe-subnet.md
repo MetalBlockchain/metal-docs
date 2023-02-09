@@ -693,7 +693,7 @@ Use the arrow keys to navigate: ↓ ↑ → ←
 The [Deploy the Subnet](#deploy-the-subnet) section shows that a Subnet is permissioned
 via a set of keys. Therefore not any node is suitable as validator to the Subnet. A holder of a control
 key _must_ call
-[Subnet addValidator](../apis/metalo/apis/p-chain.md#platformaddsubnetvalidator) first in order
+[Subnet addValidator](../apis/metalgo/apis/p-chain.md#platformaddsubnetvalidator) first in order
 to allow the node to validate the Subnet. So the tool allows the user now to verify if the node has
 already been permissioned -"whitelisted"- to be a validator for this Subnet -by calling an API in
 the background-.

@@ -29,7 +29,7 @@ function Home() {
             />
 
 
-              <Card
+              {/* <Card
                 to="subnets/build-first-subnet"
                 header={{
                   label: "🛠️ Build Your First Subnet",
@@ -38,7 +38,7 @@ function Home() {
                   label:
                     "Start your Subnet development journey by creating a subnet in under five minutes",
                 }}
-              />
+              /> */}
 
               <Card
                 to="intro"

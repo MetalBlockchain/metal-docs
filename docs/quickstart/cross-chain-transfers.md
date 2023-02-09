@@ -9,7 +9,7 @@ If you are looking for how to transfer METAL tokens using the web wallet, please
 
 ## Prerequisites
 
-- You are familiar with [Metal's architecture](../overview/getting-started/metal-platform.md).
+- You are familiar with Metal's architecture.
 - You have completed [Run an Metal Node](../nodes/build/run-metal-node-manually.md).
 - You are familiar with [MetalJS](https://github.com/MetalBlockchain/MetalJS).
 - You have installed
@@ -146,8 +146,6 @@ For Tahoe Testnet, 5 is the correct value to use.
 ```js
 const networkID: number = 5
 ```
-
-To learn more about encoded addresses, click [here](../apis/metaljs/manage-x-chain-keys.md#encode-bech32-addresses).
 
 **Set the Correct Amount To Send:**
 
@@ -309,7 +307,7 @@ The Tahoe workflow above can be adapted to Mainnet with the following modificati
   [Metal Mainnet API
   server](../apis/metalgo/public-api-server.md#using-the-public-api-nodes)
   where `api.metalblockchain.org` should be used for the `ip`.
-- `const networkID: number = 1` based on [this](../apis/metaljs/manage-x-chain-keys.md#encode-bech32-addresses).
+- `const networkID: number = 1`.
 - Set the correct amount to send.
 - The correct receiving address.
 

@@ -86,8 +86,7 @@ The default genesis Subnet-EVM provided below has some well defined parameters:
 other chains can cause issues. One suggestion is to check with [chainlist.org](https://chainlist.org/)
 to avoid ID collision, reserve and publish your ChainID properly.
 
-You can use `eth_getChainConfig` RPC call to get the current chain config. See
-[here](../apis/metalgo/apis/subnet-evm.md#ethgetchainconfig) for more info.
+You can use `eth_getChainConfig` RPC call to get the current chain config. 
 
 #### Hard Forks
 
@@ -581,8 +580,7 @@ In addition to the `AllowList` interface, the FeeConfigManager adds the followin
 - `setFeeConfig` - sets the dynamic fee config on chain (see [here](#fee-config) for details on the
   fee config parameters)
 
-You can also get the fee configuration at a block with the `eth_feeConfig` RPC method. For more
-information see [here](../apis/metalgo/apis/subnet-evm.md#eth_feeconfig).
+You can also get the fee configuration at a block with the `eth_feeConfig` RPC method.  -->
 
 #### Initial Fee Config Configuration
 
@@ -907,9 +905,8 @@ Constantinople: 0 Petersburg: 0 Istanbul: 0, Muir Glacier: 0, Subnet EVM: 0, Fee
 <!-- markdownlint-enable MD013 -->
 
 Notice that `precompileUpgrades` entry correctly reflects the changes. You can also check the
-activated precompiles at a timestamp with the
-[`eth_getActivatePrecompilesAt`](../apis/metalgo/apis/subnet-evm.md#eth_getactivateprecompilesat)
-RPC method. The [`eth_getChainConfig`](../apis/metalgo/apis/subnet-evm.md#eth_getchainconfig)
+activated precompiles at a timestamp with the eth_getActivatePrecompilesAt
+RPC method. The eth_getChainConfig
 RPC method will also return the configured upgrades in the response.
 
 That's it, your Subnet is all set and the desired upgrades will be activated at the indicated timestamp!

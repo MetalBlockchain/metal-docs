@@ -11,7 +11,7 @@ We'll show you how to leverage a pre-funded private key to access funds on the X
 
 :::info This same private key,
 `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`, can be used to
-sign transactions locally using [MetalJS](../apis/metaljs/README.md).
+sign transactions locally using [MetalJS](https://www.npmjs.com/package/@metalblockchain/metaljs).
 You don't need to import the key into the local keystore in order to access
 those funds. They are in the genesis vertex and block for each respective chain.
 
@@ -23,7 +23,7 @@ how to retrieve the port numbers.
 :::
 
 :::warning Keystore APIs are used in this tutorial, as warned in [Keystore
-API](../apis/metalo/apis/keystore.md), because the node operator has access
+API](../apis/metalgo/apis/keystore.md), because the node operator has access
 to your plain-text password, you should only create a keystore user on a node
 that you operate. If that node is breached, you could lose all your tokens.
 Keystore APIs are not recommended for use on Mainnet. :::

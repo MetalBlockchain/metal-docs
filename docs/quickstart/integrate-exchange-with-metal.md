@@ -122,7 +122,7 @@ Ethereum, so developers familiar with Ethereum and Solidity can feel right at
 home. We have tutorials and repositories for several popular development
 environments:
 
-- [MetaMask and Remix](../dapps/smart-contracts/deploy-a-smart-contract-on-metal-using-remix-and-metamask.md)
+- [MetaMask and Remix](../dapps/smart-contracts-ethereum/deploy-a-smart-contract-on-metal-using-remix-and-metamask.md)
 - [Truffle](../dapps/developer-toolchains/using-truffle-with-the-metal-c-chain.md)
 - [Hardhat](../dapps/developer-toolchains/using-hardhat-with-the-metal-c-chain.md)
 
@@ -148,9 +148,7 @@ standard `go-ethereum` Ethereum client does not compute block hashes correctly
 (when you call `block.Hash()`) because it doesn't take into account the added
 [ExtDataHash](https://github.com/MetalBlockchain/coreth/blob/2c3cfac5f766ce5f32a2eddc43451bdb473b84f1/core/types/block.go#L98)
 header field in Metal C-Chain blocks, which is used move METAL between chains
-(X-Chain and P-Chain). You can read more about our multi-chain abstraction
-[here](../overview/getting-started/metal-platform.md) (out of scope for a
-normal C-Chain integration).
+(X-Chain and P-Chain).
 
 If you plan on reading JSON responses directly or use web3.js (doesn't recompute
 hash received over the wire) to extract on-chain transaction data/logs/receipts,
