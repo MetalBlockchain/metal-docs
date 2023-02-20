@@ -1,7 +1,7 @@
 # Metal Network Runner
 
-The Metal Network Runner **(MNR)** allows a user to define, create and interact with a network
-of Metal Blockchain nodes. It can be used for development and testing.
+The Metal Network Runner **(ANR)** allows a user to define, create and interact with a network
+of Metal nodes. It can be used for development and testing.
 
 Developing P2P systems is hard, and blockchains are no different. A developer can't just focus on
 the functionality of a node, but needs to consider the dynamics of the network, the interaction of
@@ -9,13 +9,13 @@ nodes and emergent system properties. A lot of testing can't be addressed by uni
 a special kind of integration testing, where the code runs in interaction with other nodes,
 attempting to simulate real network scenarios.
 
-In the context of Metal, **[Subnets](../../subnets/README.md)** are a special focus which requires
+In the context of metal, **[Subnets](../subnets/README.md)** are a special focus which requires
 new tooling and support for playing, working and testing with this unique feature of the Metal
 ecosystem.
 
-The MNR aims at being a tool for developers and system integrators alike, offering functionality to
+The ANR aims at being a tool for developers and system integrators alike, offering functionality to
 run networks of MetalGo nodes with support for custom node, Subnet and network configurations,
-allowing to locally test code before deploying to Mainnet or even public testnets like `Tahoe`.
+allowing to locally test code before deploying to Mainnet or even public testnets like `tahoe`.
 
 **Note that this tool is not for running production nodes, and that because it is being heavily**
 **developed right now, documentation might differ slightly from the actual code.**
@@ -25,15 +25,22 @@ allowing to locally test code before deploying to Mainnet or even public testnet
 <!-- markdownlint-disable MD013 -->
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/MetalBlockchain/metal-network-runner/main/scripts/install.sh | sh -s -- -b $GOPATH/bin
-
-cd $GOPATH/bin
-export PATH=$PWD:$PATH
+curl -sSfL https://raw.githubusercontent.com/MetalBlockchain/metal-network-runner/main/scripts/install.sh | sh -s
 ```
 
 <!-- markdownlint-enable MD013 -->
 
-`metal-network-runner` will be installed into `$GOPATH/bin`.
+The script installs the binary inside the `~/bin` directory. If the directory doesn't exist,
+it will be created.
+
+Please make sure that `~/bin` is in your `$PATH`:
+
+```shell
+export PATH=~/bin:$PATH
+```
+
+To add it to your path permanently, add an export command to your shell initialization script. If
+you run `bash`, use `.bashrc`. If you run `zsh`, use `.zshrc`.
 
 Furthermore, `METALGO_EXEC_PATH` should be set properly in all shells you run commands related
 to Metal Network Runner. We strongly recommend that you put the following in to your shell's
@@ -41,8 +48,8 @@ configuration file.
 
 ```bash
 # replace execPath with the path to MetalGo on your machine
-# e.g., ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/metalgo
-AVALANCHEGO_EXEC_PATH="${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/metalgo"
+# e.g., ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/metalgo
+METALGO_EXEC_PATH="${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/metalgo"
 ```
 
 Unless otherwise specified, file paths given below are relative to the root of this repository.
@@ -51,7 +58,7 @@ Unless otherwise specified, file paths given below are relative to the root of t
 
 There are two main ways to use the network-runner:
 
-- Run MNR as a binary
+- Run ANR as a binary
 
   This is the recommended approach for most use cases. Doesn't require Golang installation and
   provides a RPC server with an HTTP API and a client library for easy interaction.
@@ -70,12 +77,9 @@ Each node can then also be reached via
 [API](https://github.com/MetalBlockchain/metal-network-runner/tree/main/api) endpoints which each node
 exposes.
 
-The following diagram is a simplified view of the high level architecture of the tool:
-![ANR architecture](/img/grpc-networkrunner.svg)
-
 ## Examples
 
-When running with the binary, MNR runs a server process as an RPC server which then waits for API
+When running with the binary, ANR runs a server process as an RPC server which then waits for API
 calls and handles them. Therefore we run one shell with the RPC server, and another one for issuing
 calls.
 
@@ -150,8 +154,8 @@ Additional optional parameters which can be passed to the start command:
 
 `--plugin-dir` and `--blockchain-specs` are parameters relevant to Subnet operation.
 
-`--plugin-dir` can be used to indicate to MNR where it will find plugin binaries for your own VMs.
-It is optional. If not set, MNR will assume a default location which is relative to the
+`--plugin-dir` can be used to indicate to ANR where it will find plugin binaries for your own VMs.
+It is optional. If not set, ANR will assume a default location which is relative to the
 `metalgo-path` given.
 
 `--blockchain-specs` specifies details about how to create your own blockchains. It takes a JSON
@@ -161,9 +165,6 @@ array for each blockchain, with the following possible fields:
    "vm_name": human readable name for the VM
    "genesis": path to a file containing the genesis for your blockchain (must be a valid path)
 ```
-
-See the [Metal-CLI documentation](../../subnets/create-a-local-subnet.md) for details about how to
-create and run Subnets with our _Metal-CLI_ tool.
 
 The network-runner supports MetalGo node configuration at different levels.
 
@@ -283,7 +284,7 @@ In this example we are stopping the node named `node1`.
 convention to avoid issues.
 
 ```bash
-# e.g., ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/metalgo
+# e.g., ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/metalgo
 METALGO_EXEC_PATH="metalgo"
 ```
 
@@ -308,7 +309,7 @@ metal-network-runner control restart-node node1 \
 In this example we are adding a node named `node99`.
 
 ```bash
-# e.g., ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/metalgo
+# e.g., ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/metalgo
 METALGO_EXEC_PATH="metalgo"
 ```
 
@@ -334,7 +335,7 @@ It's also possible to provide individual node config parameters:
 ```
 
 `--node-config` allows to specify specific MetalGo config parameters to the new node.
-See [here](../../nodes/maintain/metalgo-config-flags.md) for the reference of supported flags.
+See [here](../nodes/maintain/metalgo-config-flags.md) for the reference of supported flags.
 
 **Note**: The following parameters will be _ignored_ if set in `--node-config`, because the network
 runner needs to set its own in order to function properly: `--log-dir` `--db-dir`
@@ -361,28 +362,26 @@ metal-network-runner control stop \
 
 ## Subnets
 
-For general Subnet documentation, please refer to [Subnets](../../subnets). MNR can be a great helper
+For general Subnet documentation, please refer to [Subnets](../subnets). ANR can be a great helper
 working with Subnets, and can be used to develop and test new Subnets before deploying them in
-public networks. However, for a smooth and guided experience, we recommend using
-[Metal-CLI](../../subnets/create-a-local-subnet.md) These examples expect a basic understanding of
-what Subnets are and their usage.
+public networks.
 
 ### RPC Server Subnet-EVM Example
 
 The Subnet-EVM is a simplified version of Coreth VM (C-Chain). This chain implements the Ethereum
 Virtual Machine and supports Solidity smart-contracts as well as most other Ethereum client
 functionality. It can be used to create your own fully Ethereum-compatible Subnet running on
-Metal Blockchain. This means you can run your Ethereum-compatible dApps in custom Subnets, defining your
+Metal. This means you can run your Ethereum-compatible dApps in custom Subnets, defining your
 own gas limits and fees, and deploying solidity smart-contracts while taking advantage of
-Metal Blockchain's validator network, fast finality, consensus mechanism and other features. Essentially,
+Metal's validator network, fast finality, consensus mechanism and other features. Essentially,
 think of it as your own Ethereum where you can concentrate on your business case rather than the
 infrastructure. See [Subnet-EVM](https://github.com/MetalBlockchain/subnet-evm) for further information.
 
 ### Subnet-CLI
 
-**MNR requires an additional tool, such as [`subnet-cli`](../../subnets/subnet-cli.md), to be able to**
+**ANR requires an additional tool, such as [`subnet-cli`](../subnets/subnet-cli.md), to be able to**
 **create the necessary configuration to deploy a Subnet in a local custom test-network. For a smoother**
-**experience, we recommend using [Metal-CLI](../../subnets/create-a-local-subnet.md) though, as it**
+**experience, we recommend using Metal-CLI though, as it**
 **hides all this complexity away!**
 
 Install and start the RPC server just as in [start the server](#start-the-server)
@@ -398,7 +397,7 @@ First, download/install `subnet-cli`:
 
 ```bash
 # or download from https://github.com/MetalBlockchain/subnet-cli/releases
-cd ${HOME}/go/src/github.com/MetalBlockchain/subnet-cli
+cd ${HOME}/go/src/github.com/!metal!blockchain/subnet-cli
 go install -v .
 ```
 
@@ -412,8 +411,8 @@ subnet-cli create VMID subnetevm
 Build or...
 
 ```bash
-rm -rf ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build
-cd ${HOME}/go/src/github.com/MetalBlockchain/metalgo
+rm -rf ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build
+cd ${HOME}/go/src/github.com/!metal!blockchain/metalgo
 ./scripts/build.sh
 ```
 
@@ -424,10 +423,10 @@ Clone and build the `subnet-evm` plugin (requires `golang` installation):
 <!-- markdownlint-disable MD013 -->
 
 ```bash
-git clone https://github.com/MetalBlockchain/subnet-evm ${HOME}/go/src/github.com/MetalBlockchain/subnet-evm
-cd ${HOME}/go/src/github.com/MetalBlockchain/subnet-evm
+git clone https://github.com/MetalBlockchain/subnet-evm ${HOME}/go/src/github.com/!metal!blockchain/subnet-evm
+cd ${HOME}/go/src/github.com/!metal!blockchain/subnet-evm
 go build -v \
--o ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/plugins/srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy \
+-o ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/plugins/srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy \
 ./plugin
 ```
 
@@ -436,7 +435,7 @@ go build -v \
 Verify everything has been built correctly:
 
 ```bash
-find ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build
+find ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build
 # should yield something like:
 # .../build
 # .../build/plugins
@@ -500,8 +499,8 @@ Set some environment variables for convenience:
 
 ```bash
 # replace execPath with the path to MetalGo on your machine
-METALGO_EXEC_PATH="${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/metalgo"
-METALGO_PLUGIN_PATH="${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/plugins"
+METALGO_EXEC_PATH="${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/metalgo"
+METALGO_PLUGIN_PATH="${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/plugins"
 ```
 
 Now start the nodes with custom VM support.
@@ -529,11 +528,11 @@ Check it all up:
 curl -X POST -k http://localhost:8081/v1/control/status -d ''
 ```
 
-DONE! You are now running your very own Ethereum blockchain on the Metal Blockchain!
+DONE! You are now running your very own Ethereum blockchain on Metal!
 
 ### RPC Server `blobvm` Example
 
-While above we configured and deployed an Ethereum compatible Subnet, Metal Blockchain supports deploying
+While above we configured and deployed an Ethereum compatible Subnet, Metal supports deploying
 your completely custom blockchain, still taking advantage of existing Metal infrastructure and
 its consensus protocol.
 
@@ -557,7 +556,7 @@ First, download/install `subnet-cli`:
 
 ```bash
 # or download from https://github.com/MetalBlockchain/subnet-cli/releases
-cd ${HOME}/go/src/github.com/MetalBlockchain/subnet-cli
+cd ${HOME}/go/src/github.com/!metal!blockchain/subnet-cli
 go install -v .
 ```
 
@@ -571,8 +570,8 @@ subnet-cli create VMID blobvm
 Build or...
 
 ```bash
-rm -rf ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build
-cd ${HOME}/go/src/github.com/MetalBlockchain/metalgo
+rm -rf ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build
+cd ${HOME}/go/src/github.com/!metal!blockchain/metalgo
 ./scripts/build.sh
 ```
 
@@ -583,10 +582,10 @@ Clone and build the `blobvm` plugin (requires `golang` installation):
 <!-- markdownlint-disable MD013 -->
 
 ```bash
-git clone https://github.com/MetalBlockchain/blobvm ${HOME}/go/src/github.com/MetalBlockchain/blobvm
-cd ${HOME}/go/src/github.com/MetalBlockchain/blobvm
+git clone https://github.com/MetalBlockchain/blobvm ${HOME}/go/src/github.com/!metal!blockchain/blobvm
+cd ${HOME}/go/src/github.com/!metal!blockchain/blobvm
 go build -v \
--o ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/plugins/kM6h4LYe3AcEU1MB2UNg6ubzAiDAALZzpVrbX8zn3hXF6Avd8 \
+-o ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/plugins/kM6h4LYe3AcEU1MB2UNg6ubzAiDAALZzpVrbX8zn3hXF6Avd8 \
 ./cmd/blobvm
 ```
 
@@ -595,7 +594,7 @@ go build -v \
 Verify everything has been built correctly:
 
 ```bash
-find ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build
+find ${HOME}/go/src/github.com/!metal!blockchain/metalgo/build
 # should yield something like:
 # .../build
 # .../build/plugins
@@ -604,12 +603,12 @@ find ${HOME}/go/src/github.com/MetalBlockchain/metalgo/build
 # .../build/metalgo
 ```
 
-Every VM needs a genesis file in order to be deployed on Metal Blockchain.
+Every VM needs a genesis file in order to be deployed on Metal.
 For the BlobVM, the file is very simple, and that repository contains a helper tool to create it:
 
 ```bash
 # generate the genesis for the custom VM
-cd ${HOME}/go/src/github.com/MetalBlockchain/blobvm
+cd ${HOME}/go/src/github.com/!metal!blockchain/blobvm
 go install -v ./cmd/blob-cli
 echo "[]" > /tmp/alloc.json
 blob-cli genesis 1 /tmp/alloc.json --genesis-file /tmp/blobvm.genesis.json
@@ -621,8 +620,8 @@ Set some environment variables for convenience:
 
 ```bash
 # replace execPath with the path to MetalGo on your machine
-METALGO_EXEC_PATH="${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/metalgo"
-METALGO_PLUGIN_PATH="${HOME}/go/src/github.com/MetalBlockchain/metalgo/build/plugins"
+METALGO_EXEC_PATH="${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/metalgo"
+METALGO_PLUGIN_PATH="${HOME}/go/src/github.com/!metal!blockchain/metalgo/build/plugins"
 ```
 
 Now start the nodes with custom VM support.
@@ -671,10 +670,10 @@ and `binaryPath` is the path of the MetalGo binary that each node that exists on
 will run.
 
 For example, the below snippet creates a new network using default configurations, and each node in
-the network runs the binaries at `/home/user/go/src/github.com/MetalBlockchain/metalgo/build`:
+the network runs the binaries at `/home/user/go/src/github.com/!metal!blockchain/metalgo/build`:
 
 ```go
-network, err := local.NewDefaultNetwork(log,"/home/user/go/src/github.com/MetalBlockchain/metalgo/build")
+network, err := local.NewDefaultNetwork(log,"/home/user/go/src/github.com/!metal!blockchain/metalgo/build")
 ```
 
 **Once you create a network, you must eventually call `Stop()` on it to make sure all of the nodes**

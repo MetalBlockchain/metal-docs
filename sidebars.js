@@ -105,6 +105,22 @@ const sidebars = {
     'subnets/subnet-faq',
     {
       type: 'category',
+       label: 'Building a subnet',
+       collapsed: false,
+       items: [
+         'subnets/install-metal-cli',
+       ],
+     },
+    {
+      type: 'category',
+      label: 'Tools',
+      collapsed: false,
+      items: [
+        'subnets/network-runner',
+      ],
+    },
+    /* {
+      type: 'category',
      label: 'Are Subnets Right For You?',
      collapsed: false,
      items: [
@@ -157,23 +173,23 @@ const sidebars = {
       ],
     },
     {
-          type: 'category',
-          label: 'Deploy',
-          collapsed: false,
-          items: [
-            'subnets/deploying-subnets-on-prod',
-            'subnets/setup-dfk-node',
-          ],
-        },
-        {
-    type: 'category',
-    label: 'Upgrade',
-    collapsed: false,
-    items: [
-      'subnets/subnet-upgrade',
-      'subnets/case-study-wagmi-upgrade'
-    ]
-  },
+      type: 'category',
+      label: 'Deploy',
+      collapsed: false,
+      items: [
+        'subnets/deploying-subnets-on-prod',
+        'subnets/setup-dfk-node',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Upgrade',
+      collapsed: false,
+      items: [
+        'subnets/subnet-upgrade',
+        'subnets/case-study-wagmi-upgrade'
+      ]
+    },
     {
       type: 'category',
       label: 'Tools',
@@ -202,7 +218,7 @@ const sidebars = {
       items: [
         'subnets/reference-cli-commands',
       ],
-    },
+    }, */
   ],
 
   apis: [

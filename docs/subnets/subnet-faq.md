@@ -2,7 +2,7 @@
 
 ### What is a Subnet?
 
-A Subnet, or Subnetwork, is a dynamic set of validators working together to achieve consensus on the state of a set of blockchains. Each blockchain is validated by exactly one Subnet, however, a Subnet can validate more than one blockchain. A node may be a member of arbitrarily many Subnets. It manages its own membership and it may require that its constituent validators have certain properties. Subnets are independent and don’t share execution thread, storage, or networking with other Subnets or the Primary Network, effectively allowing the network to scale up easily while enabling lower latency, higher transactions per second (TPS), and lower transaction costs. They also share the benefits provided by the Avalanche Protocol such as low cost and time to finality.
+A Subnet, or Subnetwork, is a dynamic set of validators working together to achieve consensus on the state of a set of blockchains. Each blockchain is validated by exactly one Subnet, however, a Subnet can validate more than one blockchain. A node may be a member of arbitrarily many Subnets. It manages its own membership and it may require that its constituent validators have certain properties. Subnets are independent and don’t share execution thread, storage, or networking with other Subnets or the Primary Network, effectively allowing the network to scale up easily while enabling lower latency, higher transactions per second (TPS), and lower transaction costs. They also share the benefits provided by the Metal Protocol such as low cost and time to finality.
 
 ## How much does it cost to start a Subnet?
 

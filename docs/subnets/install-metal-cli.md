@@ -17,7 +17,7 @@ it will be created.
 
 ## Adding Metal-CLI to Your PATH
 
-To call the `avalanche` binary from anywhere, you'll need to add it to your system path. If you installed
+To call the `metal` binary from anywhere, you'll need to add it to your system path. If you installed
 the binary into the default location, you can run the following snippet to add it to your path.
 
 ```shell
@@ -35,7 +35,7 @@ export PATH=~/bin:$PATH >> .bashrc
 
 ## Checking Your Installation
 
-You can test your installation by running `avalanche --version`. The tool should print the running version.
+You can test your installation by running `metal --version`. The tool should print the running version.
 
 ## Updating
 
@@ -49,4 +49,4 @@ The source code is available in this [GitHub repository](https://github.com/Meta
 After you've cloned the repository, checkout the tag you'd like to run. You can compile the code by
 running `./scripts/build.sh` from the top level directory.
 
-The build script names the binary `./bin/avalanche`.
+The build script names the binary `./bin/metal`.

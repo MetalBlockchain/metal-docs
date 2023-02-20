@@ -1,12 +1,12 @@
 # Subnets Overview
 
 A **Subnet** is a sovereign network which defines its own rules regarding its
-membership and token economics. It is composed of a dynamic subset of Avalanche
+membership and token economics. It is composed of a dynamic subset of Metal
 validators working together to achieve consensus on the state of one or more
 blockchains. Each blockchain is validated by exactly one Subnet, and a Subnet
 can have many blockchains. A validator may be a member of many Subnets.
 
-Avalanche's 4 built-in blockchains: Platform Chain (P-Chain), Contract Chain
+Metal's 4 built-in blockchains: Platform Chain (P-Chain), Contract Chain
 (C-Chain), Proton Chain (A-Chain) and Exchange Chain (X-Chain) are validated and secured by all the
 Metal validators which compose a special Subnet and is referred as the
 Primary Network.
@@ -21,7 +21,7 @@ provide their own security. They don’t share execution thread, storage[^1] or
 networking with other Subnets including the Primary Network, effectively
 allowing the network to scale up easily while enabling lower latency, higher
 transactions per second (TPS), and lower transaction costs provided by the
-Avalanche Consensus.
+Metal Consensus.
 
 ## Advantages
 
@@ -114,32 +114,6 @@ programmers.
 Metal Virtual Machines make it easy to define a blockchain-based decentralized
 application. Rather than new, limited languages like Solidity, developers can
 write VMs in Go (other languages will be supported in the future).
-
-### Example Virtual Machines
-
-The following VMs were built using Go
-
-- [Coreth](https://github.com/MetalBlockchain/coreth)
-- [Subnet-EVM](https://github.com/MetalBlockchain/subnet-evm)
-- [SpacesVM](https://github.com/MetalBlockchain/spacesvm)
-- [BlobVM](https://github.com/MetalBlockchain/blobvm)
-- [TimestampVM](https://github.com/MetalBlockchain/timestampvm)
-- [XSVM](https://github.com/MetalBlockchain/xsvm)
-
-More info:
-
-- [How to Build a Simple Golang VM](https://docs.avax.network/subnets/create-a-vm-timestampvm)
-- [How to Build a Complex Golang VM](https://docs.avax.network/subnets/create-a-vm-blobvm)
-
-The following VMs were built using Rust via the [Metal RustSDK](https://crates.io/crates/avalanche-types)
-
-- [TimestampVM RS](https://github.com/MetalBlockchain/timestampvm-rs)
-- [SpacesVM RS](https://github.com/MetalBlockchain/spacesvm-rs)
-- [BulletproofVM](https://github.com/usmaneth/BulletproofVM)
-
-More info:
-
-- [How to Build a Simple Rust VM](https://docs.avax.network/subnets/create-a-simple-rust-vm)
 
 ## Developing Your Own Subnet
 
