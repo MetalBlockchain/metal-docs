@@ -3,7 +3,7 @@
 This tutorial will start you with a basic [ERC-721
 (NFT)](https://eips.ethereum.org/EIPS/eip-721) smart contract on the Avalanche
 Network, regardless of your previous development experience. We'll deploy our
-NFT on the Metal Fuji Testnet and view it on the MetalScan Testnet Explorer.
+NFT on the Metal Tahoe Testnet and view it on the MetalScan Testnet Explorer.
 Note that these aren't transferable to the Mainnet. However, once you feel
 comfortable launching your project, you can do so on Metal Mainnet and list
 it on an NFT marketplace.
@@ -12,7 +12,7 @@ The following tools will be used during this tutorial:
 
 - [Pinata](https://www.pinata.cloud/): To store your NFT images and metadata.
 - [OpenZeppelin’s Wizard](https://wizard.openzeppelin.com/): to create the ERC-721 smart contract.
-- [Remix IDE](https://remix-project.org/): To edit the code and deploy it to Fuji.
+- [Remix IDE](https://remix-project.org/): To edit the code and deploy it to Tahoe.
 - [Metal Testnet Faucet](https://faucet.metalblockchain.org/): To fund the deployment.
 - [MetaMask browser
   Extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn):
@@ -48,13 +48,13 @@ You'll need the MetaMask Extension installed on whatever browser you're using to
 be able to fund the deployment of the smart contract. If you've not done so
 already, download MetaMask and [add the Tahoe network to
 MetaMask](../launch.md#tahoe-testnet-settings). Create or
-import a Fuji account as necessary.
+import a Tahoe account as necessary.
 
 ### Getting Testnet Funds
 
-Because we're deploying on the Tahoe Network, you'll need to get METAL on the Fuji
+Because we're deploying on the Tahoe Network, you'll need to get METAL on the Tahoe
 network. If you visit the [Metal Faucet](https://faucet.metalblockchain.org/), you
-can request up to 2 Fuji METAL per day. Please enter the C Chain address of the
+can request up to 2 Tahoe METAL per day. Please enter the C Chain address of the
 account linked to your MetaMask in the previous step.
 
 ![Avalanche Faucet](intro-to-erc721s/1-faucet.png)

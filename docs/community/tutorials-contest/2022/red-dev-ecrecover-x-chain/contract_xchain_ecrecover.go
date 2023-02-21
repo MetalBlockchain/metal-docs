@@ -102,7 +102,7 @@ func getXChainECRecover(precompileAddr common.Address) RunStatefulPrecompileFunc
 		if err != nil {
 			log.Info("Error:", err)
 		}
-		encoded, err := bech32.Encode("fuji", conv)
+		encoded, err := bech32.Encode("tahoe", conv)
 		xchain := "X-" + encoded
 		log.Info(xchain)
 

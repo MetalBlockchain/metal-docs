@@ -105,18 +105,64 @@ const sidebars = {
     'subnets/subnet-faq',
     {
       type: 'category',
-       label: 'Building a subnet',
-       collapsed: false,
-       items: [
-         'subnets/install-metal-cli',
-       ],
-     },
+      label: 'Building a subnet',
+      collapsed: false,
+      items: [
+        'subnets/install-metal-cli',
+        'subnets/build-first-subnet',
+        'subnets/create-a-tahoe-subnet',
+        'subnets/create-a-mainnet-subnet',
+        'subnets/create-custom-subnet',
+        'subnets/deploy-a-smart-contract-on-your-evm',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'How to Use Metal-CLI',
+      collapsed: false,
+      items: [
+        'subnets/create-evm-subnet-config',
+        'subnets/create-a-local-subnet',
+        'subnets/multisig-deploy',
+        'subnets/how-to-pause-and-resume-subnets',
+        'subnets/how-to-list-and-describe',
+        'subnets/how-to-delete-subnet',
+        'subnets/how-to-run-cli-with-docker',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Customize',
+      collapsed: false,
+      items: [
+        'subnets/introduction-to-vm',
+        'subnets/create-a-vm-timestampvm',
+        'subnets/create-a-vm-blobvm',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Upgrade',
+      collapsed: false,
+      items: [
+        'subnets/subnet-upgrade',
+      ]
+    },
     {
       type: 'category',
       label: 'Tools',
       collapsed: false,
       items: [
         'subnets/network-runner',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Technical Reference',
+      collapsed: false,
+      items: [
+        'subnets/reference-cli-commands',
+        'subnets/reference-elastic-subnets-parameters',
       ],
     },
     /* {

@@ -935,7 +935,7 @@ sendBaseTx()
 ```
 
 Run this file using `node examples/sendBaseTx.js`, see the txID in the output,
-and look for it in the Fuji explorer.
+and look for it in the Tahoe explorer.
 
 ![multisig UTXOs 3](/img/multisig-utxos-3.jpeg)
 
@@ -1046,8 +1046,8 @@ exportXP()
 ```
 
 Run this file using `node examples/exportXP.js`, see the txID in the output, and
-look for it in the [Fuji
-explorer](https://explorer-xp.avax-test.network/blockchain/2JVSBoinj9C2J33VntvzYtVJNZdN2NKiwwKjcumHUWEb5DbBrm).
+look for it in the [Tahoe
+explorer](https://tahoe-explorer.metalblockchain.org/blockchain/N8BzztcRDHj6nNcGLbdimm6FSwE34rSVSgxhcV18TAaYSa4Q8).
 
 ![multisig UTXOs 4](/img/multisig-utxos-4.jpeg)
 
@@ -1342,6 +1342,6 @@ addDelegator()
 ```
 
 Run this file using `node examples/addDelegatorTx.js`, see the txID in the
-output, and look for it in the Fuji explorer.
+output, and look for it in the Tahoe explorer.
 
 ![multisig UTXOs 7](/img/multisig-utxos-7.jpeg)

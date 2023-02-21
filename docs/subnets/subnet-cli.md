@@ -173,7 +173,7 @@ And its full printed log on the console:
 2022-05-20T15:20:15.766-0600	info	client/client.go:96	fetching METAL asset id	{"uri": "https://tahoe.metalblockchain.org"}
 2022-05-20T15:20:15.788-0600	info	client/client.go:105	fetched METAL asset id	{"id": "U8iRqJoiJm8xZHAacmvYyZVwqQx6uDNtQeP3CQ6fcgQk3JqnK"}
 2022-05-20T15:20:15.788-0600	info	client/client.go:107	fetching network information
-2022-05-20T15:20:15.822-0600	info	client/client.go:116	fetched network information	{"networkId": 5, "networkName": "fuji"}
+2022-05-20T15:20:15.822-0600	info	client/client.go:116	fetched network information	{"networkId": 5, "networkName": "tahoe"}
 
 nBwT3MfSHA4es5o3iB5cMtkPng4eC861 is already a validator on 11111111111111111111111111111111LpoYY
 

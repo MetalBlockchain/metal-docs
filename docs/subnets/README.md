@@ -32,7 +32,7 @@ rules, and may require that its constituent validators have certain properties.
 
 Subnets can have their own token economics with their own native tokens and fee
 markets. They can launch their own blockchains with customized virtual machines.
-See [Customize a Subnet](../subnets/customize-a-subnet.md) for more details.
+See [Customize a Subnet](./customize-a-subnet.md) for more details.
 
 ### Compliance
 

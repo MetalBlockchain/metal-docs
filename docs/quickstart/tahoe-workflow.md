@@ -4,7 +4,7 @@
 
 Tahoe is the Metal network's test network. You can use it to test your dapp
 or smart contract after you've developed it locally. (You can use [Metal
-Network Runner](../subnets/tools/network-runner.md) to test things locally.) Tahoe is
+Network Runner](../subnets/network-runner.md) to test things locally.) Tahoe is
 typically on the same version as the Metal Mainnet, but sometimes it is
 running an unreleased version of MetalGo. In general, you can expect Tahoe's
 behavior to be about the same as Metal Mainnet. Tools such as a explorers

@@ -32,7 +32,7 @@ This command currently only works on Subnets deployed to either the Tahoe Testne
 **Usage:**
 
 ```shell
-avalanche subnet addValidator [subnetName] [flags]
+metal subnet addValidator [subnetName] [flags]
 ```
 
 **Flags:**
@@ -42,8 +42,8 @@ avalanche subnet addValidator [subnetName] [flags]
 ```shell
     --tahoe tahoe                  join on Tahoe (alias for `testnet`)
 -h, --help                       help for addValidator
--k, --key string                 select the key to use [fuji deploy only]
--g, --ledger                     use ledger instead of key (always true on mainnet, defaults to false on fuji)
+-k, --key string                 select the key to use [tahoe deploy only]
+-g, --ledger                     use ledger instead of key (always true on mainnet, defaults to false on tahoe)
     --ledger-addrs strings       use the given ledger addresses
     --mainnet mainnet            join on mainnet
     --nodeID string              set the NodeID of the validator to add
@@ -66,7 +66,7 @@ can have its own chain config. This command allows you to set both config files.
 **Usage:**
 
 ```shell
-avalanche subnet configure [subnetName] [flags]
+metal subnet configure [subnetName] [flags]
 ```
 
 **Flags:**
@@ -95,7 +95,7 @@ configuration, pass the `-f` flag.
 **Usage:**
 
 ```shell
-avalanche subnet create [subnetName] [flags]
+metal subnet create [subnetName] [flags]
 ```
 
 **Flags:**
@@ -119,7 +119,7 @@ The `subnet delete` command deletes an existing Subnet configuration.
 **Usage:**
 
 ```shell
-avalanche subnet delete [flags]
+metal subnet delete [flags]
 ```
 
 **Flags:**
@@ -144,7 +144,7 @@ networks, so you can take your locally tested Subnet and deploy it on Tahoe or M
 **Usage:**
 
 ```shell
-avalanche subnet deploy [subnetName] [flags]
+metal subnet deploy [subnetName] [flags]
 ```
 
 **Flags:**
@@ -179,7 +179,7 @@ flag, the command instead prints out the raw genesis file.
 **Usage:**
 
 ```shell
-avalanche subnet describe [subnetName] [flags]
+metal subnet describe [subnetName] [flags]
 ```
 
 **Flags:**
@@ -199,7 +199,7 @@ the `--output` flag.
 **Usage:**
 
 ```shell
-avalanche subnet export [subnetName] [flags]
+metal subnet export [subnetName] [flags]
 ```
 
 **Flags:**
@@ -228,7 +228,7 @@ flag.
 **Usage:**
 
 ```shell
-avalanche subnet import file [subnetPath] [flags]
+metal subnet import file [subnetPath] [flags]
 ```
 
 **Flags:**
@@ -256,7 +256,7 @@ To allow overwrites, provide the --force flag.
 **Usage:**
 
 ```shell
-avalanche subnet import public [subnetPath] [flags]
+metal subnet import public [subnetPath] [flags]
 ```
 
 **Flags:**
@@ -302,7 +302,7 @@ This command currently only supports Subnets deployed on the Tahoe Testnet and M
 **Usage:**
 
 ```shell
-avalanche subnet join [subnetName] [flags]
+metal subnet join [subnetName] [flags]
 ```
 
 **Flags:**
@@ -331,7 +331,7 @@ With the `--deployed` flag, information such as VMID, BlockchainID and SubnetID 
 **Usage:**
 
 ```shell
-avalanche subnet list [flags]
+metal subnet list [flags]
 ```
 
 **Flags:**
@@ -348,7 +348,7 @@ The `subnet publish` command publishes the Subnet's VM to a repository.
 **Usage:**
 
 ```shell
-avalanche subnet publish [subnetName] [flags]
+metal subnet publish [subnetName] [flags]
 ```
 
 **Flags:**
@@ -374,13 +374,13 @@ The `subnet stats` command prints validator statistics for the given Subnet.
 **Usage:**
 
 ```shell
-avalanche subnet stats [subnetName] [flags]
+metal subnet stats [subnetName] [flags]
 ```
 
 **Flags:**
 
 ```shell
-    --tahoe tahoe         print stats on fuji (alias for `testnet`)
+    --tahoe tahoe         print stats on tahoe (alias for `testnet`)
 -h, --help              help for stats
     --mainnet mainnet   print stats on mainnet
     --testnet testnet   print stats on testnet (alias for `tahoe`)
@@ -406,7 +406,7 @@ configuration.
 **Usage:**
 
 ```shell
-avalanche network clean [flags]
+metal network clean [flags]
 ```
 
 **Flags:**
@@ -427,7 +427,7 @@ already running.
 **Usage:**
 
 ```shell
-avalanche network start [flags]
+metal network start [flags]
 ```
 
 **Flags:**
@@ -446,7 +446,7 @@ some basic stats about the network.
 **Usage:**
 
 ```shell
-avalanche network status [flags]
+metal network status [flags]
 ```
 
 **Flags:**
@@ -468,7 +468,7 @@ default snapshot with `network start`.
 **Usage:**
 
 ```shell
-avalanche network stop [flags]
+metal network stop [flags]
 ```
 
 **Flags:**
@@ -489,7 +489,7 @@ The `transaction commit` command commits a transaction by submitting it to the P
 **Usage:**
 
 ```shell
-avalanche transaction commit [subnetName] [flags]
+metal transaction commit [subnetName] [flags]
 ```
 
 **Flags:**
@@ -506,7 +506,7 @@ The `transaction sign` command signs a multisig transaction.
 **Usage:**
 
 ```shell
-avalanche transaction sign [subnetName] [flags]
+metal transaction sign [subnetName] [flags]
 ```
 
 **Flags:**
@@ -547,7 +547,7 @@ If you'd like to import an existing key instead of generating one from scratch, 
 **Usage:**
 
 ```shell
-avalanche key create [keyName] [flags]
+metal key create [keyName] [flags]
 ```
 
 **Flags:**
@@ -568,7 +568,7 @@ before deleting the key. To skip the confirmation, provide the `--force` flag.
 **Usage:**
 
 ```shell
-avalanche key delete [keyName] [flags]
+metal key delete [keyName] [flags]
 ```
 
 **Flags:**
@@ -588,7 +588,7 @@ flag, the command writes the key to a file of your choosing.
 
 **Usage:**
 
-`avalanche key export [keyName] [flags]`
+`metal key export [keyName] [flags]`
 
 **Flags:**
 
@@ -605,7 +605,7 @@ keys or for the ledger addresses associated to certain indices.
 **Usage:**
 
 ```shell
-avalanche key list [flags]
+metal key list [flags]
 ```
 
 **Flags:**

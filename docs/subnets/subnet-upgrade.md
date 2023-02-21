@@ -17,7 +17,7 @@ to alter the way Subnet runs, for various business or operational needs. These u
 the purview of your team, and you have complete control over the timing of their roll out. Any such
 change represents a **network upgrade** and needs to be carefully planned and executed.
 
-:::warning
+:::warning 
 Network Upgrades Permanently Change the Rules of Your Subnet.
 
 Procedural mistakes or a botched upgrade can halt your Subnet or lead to data loss!
@@ -25,7 +25,7 @@ Procedural mistakes or a botched upgrade can halt your Subnet or lead to data lo
 When performing a Subnet upgrade, every single validator on the Subnet will need to perform the
 identical upgrade. If you are coordinating a network upgrade, you must schedule advance notice to
 every Subnet validator so that they have time to perform the upgrade prior to activation. Make sure
-you have direct line of communication to all your validators!
+you have direct line of communication to all your validators! 
 :::
 
 This tutorial will guide you through the process of doing various Subnet upgrades and changes. We
@@ -49,7 +49,7 @@ transactions).
 You as a Subnet operator need to ensure that whatever you do, at least 80% of the validators'
 cumulative weight is connected and working at all times.
 
-:::info
+:::info 
 
 It is mandatory that the cumulative weight of all validators in the Subnet must be at least
 the value of
@@ -57,13 +57,13 @@ the value of
 20). For example, if there is only one validator in the Subnet, its weight must be at least
 `snow-sample-size` . Hence, when assigning weight to the nodes, always use values greater than 20.
 Recall that a validator's weight can't be changed while it is validating, so take care to use an
-appropriate value.
+appropriate value. 
 
 :::
 
 ## Upgrading Subnet Validator Nodes
 
-MetalGo, the node client that is running the Metal Blockchain validators is under constant and rapid
+MetalGo, the node client that is running the Metal validators is under constant and rapid
 development. New versions come out often (roughly every two weeks), bringing added capabilities,
 performance improvements or security fixes. Updates are usually optional, but from time to time
 (much less frequently than regular updates) there will be an update that includes a mandatory
@@ -108,13 +108,13 @@ processor). Log into the machine where the node is running and download the arch
 and the link to the archive, like this:
 
 ```bash
-wget https://github.com/MetalBlockchain/subnet-evm/releases/download/v0.2.9/subnet-evm_0.2.9_linux_amd64.tar.gz
+wget https://github.com/MetalBlockchain/subnet-evm/releases/download/v0.4.9/subnet-evm_0.4.9_linux_amd64.tar.gz
 ```
 
 This will download the archive to the machine. Unpack it like this (use the correct filename, of course):
 
 ```bash
-tar xvf subnet-evm_0.2.9_linux_amd64.tar.gz
+tar xvf subnet-evm_0.4.9_linux_amd64.tar.gz
 ```
 
 This will unpack and place the contents of the archive in the current directory, file `subnet-evm`
@@ -122,14 +122,7 @@ is the plugin binary. You need to stop the node now (if the node is running as a
 systemctl stop metalgo` command). You need to place that file into the plugins directory where
 the MetalGo binary is located. If the node is installed using the install script, the path will
 be `~/metal-node/plugins` Instead of the `subnet-evm` filename, VM binary needs to be named as
-the VM ID of the chain on the Subnet. For example, for the WAGMI
-Subnet that VM ID is
-`srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy`. So, the command to copy the new plugin binary
-would look like:
-
-```bash
-cp subnet-evm ~/metal-node/plugins/srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
-```
+the VM ID of the chain on the Subnet.
 
 :::warning
 Make sure you use the correct VM ID, otherwise, your VM will not get updated and your Subnet may halt.
@@ -176,7 +169,7 @@ correct VM plugin in place before you restart MetalGo.
 Sometimes you need to do a network upgrade to change the configured rules in the genesis under which
 the Chain operates. In regular EVM, network upgrades are a pretty involved process that includes
 deploying the new EVM binary, coordinating the timed upgrade and deploying changes to the nodes. But
-since [Subnet-EVM v0.2.8](https://github.com/MetalBlockchain/subnet-evm/releases/tag/v0.2.8), we introduced
+since [Subnet-EVM v0.2.8](https://github.com/ava-labs/subnet-evm/releases/tag/v0.2.8), we introduced
 the long awaited feature to perform network upgrades by just using a few lines of JSON. Upgrades can
 consist of enabling/disabling particular precompiles, or changing their parameters. Currently
 available precompiles allow you to:
@@ -194,5 +187,4 @@ of possible precompile upgrade parameters.
 
 Vital part of Subnet maintenance is performing timely upgrades at all levels of the software stack
 running your Subnet. We hope this tutorial will give you enough information and context to allow you
-to do those upgrades with confidence and ease. If you have additional questions or any issues,
-please reach out to us on [Telegram Developer Channel](https://t.me/metaldevelopers).
+to do those upgrades with confidence and ease.

@@ -119,7 +119,7 @@ Default config values for the C-Chain can be seen [here](../nodes/maintain/chain
 
 If you need a private test network to test your dapp, [Metal Network Runner](https://github.com/MetalBlockchain/metal-network-runner) is a shell client for launching local Metal Blockchain networks, similar to Ganache on Ethereum.
 
-For more information, see [documentation](../subnets/tools/network-runner.md).
+For more information, see [documentation](../subnets/network-runner.md).
 
 ## Developing and Deploying Contracts
 

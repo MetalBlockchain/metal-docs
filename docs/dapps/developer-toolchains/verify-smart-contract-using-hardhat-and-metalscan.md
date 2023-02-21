@@ -87,21 +87,21 @@ import "hardhat-gas-reporter"
 import "@nomiclabs/hardhat-etherscan"
 import { MNEMONIC, APIKEY } from "./.env.json"
 
-// When using the hardhat network, you may choose to fork Fuji or Avalanche Mainnet
+// When using the hardhat network, you may choose to fork Tahoe or Metal Mainnet
 // This will allow you to debug contracts using the hardhat network while keeping the current network state
 // To enable forking, turn one of these booleans on, and then run your tasks/scripts using ``--network hardhat``
 // For more information go to the hardhat guide
 // https://hardhat.org/hardhat-network/
 // https://hardhat.org/guides/mainnet-forking.html
-const FORK_FUJI = false
+const FORK_TAHOE = false
 const FORK_MAINNET = false
-const forkingData = FORK_FUJI
+const forkingData = FORK_TAHOE
   ? {
-      url: "https://api.avax-test.network/ext/bc/C/rpc",
+      url: "https://tahoe.metalblockchain.org/ext/bc/C/rpc",
     }
   : FORK_MAINNET
   ? {
-      url: "https://api.avax.network/ext/bc/C/rpc",
+      url: "https://api.metalblockchain.org/ext/bc/C/rpc",
     }
   : undefined
 
@@ -154,16 +154,16 @@ export default {
       //   url: 'https://api.avax.network/ext/bc/C/rpc',
       // },
     },
-    fuji: {
-      url: "https://api.avax-test.network/ext/bc/C/rpc",
+    tahoe: {
+      url: "https://tahoe.metalblockchain.org/ext/bc/C/rpc",
       gasPrice: 225000000000,
-      chainId: 43113,
+      chainId: 381932,
       accounts: { mnemonic: MNEMONIC },
     },
     mainnet: {
       url: "https://api.avax.network/ext/bc/C/rpc",
       gasPrice: 225000000000,
-      chainId: 43114,
+      chainId: 381931,
       accounts: { mnemonic: MNEMONIC },
     },
   },
@@ -183,7 +183,7 @@ npx hardhat verify <contract address> <arguments> --network <network>
 Example:
 
 ```zsh
-npx hardhat verify 0x3972c87769886C4f1Ff3a8b52bc57738E82192D5 MockNFT Mock ipfs://QmQ2RFEmZaMds8bRjZCTJxo4DusvcBdLTS6XuDbhp5BZjY 100 --network fuji
+npx hardhat verify 0x3972c87769886C4f1Ff3a8b52bc57738E82192D5 MockNFT Mock ipfs://QmQ2RFEmZaMds8bRjZCTJxo4DusvcBdLTS6XuDbhp5BZjY 100 --network tahoe
 ```
 
 <br></br>
@@ -230,7 +230,7 @@ npx hardhat run scripts/<scriptname.ts> --network <network>
 Example:
 
 ```zsh
-npx hardhat run scripts/5-verifyNFT.ts --network fuji
+npx hardhat run scripts/5-verifyNFT.ts --network tahoe
 ```
 
 <br></br>

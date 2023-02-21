@@ -52,7 +52,7 @@ before you're ready to deploy on permanent infrastructure (testnet or Mainnet).
 
 GitHub: [https://github.com/MetalBlockchain/metal-network-runner](https://github.com/MetalBlockchain/metal-network-runner)
 
-Document: [Metal Network Runner](../subnets/tools/network-runner.md)
+Document: [Metal Network Runner](../subnets/network-runner.md)
 
 ## Metal Plugin Manager (APM)
 
