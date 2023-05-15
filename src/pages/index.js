@@ -76,7 +76,7 @@ function Home() {
 
 
               <Card
-                to="specs/coreth-arc20s"
+                to="subnets/README.md"
                 header={{
                   label: "🚀 Launch Your First Subnet",
                 }}
