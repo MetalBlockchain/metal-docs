@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: Learn how to stake on Avalanche by validating or delegating
+description: Learn how to stake on Metal Blockchain by validating or delegating
 ---
 
 # What is Staking?
@@ -9,7 +9,7 @@ Staking is the process of locking up tokens to support a network while receiving
 
 ## How Does Proof-of-stake Work?
 
-To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Avalanche, the scarce resource is the native token, [METAL](../../overview/getting-started/intro.md#metal). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Metal Blockchain, it must stake METAL.
+To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Metal Blockchain, the scarce resource is the native token, [METAL](../../overview/getting-started/intro.md#metal). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Metal Blockchain, it must stake METAL.
 
 ## Staking Parameters on Metal Blockchain
 

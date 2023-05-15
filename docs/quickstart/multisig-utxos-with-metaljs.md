@@ -187,7 +187,7 @@ const evm = avalanche.CChain()
 
 ### Setup Keychains with Private Keys
 
-In order to sign transactions with our private keys, we will use the AvalancheJS
+In order to sign transactions with our private keys, we will use the MetalJS
 keychain API. This will locally store our private keys and can be easily used
 for signing.
 

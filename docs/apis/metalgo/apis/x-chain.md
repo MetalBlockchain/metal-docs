@@ -624,7 +624,7 @@ avm.export({
 
 - `to` is the P-Chain or C-Chain address the asset is sent to.
 - `amount` is the amount of the asset to send.
-- `assetID` is the asset id of the asset which is sent. Use `AVAX` for AVAX exports.
+- `assetID` is the asset id of the asset which is sent. Use `METAL` for METAL exports.
 - `from` are the addresses that you want to use for this operation. If omitted, uses any of your addresses as needed.
 - `changeAddr` is the address any change will be sent to. If omitted, change is sent to one of the addresses controlled by the user.
 - The asset is sent from addresses controlled by `username`
@@ -641,9 +641,9 @@ curl -X POST --data '{
     "id"     :1,
     "method" :"avm.export",
     "params" :{
-        "to":"C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+        "to":"C-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
         "amount": 10,
-        "assetID": "AVAX",
+        "assetID": "METAL",
         "from":["X-metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"],
         "changeAddr":"X-metal1turszjwn05lflpewurw96rfrd3h6x8flgs5uf8",
         "username":"myUsername",
@@ -1447,7 +1447,7 @@ avm.send({
 }) -> {txID: string, changeAddr: string}
 ```
 
-- Sends `amount` units of asset with ID `assetID` to address `to`. `amount` is denominated in the smallest increment of the asset. For AVAX this is 1 nAVAX (one billionth of 1 AVAX.)
+- Sends `amount` units of asset with ID `assetID` to address `to`. `amount` is denominated in the smallest increment of the asset. For METAL this is 1 nMETAL (one billionth of 1 METAL.)
 - `to` is the X-Chain address the asset is sent to.
 - `from` are the addresses that you want to use for this operation. If omitted, uses any of your addresses as needed.
 - `changeAddr` is the address any change will be sent to. If omitted, change is sent to one of the addresses controlled by the user.

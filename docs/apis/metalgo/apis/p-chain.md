@@ -460,7 +460,7 @@ curl -X POST --data '{
 
 ### platform.exportAVAX
 
-Send AVAX from an address on the P-Chain to an address on the X-Chain or C-Chain. After issuing this transaction, you must call the X-Chain's [`avm.import`](x-chain.md#avmimport) or C-Chain's [`avax.import`](c-chain.md#avaximport) with assetID `AVAX` to complete the transfer.
+Send METAL from an address on the P-Chain to an address on the X-Chain or C-Chain. After issuing this transaction, you must call the X-Chain's [`avm.import`](x-chain.md#avmimport) or C-Chain's [`avax.import`](c-chain.md#avaximport) with assetID `METAL` to complete the transfer.
 
 #### **Signature**
 
@@ -482,10 +482,10 @@ platform.exportAVAX(
 ```
 
 - `amount` is the amount of nAVAX to send.
-- `to` is the address on the X-Chain or C-Chain to send the AVAX to.
+- `to` is the address on the X-Chain or C-Chain to send the METAL to.
 - `from` are the addresses that you want to use for this operation. If omitted, uses any of your addresses as needed.
 - `changeAddr` is the address any change will be sent to. If omitted, change is sent to one of the addresses controlled by the user.
-- `username` is the user sending the AVAX and paying the transaction fee.
+- `username` is the user sending the METAL and paying the transaction fee.
 - `password` is `username`‘s password.
 - `txID` is the ID of this transaction.
 
@@ -1929,9 +1929,9 @@ curl -X POST --data '{
 Not recommended for use on Mainnet. See warning notice in [Keystore API](./keystore.md).
 :::
 
-Complete a transfer of AVAX from the X-Chain, or C-Chain to the P-Chain.
+Complete a transfer of METAL from the X-Chain, or C-Chain to the P-Chain.
 
-Before this method is called, you must call the X-Chain’s [`avm.export`](x-chain.md#avmexport) or C-Chain’s [`avax.export`](c-chain.md#avaxexport) method with assetID `AVAX` to initiate the transfer.
+Before this method is called, you must call the X-Chain’s [`avm.export`](x-chain.md#avmexport) or C-Chain’s [`avax.export`](c-chain.md#avaxexport) method with assetID `METAL` to initiate the transfer.
 
 #### **Signature**
 
@@ -1952,7 +1952,7 @@ platform.importAVAX(
 }
 ```
 
-- `to` is the ID of the address the AVAX is imported to. This must be the same as the `to` argument in the corresponding call to the X-Chain’s or C-Chain's `export`.
+- `to` is the ID of the address the METAL is imported to. This must be the same as the `to` argument in the corresponding call to the X-Chain’s or C-Chain's `export`.
 - `sourceChain` is the chain the funds are coming from. Must be either `"X"` or `"C"`.
 - `from` are the addresses that you want to use for this operation. If omitted, uses any of your addresses as needed.
 - `changeAddr` is the address any change will be sent to. If omitted, change is sent to one of the addresses controlled by the user.

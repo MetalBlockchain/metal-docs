@@ -78,11 +78,11 @@ function Home() {
               <Card
                 to="specs/coreth-arc20s"
                 header={{
-                  label: "Ⓜ️ Metal Native Tokens",
+                  label: "🚀 Launch Your First Subnet",
                 }}
                 body={{
                   label:
-                    "Learn all about Metal Native Tokens (MNT) and MRC-20's",
+                    "Start your Subnet development journey by creating a subnet in under five minutes",
                 }}
               />
             </div>
