@@ -76,7 +76,7 @@ function Home() {
 
 
               <Card
-                to="subnets/README"
+                to="subnets"
                 header={{
                   label: "🚀 Launch Your First Subnet",
                 }}
