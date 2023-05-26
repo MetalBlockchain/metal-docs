@@ -277,7 +277,7 @@ or
 npx hardhat balance --from subnet
 ```
 
-After running the script you should see balances printed out in the comman line. If you have used `--from subnet` you will only see the native token balance of the user. If you have used `--from avax` you will see the ERC20 balances of both user and the bridge contract.
+After running the script you should see balances printed out in the command line. If you have used `--from subnet` you will only see the native token balance of the user. If you have used `--from avax` you will see the ERC20 balances of both user and the bridge contract.
 
 Balance value seen on the Subnet depends on how you have funded your address. But balance values on avax should look like the following:
 
@@ -447,12 +447,12 @@ Our bridge implementation is a naive one. It should give the reader a deep under
   - Contracts used in this tutorial are not audited.
 - Relayer Application
   - There might be some bugs inside our relayer application.
-  - We only have one relayer application running. Computer that runs the relayer application might encounter an error, maybe an electricity outage or we might need to update and restart the relayer application itself. In that case, our bridge would stop working for that timeframe and users would not be able to bridge their tokens.
+  - We only have one relayer application running. Computer that runs the relayer application might encounter an error, maybe an electricity outage or we might need to update and restart the relayer application itself. In that case, our bridge would stop working for that time frame and users would not be able to bridge their tokens.
 
 ### Suggestions
 
 - More Bridge Operators
-  - Rather than trusting on a single account, we might use a multi-sig wallet. For example, it could be a 4 of 5 multi-sig wallet. Allowing us to confirm transactions with 5 accounts and on 4 confirmation it would allow for execution. In that case, we would have a multi-sig smart contract and that contract would be the admin of the bridges. There will be 5 different relayer applications running with 5 different accounts' private keys. Each of them would send transactions to the multi-sig smart contract. When 4 of them sends the transaction, smart contract would execute the mint or release function on the bridge contract. This approach would increases both the security and ease of maintanance of our bridge. Because of this approach, when one computer that runs the relayer application has to have a maintenance or have an electricity outage bridge would function normally. But, just because we have more bridge operators our bridge is not fully secure.
+  - Rather than trusting on a single account, we might use a multi-sig wallet. For example, it could be a 4 of 5 multi-sig wallet. Allowing us to confirm transactions with 5 accounts and on 4 confirmation it would allow for execution. In that case, we would have a multi-sig smart contract and that contract would be the admin of the bridges. There will be 5 different relayer applications running with 5 different accounts' private keys. Each of them would send transactions to the multi-sig smart contract. When 4 of them sends the transaction, smart contract would execute the mint or release function on the bridge contract. This approach would increases both the security and ease of maintenance of our bridge. Because of this approach, when one computer that runs the relayer application has to have a maintenance or have an electricity outage bridge would function normally. But, just because we have more bridge operators our bridge is not fully secure.
 - Auditing Smart Contracts
   - Smart Contracts should be audited. But, do not forget audited does not mean it is bug free.
 - Testing Relayer Application

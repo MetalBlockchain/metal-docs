@@ -332,7 +332,7 @@ admin.setLoggerLevel(
 - `logLevel` is the log level of written logs, can be omitted.
 - `displayLevel` is the log level of displayed logs, can be omitted.
 
-`logLevel` and `displayLevel` cannot be omited at the same time.
+`logLevel` and `displayLevel` cannot be omitted at the same time.
 
 #### **Example Call**
 

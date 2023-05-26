@@ -265,7 +265,7 @@ describe("Swappity swap", function () {
             })
         }
 
-        // We tell Wavax contract that we are cool with Swapper contract using our Wavax on our behalve
+        // We tell Wavax contract that we are cool with Swapper contract using our Wavax on our behalf
         await wavaxTokenContract.approve(swapper.address, ethers.constants.MaxUint256)
 
         // Check balance before the swap
@@ -371,7 +371,7 @@ it("should swap wavax for png", async function () {
         })
     }
 
-    // We tell Wavax contract that we are cool with Swapper contract using our Wavax on our behalve
+    // We tell Wavax contract that we are cool with Swapper contract using our Wavax on our behalf
     await wavaxTokenContract.approve(swapper.address, ethers.constants.MaxUint256);
 
     // Check balance before the swap
@@ -434,7 +434,7 @@ Then we fetch again the balance of our address. And we check if the balances cor
 it means that our code working as we expect for this functionality.
 
 ```ts
-// We tell Wavax contract that we are cool with Swapper contract using our Wavax on our behalve
+// We tell Wavax contract that we are cool with Swapper contract using our Wavax on our behalf
 await wavaxTokenContract.approve(swapper.address, ethers.constants.MaxUint256);
 
 // Check balance before the swap

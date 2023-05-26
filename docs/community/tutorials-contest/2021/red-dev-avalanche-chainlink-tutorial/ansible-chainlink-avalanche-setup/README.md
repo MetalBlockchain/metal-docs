@@ -10,12 +10,12 @@ key = quertyuiop123456789
 timeout = 60
  ```
 
-## Developement server creation with vps
+## Development server creation with vps
 
 1. Run `ansible-playbook -i inventory tasks/createvultrvps.yml`
-2. Follow directions to create new developement server in Vulr
+2. Follow directions to create new development server in Vulr
 3. Run `ansible-playbook -i inventory tasks/provision.yml`
-4. Follow directions to provision the newly created developement server
+4. Follow directions to provision the newly created development server
 
 ## Development server creation within same host
 

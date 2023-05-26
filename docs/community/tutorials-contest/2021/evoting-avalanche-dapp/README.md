@@ -8,9 +8,9 @@ Truffle Suite is a toolkit for launching decentralized applications (dApps) on E
 
 ## Prerequisites
 
-- Basic familarity with [NodeJS](https://nodejs.org/en) and [npm](https://www.npmjs.com/).
-- Basic familarity with [ReactJS](https://reactjs.org/).
-- Basic familarity with [Avalanche](https://avax.network) network, [Solidity](https://docs.soliditylang.org/en/v0.8.6/) and [Truffle](https://www.trufflesuite.com/truffle).
+- Basic familiarity with [NodeJS](https://nodejs.org/en) and [npm](https://www.npmjs.com/).
+- Basic familiarity with [ReactJS](https://reactjs.org/).
+- Basic familiarity with [Avalanche](https://avax.network) network, [Solidity](https://docs.soliditylang.org/en/v0.8.6/) and [Truffle](https://www.trufflesuite.com/truffle).
 
 ## Requirements
 

@@ -34,7 +34,7 @@ An EVM Transaction is composed of the following fields:
 
 `nativeAssetCall` is a precompiled contract at address `0x0100000000000000000000000000000000000002`. `nativeAssetCall` allows users to atomically transfer a native asset to a given address and, optionally, make a contract call to that address. This is parallel to how a normal transaction can send value to an address and atomically call that address with some `data`.
 
-Note: the caller of `nativeAssetCall` is forwarded to the `address` defined in the call. This means that when `Address A` invokes a contract through `nativeAssetCall`, the contract will pereceive the caller (or `msg.sender`) as `Address A`. This enables the deposit logic that we use to create ARC-20 contracts.
+Note: the caller of `nativeAssetCall` is forwarded to the `address` defined in the call. This means that when `Address A` invokes a contract through `nativeAssetCall`, the contract will perceive the caller (or `msg.sender`) as `Address A`. This enables the deposit logic that we use to create ARC-20 contracts.
 
 ```text
 nativeAssetCall(address addr, uint256 assetID, uint256 assetAmount, bytes memory callData) -> {ret: bytes memory}

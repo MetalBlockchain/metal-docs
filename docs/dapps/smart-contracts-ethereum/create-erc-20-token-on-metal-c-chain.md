@@ -1,5 +1,5 @@
 ---
-description: ERC-20 tokens are the most fundamental and essential concept in Ethereum. This same token standard is adopted in the Melal Blockchain ecosystem.
+description: ERC-20 tokens are the most fundamental and essential concept in Ethereum. This same token standard is adopted in the Metal Blockchain ecosystem.
 ---
 
 # Create an ERC-20 Token Using Solidity

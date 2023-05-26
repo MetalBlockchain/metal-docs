@@ -4,7 +4,7 @@
 
 [Avalanche](https://www.avax.network/) is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Avalanche is a blockchain that promises to combine scaling capabilities and quick confirmation times through its Avalanche Consensus Protocol. It can process 4,500 TPS (transactions per second). For Ethereum, that number is 14 TPS.
 
-Blockchains have traditionally been referred to as being slow and unscalable. Avalanche embraces an innovative approach to concensus that solve these problems without compromising on security.
+Blockchains have traditionally been referred to as being slow and unscalable. Avalanche embraces an innovative approach to consensus that solve these problems without compromising on security.
 
 Avalanche is a high-performance, scalable, customizable, and secure blockchain platform. It targets three 15 broad use cases:
 
@@ -31,7 +31,7 @@ The Avalanche Architecture is composed of:
 
 ## The Graph Protocol
 
-[The Graph](https://thegraph.com/) is an open-sourced indexing protocol for organising blockchain data and making it easily accessible using [GraphQL](https://graphql.org/). This software collects, processes and stores data from various blockchain applications to facilitate effecient information retrieval. The Graph stored data into various indices called Subgraphs, allowing applications to query it. These queries are initiated using GraphQL, a language originally created by facebook. The Graph has the ability to query networks like Ethereum and IPFS. Anyone can build and publish open subgraphs.
+[The Graph](https://thegraph.com/) is an open-sourced indexing protocol for organizing blockchain data and making it easily accessible using [GraphQL](https://graphql.org/). This software collects, processes and stores data from various blockchain applications to facilitate efficient information retrieval. The Graph stored data into various indices called Subgraphs, allowing applications to query it. These queries are initiated using GraphQL, a language originally created by facebook. The Graph has the ability to query networks like Ethereum and IPFS. Anyone can build and publish open subgraphs.
 
 ![graph](./images/21.png "graph")
 
@@ -91,7 +91,7 @@ export PATH=$PWD:PATH
 
 This makes the `avalanche` command available globally. For more information about [environment-variables](https://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x) and [avalanche-cli-commands](https://docs.avax.network/subnets/create-a-local-subnet#quickstart) visit the respective links.
 
-### Initialising a Default Subnet
+### Initializing a Default Subnet
 
 We will be using the `avalanche subnet create` command line wizard to get our network running. ASAP.
 In the same directory where the binary was installed, run the following command
@@ -99,13 +99,13 @@ In the same directory where the binary was installed, run the following command
 ```zsh
 avalanche subnet create <SubnetName>
 ```
-Substitute `<SubnetName>` with any perferred name of your choice but without spaces. For this tutorial we are going to call our Subnet `<fibrinNet>`.
+Substitute `<SubnetName>` with any preferred name of your choice but without spaces. For this tutorial we are going to call our Subnet `<fibrinNet>`.
 
 ```zsh
 avalanche subnet create fibrinNet
 ```
 
-Since this command does not provide any arguements, you would neeed to walk through the configuration wizard to generate a `genesis file` for your network.
+Since this command does not provide any arguments, you would need to walk through the configuration wizard to generate a `genesis file` for your network.
 
 * Choose a Virtual Machine (VM): 
   ![choose a VM](./images/2.png "Choose VM")
@@ -159,7 +159,7 @@ When a Subnet is run locally, it starts a multi-node (5 node) Avalanche Network 
 To test the functionality of the just created Subnet, go ahead and add the configuration details to [Metamask](https://metamask.io/).
 You can create a new metamask account by importing the private key `0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027` and start experiencing with this account.
 
-I have a [Github Tutorial](https://github.com/FibrinLab/Avalanche-Local-Environment-Setup) that explains how to setup your local development environmet including `Metamask`. 
+I have a [Github Tutorial](https://github.com/FibrinLab/Avalanche-Local-Environment-Setup) that explains how to setup your local development environment including `Metamask`. 
 
 Lastly don't forget to stop the running local network
 ```zsh
@@ -192,13 +192,13 @@ This repo contains the official sample subgraph for the [gravatar](https://en.gr
 
 1. Deployment Steps
 
-Compile and deploy the `Gravity` smart contract using the Local Subnet you just created. To do this select the `deploy` tab and choose `injected web3` from the dropdwown. `Please note that Remix automatically detects the appropriate compiler version and makes use of it to compile your contract.
+Compile and deploy the `Gravity` smart contract using the Local Subnet you just created. To do this select the `deploy` tab and choose `injected web3` from the dropdown. `Please note that Remix automatically detects the appropriate compiler version and makes use of it to compile your contract.
 
 ![remix1](./images/23.png "remix1")
 
 ![remix2](./images/24.png "remix2")
 
-`Always make sure to confirm the Environmet Chain ID is the same as that of your selected metamask account`.
+`Always make sure to confirm the Environment Chain ID is the same as that of your selected metamask account`.
 
 With this all set go ahead and deploy your smart contract on your local Subnet by clicking the `deploy` button. Approve the metamask request and pay the necessary gas fees.
 
@@ -216,7 +216,7 @@ Please take note of the deployment address as we will be making use of it subseq
 
 1. Installing Dependencies
 
-The most efficient way to make use of The Graph in indexing our Subnet is to host a local Graph Node. This is pretty striaghtforwards to setup once you got requirements up and running. This tutorial is an extension of the [Graph-Node](https://github.com/graphprotocol/graph-node) Github repository.
+The most efficient way to make use of The Graph in indexing our Subnet is to host a local Graph Node. This is pretty straightforward to setup once you got requirements up and running. This tutorial is an extension of the [Graph-Node](https://github.com/graphprotocol/graph-node) Github repository.
 
 The following components are needed:
 * Interplanetary File System (IPFS) for hosting our files. [Installation](https://docs.ipfs.io/install/) instructions.
@@ -230,9 +230,9 @@ If the above installation instructions are followed correctly, you should have t
 
 ![ipfs2](./images/27.png "ipfs2")
 
-2. Deploying Rosources
+2. Deploying Resources
 
-After sucessfully installing IPFS, initialise the daemon by running
+After successfully installing IPFS, initialize the daemon by running
 
 ```zsh
 ipfs init
@@ -272,12 +272,12 @@ Clone and build `The Graph` node folder
 git clone https://github.com/graphprotocol/graph-node
 ```
 
-Build the folder by runnning 
+Build the folder by running 
 ```zsh
 cargo build
 ```
 
-If you have sucessfully installed Rust but `the command is not found`, you would need to setup some environmental variables.
+If you have successfully installed Rust but `the command is not found`, you would need to setup some environmental variables.
 Running this command might help.
 
 ```zsh
@@ -340,7 +340,7 @@ yarn create-local
 yarn deploy-local
 ```
 
-Congratulations, you have sucessfully deployed a Sub-Graph on a locally deployed Subnet.
+Congratulations, you have successfully deployed a Sub-Graph on a locally deployed Subnet.
 
 ![done](./images/34.png "done")
 

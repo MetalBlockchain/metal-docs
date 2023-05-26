@@ -226,7 +226,7 @@ avax.getAtomicTx({
 
 **Request**
 
-- `txID` is the transacion ID. It should be in cb58 format.
+- `txID` is the transaction ID. It should be in cb58 format.
 - `encoding` is the encoding format to use. Can only be `hex` when a value is provided.
 
 **Response**
@@ -287,7 +287,7 @@ avax.export({
 - `to` is the X-Chain or P-Chain address the asset is sent to.
 - `amount` is the amount of the asset to send.
 - `assetID` is the ID of the asset. To export METAL use `"METAL"` as the `assetID`.
-- `baseFee` is the base fee that should be used when creating the transaction. If ommitted, a suggested fee will be used.
+- `baseFee` is the base fee that should be used when creating the transaction. If omitted, a suggested fee will be used.
 - `username` is the user that controls the address that transaction will be sent from.
 - `password` is `username`‘s password.
 
@@ -346,7 +346,7 @@ avax.exportAVAX({
 
 - `to` is X-Chain or P-Chain address the asset is sent to.
 - `amount` is the amount of the asset to send.
-- `baseFee` is the base fee that should be used when creating the transaction. If ommitted, a suggested fee will be used.
+- `baseFee` is the base fee that should be used when creating the transaction. If omitted, a suggested fee will be used.
 - `username` is the user that controls the address that transaction will be sent from.
 - `password` is `username`‘s password.
 

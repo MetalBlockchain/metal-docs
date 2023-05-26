@@ -1,7 +1,7 @@
 # How to Deploy a Subnet with Multisig Authorization
 
-Subnet creators can control critical Subnet operations with a N of M multisig. This multisig must be
-setup at deployment time and can't be edited afterward. Multisigs can are available on both the Tahoe
+Subnet creators can control critical Subnet operations with an N of M multisig. This multisig must be
+setup at deployment time and can't be edited afterward. Multisig authorization is available on both the Tahoe
 Testnet and Mainnet.
 
 To setup your multisig, you need to know the P-Chain address of each key holder and what you

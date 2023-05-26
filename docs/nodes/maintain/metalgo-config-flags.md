@@ -664,7 +664,7 @@ Maximum number of CPU/memory profiles files to keep. Defaults to 5.
 
 #### `--health-check-frequency` (duration):
 
-Health check runs with this freqency. Defaults to `30s`.
+Health check runs with this frequency. Defaults to `30s`.
 
 #### `--health-check-averager-halflife` (duration):
 
