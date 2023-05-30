@@ -1031,7 +1031,7 @@ important addresses (like bridge relayers). To do so, you'll need to update your
 }
 ```
 
-By default, up to 32 transactions from priority addresses (max 16 per address) are regossipped to
+By default, up to 32 transactions from priority addresses (max 16 per address) are regossiped to
 validators per second. You can override these defaults with the following config:
 
 ```json

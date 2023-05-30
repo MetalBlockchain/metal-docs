@@ -54,7 +54,7 @@ Yes, you can choose to use any token as your native token.
 
 ## Can Subnets use different tokens for gas and staking?
 
-Yes, for example, a Subnet can require token A to be used to stake to be a validator on the Subnet, which will also be paid out to validators for validating the Subnet. While token B can be used as gas for transactions on the Subnet. Note that validators are always paid in the stocking token.
+Yes, for example, a Subnet can require token A to be used to stake to be a validator on the Subnet, which will also be paid out to validators for validating the Subnet. While token B can be used as gas for transactions on the Subnet. Note that validators are always paid in the staking token.
 
 ## What VMs can you use to build your Subnet?
 
@@ -64,7 +64,7 @@ You can use EVM or any other VM of your choosing. Currently, besides the EVM and
 
 No, but a Subnet can have multiple blockchains within it.
 
-## What consensus mechanism does a subnet use? Avalanche or snowman?
+## What consensus mechanism does a subnet use? Avalanche or Snowman?
 
 Subnets can use either Avalanche or Snowman. However, MetalGo only supports implementing custom chain-based VMs. So unless your subnet is using the AVM, it is going to be using Snowman.
 

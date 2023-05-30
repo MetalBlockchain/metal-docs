@@ -7,7 +7,7 @@ import App from "./App";
 import ElectionJSON from "./build/contracts/Election.json";
 import VoteModal from "./VoteModal";
 
-// Election component for organising election details
+// Election component for organizing election details
 let Election = (props) => (
   <tr>
     <td>{props.election.electionId}</td>
@@ -38,7 +38,7 @@ let Election = (props) => (
   </tr>
 );
 
-// Candidate component for organising candidate details of each candidate
+// Candidate component for organizing candidate details of each candidate
 let Candidates = (props) => (
   <font size="2">
     <b>{props.name}</b> ({props.voteCount}) <br />
@@ -106,7 +106,7 @@ class ActiveElections extends Component {
       // Election id
       electionDetails[i].electionId = i;
 
-      // Organising candidates into components
+      // Organizing candidates into components
       let candidatesCount = await election.methods.candidatesCount().call();
       let candidates = [], candidateComponents = [];
       candidates[i] = [];

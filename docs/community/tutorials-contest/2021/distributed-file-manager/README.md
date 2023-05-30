@@ -10,9 +10,9 @@ For your information, [Truffle Suite](https://www.trufflesuite.com) is a toolkit
 
 ## Prerequisites
 
-* Basic familarity with [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/en) and [npm](https://www.npmjs.com/).
-* Basic familarity with [ReactJS](https://reactjs.org/).
-* Basic familarity with [Avalanche](https://avax.network) network, [Solidity](https://docs.soliditylang.org/en/v0.8.6/) and [Truffle](https://www.trufflesuite.com/truffle).
+* Basic familiarity with [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/en) and [npm](https://www.npmjs.com/).
+* Basic familiarity with [ReactJS](https://reactjs.org/).
+* Basic familiarity with [Avalanche](https://avax.network) network, [Solidity](https://docs.soliditylang.org/en/v0.8.6/) and [Truffle](https://www.trufflesuite.com/truffle).
 
 ## Requirements
 

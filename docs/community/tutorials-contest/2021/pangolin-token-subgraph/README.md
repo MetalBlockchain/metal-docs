@@ -2,16 +2,18 @@
 
 ### Table of Content
 
-* [Introduction](#introduction)
-* [What is The Graph](#what-is-the-graph)
-* [The Graph and Open APIs](#the-graph-and-open-apis)
-* [GraphQL Introduction](#graphql-introduction)
-* [What is Avalanche](#what-is-avalanche)
-* [The Graph and Avalanche](#the-graph-and-avalanche)
-* [Interacting with Avalanche Data via the Graph: Pangolin Example](#interacting-with-avalanche-data-via-the-graph-pangolin-example)
-* [How to Build a Subgraph](#how-to-build-a-subgraph)
-* [How to Deploy a Subgraph](#how-to-deploy-a-subgraph)
-* [Conclusion](#conclusion)
+- [How to Use The Graph to Query Avalanche Data](#how-to-use-the-graph-to-query-avalanche-data)
+  - [Table of Content](#table-of-content)
+  - [Introduction](#introduction)
+  - [What is The Graph](#what-is-the-graph)
+  - [The Graph and Open APIs](#the-graph-and-open-apis)
+  - [GraphQL Introduction](#graphql-introduction)
+  - [What is Avalanche](#what-is-avalanche)
+  - [The Graph and Avalanche](#the-graph-and-avalanche)
+  - [Interacting with Avalanche Data via the Graph: Pangolin Example](#interacting-with-avalanche-data-via-the-graph-pangolin-example)
+  - [How to Build a Subgraph](#how-to-build-a-subgraph)
+  - [How to Deploy a Subgraph](#how-to-deploy-a-subgraph)
+  - [Conclusion](#conclusion)
 
 ### Introduction
 
@@ -40,7 +42,7 @@ The entry point of a subgraph project is the manifest file. It contains the gene
 
 ### GraphQL Introduction
 
-GraphQL is a query language for APIs and it solves some of the pain points associated with traditional APIs that use the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) framework. With GraphQL, data can be gotten from different resources in a single request as there is no need for multiple round trips to different endpoints to fetch data. GraphQL also enables frontend clients to describe and request exactly the data they are interested in unlike REST APIs where data that may not be required by the client is returned simply because it is a part of that endpoint. GraphQL uses a single endpoint to serve requests as it relies on the concept of types and fields so your APIs can evolve without the need for explicit versioning, rather new fields, and types can be added. This decouples API design from the frontend structure as APIs can be developed independently and frontends can ask for only data they are interested in with guarantees that they will receive that data if they follow the schema provided by the GraphQL API.
+GraphQL is a query language for APIs and it solves some of the pain points associated with traditional APIs that use the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) framework. With GraphQL, data can be gotten from different resources in a single request as there is no need for multiple round trips to different endpoints to fetch data. GraphQL also enables frontend clients to describe and request exactly the data they are interested in unlike REST APIs where data that may not be required by the client is returned simply because it is a part of that endpoint. GraphQL uses a single endpoint to serve requests as it relies on the concept of types and fields so your APIs can evolve without the need for explicit versioning, rather new fields, and types can be added. This decouples API design from the frontend structure as APIs can be developed independently and front ends can ask for only data they are interested in with guarantees that they will receive that data if they follow the schema provided by the GraphQL API.
 
 GraphQL defines three [operation types](https://graphql.org/learn/schema/) namely Query, Mutation, and Subscription. In this tutorial, you will concentrate on the [features of GraphQL as relates to The Graph](https://thegraph.com/docs/developer/graphql-api). The Graph only supports the Query type, which as the name implies is used for querying (retrieving) data. Mutations represent actions that can change or update data and are not supported as DApp developers are expected to interact directly with the underlying blockchain through transactions. Subscriptions are used for maintaining an existing connection from a client to a GraphQL server and are not supported by The Graph.
 

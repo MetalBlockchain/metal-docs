@@ -27,7 +27,7 @@ command-line.
   installation includes the `forge` and `cast` binaries used in this
   walk-through.
 
-### MeetalGo and Metal Network Runner
+### MetalGo and Metal Network Runner
 
 [MetalGo](https://github.com/MetalBlockchain/metalgo) is an Metal node
 implementation written in Go.

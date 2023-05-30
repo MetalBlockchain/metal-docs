@@ -1,5 +1,5 @@
 ---
-decription: In this doc, learn how to deploy and test a smart contract on Metal Blockchain using Remix and MetaMask.
+description: In this doc, learn how to deploy and test a smart contract on Metal Blockchain using Remix and MetaMask.
 ---
 
 # Deploy a Smart Contract on Metal Blockchain Using Remix and MetaMask

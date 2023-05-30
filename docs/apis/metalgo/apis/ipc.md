@@ -30,7 +30,7 @@ Writes to the socket:
 
 ## IPC Socket URL Format
 
-The names of the sockets are of the form `<network_id>-<chain_id>-<event_type>` where `<event_type>` is either `consensus` or `decisions`. The consensus socket receives verticies and blocks and while the decisions socket recives individual transactions.
+The names of the sockets are of the form `<network_id>-<chain_id>-<event_type>` where `<event_type>` is either `consensus` or `decisions`. The consensus socket receives vertices and blocks and while the decisions socket receives individual transactions.
 
 ## Format
 

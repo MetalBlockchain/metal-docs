@@ -350,7 +350,7 @@ Both Injected Web3 and Web3 Provider require the use of an external tool.
 
 An external tool for Injected provider is Metamask. Some external tools used with Web3 provider are a Truffle Ganache-CLI, Hardhat node, or an Ethereum node itself.
 
-In this tutorial, we have used the Injected Web3 as environment and loaded the Metamask with Avalanche Fuji Testnet. Please have a look at this [**section**](####deployed-smart-contracts:) you can see our Avalanche Fuji Testnet Address has been choosen in the Account dropdown. For more details please refer to [link](https://remix-ide.readthedocs.io/en/latest/run.html) on how to run & deploy the smart contracts .
+In this tutorial, we have used the Injected Web3 as environment and loaded the Metamask with Avalanche Fuji Testnet. Please have a look at this [**section**](####deployed-smart-contracts:) you can see our Avalanche Fuji Testnet Address has been chosen in the Account dropdown. For more details please refer to [link](https://remix-ide.readthedocs.io/en/latest/run.html) on how to run & deploy the smart contracts .
 
 Below is the code snippet which you can copy and paste into the Remix IDE and then compile and deploy as suggested above.
 

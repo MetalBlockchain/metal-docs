@@ -226,7 +226,7 @@ Let's make a payment input with:
 
 ## Outputs
 
-Outputs to Coreth Atomic Transactions are either an `EVMOutput` to be added to the balance of an address on this chain or a `TransferableOutput` (whcih contains a `SECP256K1TransferOutput`) to be moved to another chain.
+Outputs to Coreth Atomic Transactions are either an `EVMOutput` to be added to the balance of an address on this chain or a `TransferableOutput` (which contains a `SECP256K1TransferOutput`) to be moved to another chain.
 
 The EVM Output will be used in `ImportTx` to add funds to this chain, while the `TransferableOutput` will be used to export atomic UTXOs to another chain.
 
@@ -494,7 +494,7 @@ Let's make an EVM Output:
 - **`DestinationChain`**: `0xd891ad56056d9c01f18f43f58b5c784ad07a4a49cf3d1f11623804b5cba2c6bf`
 - **`Inputs`**:
   - `"Example EVMInput as defined above"`
-- **`Exportedoutputs`**:
+- **`ExportedOutputs`**:
   - `"Example TransferableOutput as defined above"`
 
 ```text
