@@ -89,7 +89,7 @@ const (
 )
 ```
 
-Next, at about [line 28](https://github.com/ava-labs/subnet-evm/blob/master/precompile/params.go#L28), declare the varaible `ContractXchainECRecoverAddress` and assign the designated contract address:
+Next, at about [line 28](https://github.com/ava-labs/subnet-evm/blob/master/precompile/params.go#L28), declare the variable `ContractXchainECRecoverAddress` and assign the designated contract address:
 
 ```diff
 var (

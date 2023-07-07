@@ -1,6 +1,6 @@
 # Network Protocol
 
-Avalanche network defines the core communication format between Avalanche nodes. It uses the [primitive serialization](serialization-primitives.md) format for payload packing.
+Metal Blockchain defines the core communication format between Metal Blockchain nodes. It uses the [primitive serialization](serialization-primitives.md) format for payload packing.
 
 `"Containers"` are mentioned extensively in the description. A Container is simply a generic term for blocks or vertices, without needing to specify whether the consensus algorithm is DAG or Chain.
 
@@ -28,7 +28,7 @@ A node receiving a `GetVersion` message must respond with a `Version` message co
 
 ## Version
 
-`Version` ensures that the nodes we are connected to are running compatible versions of Avalanche, and at least loosely agree on the current time.
+`Version` ensures that the nodes we are connected to are running compatible versions of Metal, and at least loosely agree on the current time.
 
 The OpCode used by `Version` messages is: `0x01`.
 
@@ -55,12 +55,12 @@ If the versions are incompatible or the current times differ too much, the conne
 
 ### Version Example
 
-Sending a `Version` message with the time `November 16th, 2008 at 12:00am (UTC)` and the version `avalanche/0.0.1`
+Sending a `Version` message with the time `November 16th, 2008 at 12:00am (UTC)` and the version `metal/0.0.1`
 
 ```text
 [
     Long   <- 1226793600 = 0x00000000491f6280
-    String <- "avalanche/0.0.1"
+    String <- "metal/0.0.1"
 ]
 =
 [

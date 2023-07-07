@@ -227,12 +227,12 @@ action. You might want to try to [Deploy a Smart Contract on Your Subnet-EVM Usi
 
 ## Next Steps
 
-Congrats Subnetooooor, you just deployed your first Subnet!
+Congratulations, you just deployed your first Subnet!
 
 After you feel comfortable with this deployment flow, try deploying smart contracts on your chain
 with [Remix](https://remix.ethereum.org/), [Hardhat](https://hardhat.org/), or
 [Foundry](https://github.com/foundry-rs/foundry). You can also experiment with customizing your
-Subnet by addingprecompiles or adjusting the airdrop.
+Subnet by adding precompiles or adjusting the airdrop.
 
 Once you've developed a stable Subnet you like, see
 [Create an EVM Subnet on Tahoe Testnet](./create-a-tahoe-subnet.md) to take your Subnet one step

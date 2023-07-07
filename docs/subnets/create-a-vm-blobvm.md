@@ -788,8 +788,8 @@ Let's look at some of the important methods of `vm.go` that must be implemented:
 
 ##### Initialize
 
-[Initialize](https://github.com/ava-labs/blobvm/blob/master/vm/vm.go#L92) is invoked by `avalanchego`
-when creating the blockchain. `avalanchego` passes some parameters to the implementing VM.
+[Initialize](https://github.com/ava-labs/blobvm/blob/master/vm/vm.go#L92) is invoked by `metalgo`
+when creating the blockchain. `metalgo` passes some parameters to the implementing VM.
 
 - `ctx` - Metadata about the VM's execution
 - `dbManager` - The database that the VM can write to

@@ -226,7 +226,7 @@ Let's make a payment input with:
 
 ## Outputs
 
-Outputs to Coreth Atomic Transactions are either an `EVMOutput` to be added to the balance of an address on this chain or a `TransferableOutput` (whcih contains a `SECP256K1TransferOutput`) to be moved to another chain.
+Outputs to Coreth Atomic Transactions are either an `EVMOutput` to be added to the balance of an address on this chain or a `TransferableOutput` (which contains a `SECP256K1TransferOutput`) to be moved to another chain.
 
 The EVM Output will be used in `ImportTx` to add funds to this chain, while the `TransferableOutput` will be used to export atomic UTXOs to another chain.
 
@@ -458,7 +458,7 @@ ExportTx is a transaction to export funds from Coreth to a different chain.
 An ExportTx contains an `typeID`, `networkID`, `blockchainID`, `destinationChain`, `inputs`, and `exportedOutputs`.
 
 - **`typeID`** is an int that the type for an ExportTx. The typeID for an exportTx is 1.
-- **`networkID`** is an int that defines which Avalanche network this transaction is meant to be issued to. This could refer to mainnet, tahoe, etc. and is different than the EVM's network ID.
+- **`networkID`** is an int that defines which Metal network this transaction is meant to be issued to. This could refer to mainnet, tahoe, etc. and is different than the EVM's network ID.
 - **`blockchainID`** is a 32-byte array that defines which blockchain this transaction was issued to.
 - **`destinationChain`** is a 32-byte array that defines which blockchain this transaction exports funds to.
 - **`inputs`** is an array of EVM Inputs to fund the ExportTx.
@@ -494,7 +494,7 @@ Let's make an EVM Output:
 - **`DestinationChain`**: `0xd891ad56056d9c01f18f43f58b5c784ad07a4a49cf3d1f11623804b5cba2c6bf`
 - **`Inputs`**:
   - `"Example EVMInput as defined above"`
-- **`Exportedoutputs`**:
+- **`ExportedOutputs`**:
   - `"Example TransferableOutput as defined above"`
 
 ```text
@@ -563,7 +563,7 @@ ImportTx is a transaction to import funds to Coreth from another chain.
 An ImportTx contains an `typeID`, `networkID`, `blockchainID`, `destinationChain`, `importedInputs`, and `Outs`.
 
 - **`typeID`** is an int that the type for an ImportTx. The typeID for an `ImportTx` is 0.
-- **`networkID`** is an int that defines which Avalanche network this transaction is meant to be issued to. This could refer to mainnet, tahoe, etc. and is different than the EVM's network ID.
+- **`networkID`** is an int that defines which Metal network this transaction is meant to be issued to. This could refer to mainnet, tahoe, etc. and is different than the EVM's network ID.
 - **`blockchainID`** is a 32-byte array that defines which blockchain this transaction was issued to.
 - **`sourceChain`** is a 32-byte array that defines which blockchain from which to import funds.
 - **`importedInputs`** is an array of TransferableInputs to fund the ImportTx.

@@ -108,7 +108,7 @@ ws://127.0.0.1:9650/ext/bc/C/ws
 ```
 
 :::info
-When using the [Public API](../public-api-server.md) or another host that supports HTTPS, use `https://` or `wss://` instad of `http://` or `ws://`.
+When using the [Public API](../public-api-server.md) or another host that supports HTTPS, use `https://` or `wss://` instead of `http://` or `ws://`.
 
 Also, note that the [public api](../public-api-server.md#supported-apis) only supports C-Chain websocket API calls for API methods that don't exist on the C-Chain's HTTP API.
 :::

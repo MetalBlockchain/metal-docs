@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: Learn how to stake on Avalanche by validating or delegating
+description: Learn how to stake on Metal Blockchain by validating or delegating
 ---
 
 # What is Staking?
@@ -9,7 +9,7 @@ Staking is the process of locking up tokens to support a network while receiving
 
 ## How Does Proof-of-stake Work?
 
-To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Avalanche, the scarce resource is the native token, [METAL](../../overview/getting-started/intro.md#metal). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Metal Blockchain, it must stake METAL.
+To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Metal Blockchain, the scarce resource is the native token, [METAL](../../overview/getting-started/intro.md#metal). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Metal Blockchain, it must stake METAL.
 
 ## Staking Parameters on Metal Blockchain
 
@@ -30,7 +30,7 @@ Staking rewards are sent to your wallet address at the end of the staking term *
 
 A validator will receive a staking reward if they are online and response for more than 80% of their validation period, as measured by a majority of validators, weighted by stake. **You should aim for your validator be online and responsive 100% of the time.**
 
-You can call API method `info.uptime` on your node to learn its weighted uptime and what percentage of the network currently thinks your node has an uptime high enough to reveive a staking reward. See [here.](../../apis/metalgo/apis/info.md#infouptime)
+You can call API method `info.uptime` on your node to learn its weighted uptime and what percentage of the network currently thinks your node has an uptime high enough to receive a staking reward. See [here.](../../apis/metalgo/apis/info.md#infouptime)
 You can get another opinion on your node's uptime from the Validators tab on the Metal Blockchain Explorer's [Subnets page](https://explorer.metalblockchain.org/subnets?tab=validators).
 If your reported uptime is not close to 100%, there may be something wrong with your node setup, which may jeopardize your staking reward.
 If this is the case, please see [here](#why-is-my-uptime-low).

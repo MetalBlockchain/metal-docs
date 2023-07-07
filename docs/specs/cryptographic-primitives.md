@@ -1,18 +1,18 @@
 # Cryptographic Primitives
 
-Avalanche uses a variety of cryptographic primitives for its different functions. This file summarizes the type and kind of cryptography used at the network and blockchain layers.
+Metal Blockchain uses a variety of cryptographic primitives for its different functions. This file summarizes the type and kind of cryptography used at the network and blockchain layers.
 
 ## Cryptography in the Network Layer
 
-Avalanche uses Transport Layer Security, TLS, to protect node-to-node communications from eavesdroppers. TLS combines the practicality of public-key cryptography with the efficiency of symmetric-key cryptography. This has resulted in TLS becoming the standard for internet communication. Whereas most classical consensus protocols employ public-key cryptography to prove receipt of messages to third parties, the novel Snow\* consensus family does not require such proofs. This enables Avalanche to employ TLS in authenticating stakers and eliminates the need for costly public-key cryptography for signing network messages.
+Metal Blockchain uses Transport Layer Security, TLS, to protect node-to-node communications from eavesdroppers. TLS combines the practicality of public-key cryptography with the efficiency of symmetric-key cryptography. This has resulted in TLS becoming the standard for internet communication. Whereas most classical consensus protocols employ public-key cryptography to prove receipt of messages to third parties, the novel Snow\* consensus family does not require such proofs. This enables Metal Blockchain to employ TLS in authenticating stakers and eliminates the need for costly public-key cryptography for signing network messages.
 
 ### TLS Certificates
 
-Avalanche does not rely on any centralized third-parties, and in particular, it does not use certificates issued by third-party authenticators. All certificates used within the network layer to identify endpoints are self-signed, thus creating a self-sovereign identity layer. No third parties are ever involved.
+Metal Blockchain does not rely on any centralized third-parties, and in particular, it does not use certificates issued by third-party authenticators. All certificates used within the network layer to identify endpoints are self-signed, thus creating a self-sovereign identity layer. No third parties are ever involved.
 
 ### TLS Addresses
 
-To avoid posting the full TLS certificate to the Platform chain, the certificate is first hashed. For consistency, Avalanche employs the same hashing mechanism for the TLS certificates as is used in Bitcoin. Namely, the DER representation of the certificate is hashed with sha256, and the result is then hashed with ripemd160 to yield a 20-byte identifier for stakers.
+To avoid posting the full TLS certificate to the Platform chain, the certificate is first hashed. For consistency, Metal Blockchain employs the same hashing mechanism for the TLS certificates as is used in Bitcoin. Namely, the DER representation of the certificate is hashed with sha256, and the result is then hashed with ripemd160 to yield a 20-byte identifier for stakers.
 
 This 20-byte identifier is represented by "NodeID-" followed by the data’s [CB58](https://support.avalabs.org/en/articles/4587395-what-is-cb58) encoded string.
 
@@ -24,30 +24,28 @@ This 32-byte identifier is represented by "PrivateKey-" followed by the data’s
 
 ### Secp256k1 Addresses
 
-Avalanche is not prescriptive about addressing schemes, choosing to instead leave addressing up to each blockchain.
+Metal Blockchain is not prescriptive about addressing schemes, choosing to instead leave addressing up to each blockchain.
 
-The addressing scheme of the X-Chain and the P-Chain relies on secp256k1. Avalanche follows a similar approach as Bitcoin and hashes the ECDSA public key. The 33-byte compressed representation of the public key is hashed with sha256 **once**. The result is then hashed with ripemd160 to yield a 20-byte address.
+The addressing scheme of the X-Chain and the P-Chain relies on secp256k1. Metal Blockchain follows a similar approach as Bitcoin and hashes the ECDSA public key. The 33-byte compressed representation of the public key is hashed with sha256 **once**. The result is then hashed with ripemd160 to yield a 20-byte address.
 
-Avalanche uses the convention `chainID-address` to specify which chain an address exists on. `chainID` may be replaced with an alias of the chain. When transmitting information through external applications, the CB58 convention is required.
+Metal Blockchain uses the convention `chainID-address` to specify which chain an address exists on. `chainID` may be replaced with an alias of the chain. When transmitting information through external applications, the CB58 convention is required.
 
 ### Bech32
 
-Addresses on the X-Chain and P-Chain use the [Bech32](http://support.avalabs.org/en/articles/4587392-what-is-bech32) standard outlined in [BIP 0173](https://en.bitcoin.it/wiki/BIP_0173). There are four parts to a Bech32 address scheme. In order of appearance:
+Addresses on the X-Chain and P-Chain use the Bech32 standard outlined in [BIP 0173](https://en.bitcoin.it/wiki/BIP_0173). There are four parts to a Bech32 address scheme. In order of appearance:
 
 - A human-readable part (HRP). On mainnet this is `metal`.
 - The number `1`, which separates the HRP from the address and error correction code.
 - A base-32 encoded string representing the 20 byte address.
 - A 6-character base-32 encoded error correction code.
 
-Additionally, an Avalanche address is prefixed with the alias of the chain it exists on, followed by a dash. For example, X-Chain addresses are prefixed with `X-`.
+Additionally, an Metal address is prefixed with the alias of the chain it exists on, followed by a dash. For example, X-Chain addresses are prefixed with `X-`.
 
-The following regular expression matches addresses on the X-Chain, P-Chain and C-Chain for mainnet, tahoe and localnet. Note that all valid Avalanche addresses will match this regular expression, but some strings that are not valid Avalanche addresses may match this regular expression.
+The following regular expression matches addresses on the X-Chain, P-Chain and C-Chain for mainnet, tahoe and localnet. Note that all valid Metal addresses will match this regular expression, but some strings that are not valid Metal addresses may match this regular expression.
 
 ```text
 ^([XPC]|[a-km-zA-HJ-NP-Z1-9]{36,72})-[a-zA-Z]{1,83}1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{38}$
 ```
-
-Read more about Avalanche's [addressing scheme](https://support.avalabs.org/en/articles/4596397-what-is-an-address).
 
 ### Secp256k1 Recoverable Signatures
 
@@ -118,14 +116,14 @@ As an example we will sign the message "Through consensus to the stars"
 54 68 72 6f 75 67 68 20 63 6f 6e 73 65 6e 73 75 73 20 74 6f 20 74 68 65 20 73 74 61 72 73
 ```
 
-After hashing with `sha256` and signing the pre-image we return the value [cb58](https://support.avalabs.org/en/articles/4587395-what-is-cb58) encoded: `4Eb2zAHF4JjZFJmp4usSokTGqq9mEGwVMY2WZzzCmu657SNFZhndsiS8TvL32n3bexd8emUwiXs8XqKjhqzvoRFvghnvSN`. Here's an example using the [Avalanche Web Wallet](https://wallet.metalblockchain.org/wallet/advanced).
+After hashing with `sha256` and signing the pre-image we return the value [cb58](https://support.avalabs.org/en/articles/4587395-what-is-cb58) encoded: `4Eb2zAHF4JjZFJmp4usSokTGqq9mEGwVMY2WZzzCmu657SNFZhndsiS8TvL32n3bexd8emUwiXs8XqKjhqzvoRFvghnvSN`. Here's an example using the [Metal Web Wallet](https://wallet.metalblockchain.org/wallet/advanced).
 
 ![Sign message](/img/sign-message.png)
 
 ## Cryptography in Ethereum Virtual Machine
 
-Avalanche nodes support the full Ethereum Virtual Machine (EVM) and precisely duplicate all of the cryptographic constructs used in Ethereum. This includes the Keccak hash function and the other mechanisms used for cryptographic security in the EVM.
+Metal nodes support the full Ethereum Virtual Machine (EVM) and precisely duplicate all of the cryptographic constructs used in Ethereum. This includes the Keccak hash function and the other mechanisms used for cryptographic security in the EVM.
 
 ## Cryptography in Other Virtual Machines
 
-Since Avalanche is an extensible platform, we expect that people will add additional cryptographic primitives to the system over time.
+Since Metal Blockchain is an extensible platform, we expect that people will add additional cryptographic primitives to the system over time.

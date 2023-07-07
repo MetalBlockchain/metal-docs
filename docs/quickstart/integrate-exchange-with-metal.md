@@ -9,7 +9,7 @@ Metal node (which has the [same API](https://eth.wiki/json-rpc/API) as
 [`go-ethereum`](https://geth.ethereum.org/docs/rpc/server)) and populating
 Metal’s ChainID (381931) when constructing transactions.
 
-Additionally, Ava Labs maintains an implementation of the [Rosetta
+Additionally, Metallicus maintains an implementation of the [Rosetta
 API](https://www.rosetta-api.org/) for the C-Chain called
 [metal-rosetta](https://github.com/MetalBlockchain/metal-rosetta). You can
 learn more about this standardized integration path on the attached Rosetta API
@@ -17,7 +17,7 @@ website.
 
 ## Integration Using EVM Endpoints
 
-### Running an Metal Node
+### Running a Metal Blockchain Node
 
 If you want to build your node form source or include it in a docker image,
 reference the [MetalGo GitHub
@@ -27,7 +27,7 @@ script](../nodes/build/set-up-node-with-installer.md) that automates installing
 and updating MetalGo node as a `systemd` service on Linux, using prebuilt
 binaries.
 
-### Configuring an Avalanche Node
+### Configuring a Metal Blockchain Node
 
 All configuration options and their default values are described [here](../nodes/maintain/metalgo-config-flags.md).
 
@@ -132,7 +132,7 @@ You can use any standard way of ingesting on-chain data you use for Ethereum net
 
 ### Determining Finality
 
-Avalanche consensus provides fast and irreversible finality with 1-2 seconds. To
+Avalanche consensus, implemented on the Metal Blockchain, provides fast and irreversible finality with 1-2 seconds. To
 query the most up-to-date finalized block, query any value (that is block, balance,
 state, etc) with the `latest` parameter. If you query above the last finalized
 block (that is eth_blockNumber returns 10 and you query 11), an error will be

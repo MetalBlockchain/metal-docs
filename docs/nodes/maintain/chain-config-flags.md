@@ -128,7 +128,7 @@ The names used in this configuration flag have been updated in coreth `v.0.8.14`
 The previous names containing `public-` and `private-` are deprecated.
 While the current version continues to accept deprecated values, they may not be supported in future updates and updating to the new values is recommended.
 
-The mapping of deprecated values and their updated equivilant follows:
+The mapping of deprecated values and their updated equivalent follows:
 
 | Deprecated                         | Use instead            |
 | ---------------------------------- | ---------------------- |
@@ -453,7 +453,7 @@ This is meant to be run manually, so after running with this flag once, it must 
 
 #### `offline-pruning-bloom-filter-size` (int):
 
-This flag sets the size of the bloom filter to use in offline pruning (denominated in MB and defaulting to 512 MB). The bloom filter is kept in memory for efficient checks during pruning and is also written to disk to allow pruning to resume withou re-generating the bloom filter.
+This flag sets the size of the bloom filter to use in offline pruning (denominated in MB and defaulting to 512 MB). The bloom filter is kept in memory for efficient checks during pruning and is also written to disk to allow pruning to resume without re-generating the bloom filter.
 
 The active state is added to the bloom filter before iterating the DB to find trie nodes that can be safely deleted, any trie nodes not in the bloom filter are considered safe for deletion. The size of the bloom filter may impact its false positive rate, which can impact the results of offline pruning. This is an advanced parameter that has been tuned to 512 MB and should not be changed without thoughtful consideration.
 

@@ -278,7 +278,7 @@ fee = fee.add(new BN(1e6))
 Run the export script:
 
 ```zsh
-avalanchejs $ ts-node examples/evm/buildExportTx-xchain-avax.ts
+metaljs $ ts-node examples/evm/buildExportTx-xchain-avax.ts
 Success! TXID: UAez3DTv26qmhKKFDvmQTayaXTPAVahHenDKe6xnUMhJbKuxc
 ```
 

@@ -16,7 +16,7 @@ Note that once you issue the transaction to add a node as a validator, there is 
 
 ## Requirements
 
-You've completed [Run an Avalanche Node](../build/run-metal-node-manually.md) and are familiar with [Avalanche's architecture](../../overview/getting-started/intro.md).
+You've completed [Run an Metal Node](../build/run-metal-node-manually.md) and are familiar with [Metal Blockchain's architecture](../../overview/getting-started/intro.md).
 
 In order to ensure your node is well-connected, make sure that your node can receive and send TCP traffic on the staking port (`9651` by default) and that you started your node with config flag `--public-ip=[YOUR NODE'S PUBLIC IP HERE]`. Failing to do either of these may jeopardize your staking reward.
 
@@ -66,16 +66,16 @@ You can also call [`platform.getCurrentValidators`](../../apis/metalgo/apis/p-ch
 
 That’s it!
 
-## Add a Validator with AvalancheJS
+## Add a Validator with MetalJS
 
-We can also add a node to the validator set using AvalancheJS.
+We can also add a node to the validator set using MetalJS.
 
-### Install AvalancheJS
+### Install MetalJS
 
-To use AvalancheJS, you can clone the repo:
+To use MetalJS, you can clone the repo:
 
 ```zsh
-git clone https://github.com/ava-labs/avalanchejs.git
+git clone https://github.com/MetalBlockchain/metaljs.git
 ```
 
 or add it to an existing project:
@@ -84,15 +84,15 @@ or add it to an existing project:
 yarn add avalanche
 ```
 
-For this tutorial we will use [`ts-node`](https://www.npmjs.com/package/ts-node) to run the example scripts directly from an AvalancheJS directory.
+For this tutorial we will use [`ts-node`](https://www.npmjs.com/package/ts-node) to run the example scripts directly from an MetalJS directory.
 
 ### Tahoe Workflow
 
 In this section, we will use Tahoe Testnet to show how to add a node to the validator set.
 
-Open your AvalancheJS directory and select the [**`examples/platformvm`**](https://github.com/ava-labs/avalanchejs/tree/master/examples/platformvm) folder to view the source code for the examples scripts.
+Open your MetalJS directory and select the [**`examples/platformvm`**](https://github.com/MetalBlockchain/metaljs/tree/master/examples/platformvm) folder to view the source code for the examples scripts.
 
-We will use the [**`buildAddValidatorTx.ts`**](https://github.com/ava-labs/avalanchejs/blob/master/examples/platformvm/buildAddValidatorTx.ts) script to add a validator. To learn more about the `buildAddValidatorTx` API, please click [here](https://github.com/ava-labs/avalanchejs-docs/blob/main/classes/api_platformvm.platformvmapi.md#buildaddvalidatortx).
+We will use the [**`buildAddValidatorTx.ts`**](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/buildAddValidatorTx.ts) script to add a validator. To learn more about the `buildAddValidatorTx` API, please click [here](https://github.com/MetalBlockchain/metaljs-docs/blob/main/classes/api_platformvm.platformvmapi.md#buildaddvalidatortx).
 
 #### Private Key
 
@@ -102,7 +102,7 @@ Locate this line in the file
 const privKey: string = `${PrivateKeyPrefix}${DefaultLocalGenesisPrivateKey}`
 ```
 
-and replace this with a private key that you control. You can use [this code to generate a new key](https://github.com/ava-labs/avalanchejs/blob/master/examples/platformvm/createKeypair.ts).
+and replace this with a private key that you control. You can use [this code to generate a new key](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/createKeypair.ts).
 
 ```js
 const privKey: string = "<YOUR-PRIVATE-KEY-HERE>"
@@ -119,7 +119,7 @@ const protocol: string = "http"
 const networkID: number = 5
 ```
 
-However, to connect directly to the [Avalanche Tahoe Testnet API server](../../apis/metalgo/public-api-server.md), the following changes are needed:
+However, to connect directly to the [Metal Tahoe Testnet API server](../../apis/metalgo/public-api-server.md), the following changes are needed:
 
 ```js
 const ip: string = "tahoe.metalblockchain.org"
@@ -128,7 +128,7 @@ const protocol: string = "https"
 const networkID: number = 5
 ```
 
-Depending on the networkID passed in when instantiating an `Avalanche` object in the code, the encoded addresses used will have a distinctive Human Readable Part(HRP) per each network.
+Depending on the networkID passed in when instantiating an `Metal` object in the code, the encoded addresses used will have a distinctive Human Readable Part(HRP) per each network.
 
 _Example Address: 5 - X-`tahoe`19rknw8l0grnfunjrzwxlxync6zrlu33yxqzg0h_
 
@@ -178,7 +178,7 @@ const endTime: BN = new BN(1662602029) // Thu Sep 08 2022 01:53:49 GMT+0000
 
 #### Delegation Fee Rate
 
-Avalanche allows for delegation of stake. This parameter is the percent fee this validator charges when others delegate stake to them. For example, if `delegationFeeRate` is `10` and someone delegates to this validator, then when the delegation period is over, 10% of the reward goes to the validator and the rest goes to the delegator, if this node meets the validation reward requirements.
+Metal Blockchain allows for delegation of stake. This parameter is the percent fee this validator charges when others delegate stake to them. For example, if `delegationFeeRate` is `10` and someone delegates to this validator, then when the delegation period is over, 10% of the reward goes to the validator and the rest goes to the delegator, if this node meets the validation reward requirements.
 
 #### Stake Amount
 
@@ -212,7 +212,7 @@ The response has the transaction ID.
 Success! TXID: 2ftDVwmss5eJk8HFsNVi6a3vWK9s3szZFhEeSY2HCS8xDb8Cra
 ```
 
-We can check the transaction’s status by running the example script: [`getTxStatus.ts`](https://github.com/ava-labs/avalanchejs/blob/master/examples/platformvm/getTxStatus.ts) following the steps below:
+We can check the transaction’s status by running the example script: [`getTxStatus.ts`](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/getTxStatus.ts) following the steps below:
 
 1. Ensure that your [network settings](#network-setting) are correct before running the script.
 
@@ -248,7 +248,7 @@ This returns:
 
 The status should be `Committed`, meaning the transaction was successful.
 
-We can see if the node is now in the pending validator set for the Tahoe network by using the example:[`getPendingValidators.ts`](https://github.com/ava-labs/avalanchejs/blob/master/examples/platformvm/getPendingValidators.ts). Just change the [network settings](#network-setting) to meet Tahoe requirements and then run the script:
+We can see if the node is now in the pending validator set for the Tahoe network by using the example:[`getPendingValidators.ts`](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/getPendingValidators.ts). Just change the [network settings](#network-setting) to meet Tahoe requirements and then run the script:
 
 ```sh
 ts-node examples/platformvm/getPendingValidators.ts
@@ -294,7 +294,7 @@ let privKey: string = `${PrivateKeyPrefix}${DefaultLocalGenesisPrivateKey}`
 pKeychain.importKey(privKey)
 ```
 
-and replace `privKey` with private keys that you control. To generate a new keypair, we can use the [`createKeypair.ts`](https://github.com/ava-labs/avalanchejs/blob/master/examples/platformvm/createKeypair.ts) example script along with [Tahoe Network Settings](#network-setting).
+and replace `privKey` with private keys that you control. To generate a new keypair, we can use the [`createKeypair.ts`](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/createKeypair.ts) example script along with [Tahoe Network Settings](#network-setting).
 
 ```ts
 let privKey: string =
@@ -345,6 +345,6 @@ const unsignedTx: UnsignedTx = await pchain.buildAddValidatorTx(
 The Tahoe workflow above can be adapted to Mainnet with the following modifications:
 
 - The correct private key.
-- Network setting should be to a Mainnet node, either [a local node on Mainnet](../../nodes/maintain/metalgo-config-flags.md#network-id) or [Avalanche Mainnet API server](../../apis/metalgo/public-api-server.md#using-the-public-api-nodes) where `api.metalblockchain.org` should be used for the `ip`.
+- Network setting should be to a Mainnet node, either [a local node on Mainnet](../../nodes/maintain/metalgo-config-flags.md#network-id) or [Metal Mainnet API server](../../apis/metalgo/public-api-server.md#using-the-public-api-nodes) where `api.metalblockchain.org` should be used for the `ip`.
 - `const networkID: number = 1`.
 - Set the correct amount to stake.

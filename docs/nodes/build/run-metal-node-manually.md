@@ -61,7 +61,7 @@ Building the node from source is recommended if you're a developer looking to ex
 
 #### **Source Code**
 
-First install Go 1.17.9 or later. Follow the instructions [here](https://golang.org/doc/install). You can verify by runing `go version`.
+First install Go 1.17.9 or later. Follow the instructions [here](https://golang.org/doc/install). You can verify by running `go version`.
 
 Set `$GOPATH` environment variable properly for Go to look for Go Workspaces. Please read [this](https://go.dev/doc/gopath_code) for details. You can verify by running `echo $GOPATH`.
 
@@ -151,7 +151,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
 ```
 
-If this returns `true`, the chain is bootstrapped; otherwise, it returns `false`. If you make other API calls to a chain that is not done bootstrapping, it will return `API call rejected because chain is not done bootstrapping`. If you are still experiencing issues please contact us on [Discord.](https://chat.avalabs.org/)
+If this returns `true`, the chain is bootstrapped; otherwise, it returns `false`. If you make other API calls to a chain that is not done bootstrapping, it will return `API call rejected because chain is not done bootstrapping`. If you are still experiencing issues please contact us on [Telegram](https://t.me/metalvalidators)
 
 Your node is running and connected now. If you want to use your node as a validator on the main net, check out [this tutorial](../validate/add-a-validator.md#add-a-validator-with-avalanche-wallet) to find out how to add your node as a validator using the web wallet.
 

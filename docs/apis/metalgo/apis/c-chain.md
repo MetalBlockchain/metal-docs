@@ -195,13 +195,13 @@ curl -X POST --data '{
 
 ### Endpoints
 
-To interact with the `avax` specific RPC calls on the C-Chain:
+To interact with the `METAL` specific RPC calls on the C-Chain:
 
 ```sh
 /ext/bc/C/avax
 ```
 
-To interact with other instances of the EVM AVAX endpoints:
+To interact with other instances of the EVM METAL endpoints:
 
 ```sh
 /ext/bc/blockchainID/avax
@@ -226,7 +226,7 @@ avax.getAtomicTx({
 
 **Request**
 
-- `txID` is the transacion ID. It should be in cb58 format.
+- `txID` is the transaction ID. It should be in cb58 format.
 - `encoding` is the encoding format to use. Can only be `hex` when a value is provided.
 
 **Response**
@@ -286,8 +286,8 @@ avax.export({
 
 - `to` is the X-Chain or P-Chain address the asset is sent to.
 - `amount` is the amount of the asset to send.
-- `assetID` is the ID of the asset. To export AVAX use `"AVAX"` as the `assetID`.
-- `baseFee` is the base fee that should be used when creating the transaction. If ommitted, a suggested fee will be used.
+- `assetID` is the ID of the asset. To export METAL use `"METAL"` as the `assetID`.
+- `baseFee` is the base fee that should be used when creating the transaction. If omitted, a suggested fee will be used.
 - `username` is the user that controls the address that transaction will be sent from.
 - `password` is `username`‘s password.
 
@@ -299,7 +299,7 @@ curl -X POST --data '{
     "id"     :1,
     "method" :"avax.export",
     "params" :{
-        "to":"X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+        "to":"X-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
         "amount": 500,
         "assetID": "2nzgmhZLuVq8jc7NNu2eahkKwoJcbFWXWJCxHBVWAJEZkhquoK",
         "username":"myUsername",
@@ -328,7 +328,7 @@ Not recommended for use on Mainnet. See warning notice in [Keystore API](./keyst
 
 **DEPRECATED—instead use** [**avax.export**](c-chain.md#avaxexport).
 
-Send AVAX from the C-Chain to X-Chain or P-Chain. After calling this method, you must call the X-Chain's [`avm.import`](x-chain.md#avmimport) or P-Chain's [`platform.import`](p-chain.md#platformimportavax) with assetID `AVAX` on the X-Chain to complete the transfer.
+Send METAL from the C-Chain to X-Chain or P-Chain. After calling this method, you must call the X-Chain's [`avm.import`](x-chain.md#avmimport) or P-Chain's [`platform.import`](p-chain.md#platformimportavax) with assetID `METAL` on the X-Chain to complete the transfer.
 
 #### Signature
 
@@ -346,7 +346,7 @@ avax.exportAVAX({
 
 - `to` is X-Chain or P-Chain address the asset is sent to.
 - `amount` is the amount of the asset to send.
-- `baseFee` is the base fee that should be used when creating the transaction. If ommitted, a suggested fee will be used.
+- `baseFee` is the base fee that should be used when creating the transaction. If omitted, a suggested fee will be used.
 - `username` is the user that controls the address that transaction will be sent from.
 - `password` is `username`‘s password.
 
@@ -363,7 +363,7 @@ curl -X POST --data '{
     "method" :"avax.exportAVAX",
     "params" :{
         "from": ["0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC"],
-        "to":"X-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+        "to":"X-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
         "amount": 500,
         "changeAddr": "0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC",
         "username":"myUsername",
@@ -479,7 +479,7 @@ avax.getUTXOs(
 
 #### **Example**
 
-Suppose we want all UTXOs that reference at least one of `C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5`.
+Suppose we want all UTXOs that reference at least one of `C-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5`.
 
 ```sh
 curl -X POST --data '{
@@ -487,10 +487,10 @@ curl -X POST --data '{
     "id"     :1,
     "method" :"avax.getUTXOs",
     "params" :{
-        "addresses":["C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"],
+        "addresses":["C-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5"],
         "sourceChain": "X",
         "startIndex": {
-            "address": "C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+            "address": "C-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
             "utxo": "22RXW7SWjBrrxu2vzDkd8uza7fuEmNpgbj58CxBob9UbP37HSB"
         },
         "encoding": "hex"
@@ -511,7 +511,7 @@ This gives response:
       "0x000038137283c94582351b86c3e90808312636769e3f5c14fbf1152d6634f770695c00000001dbcf890f77f49b96857648b72b77f9f82937f28a68704af05da0dc12ba53f2db00000007000003a352a38240000000000000000000000001000000013cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c7412490e"
     ],
     "endIndex": {
-      "address": "C-avax18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
+      "address": "C-Metal18jma8ppw3nhx5r4ap8clazz0dps7rv5ukulre5",
       "utxo": "0x9333ef8a05f26acf2d8766f94723f749870fa2ca80c19c33cc945d79013d7c50fd023beb"
     },
     "encoding": "hex"
@@ -526,7 +526,7 @@ This gives response:
 Not recommended for use on Mainnet. See warning notice in [Keystore API](./keystore.md).
 :::
 
-Finalize the transfer of a non-AVAX or AVAX from X-Chain or P-Chain to the C-Chain. Before this method is called, you must call the X-Chain’s [`avm.export`](x-chain.md#avmexport) or P-Chain’s [`platform.exportAVAX`](p-chain.md#platformexportavax) with assetID `AVAX` to initiate the transfer.
+Finalize the transfer of a non-METAL or METAL from X-Chain or P-Chain to the C-Chain. Before this method is called, you must call the X-Chain’s [`avm.export`](x-chain.md#avmexport) or P-Chain’s [`platform.exportAVAX`](p-chain.md#platformexportavax) with assetID `METAL` to initiate the transfer.
 
 #### Signature
 
@@ -588,7 +588,7 @@ Not recommended for use on Mainnet. See warning notice in [Keystore API](./keyst
 
 **DEPRECATED—instead use** [**avax.import**](c-chain.md#avaximport)
 
-Finalize a transfer of AVAX from the X-Chain or P-Chain to the C-Chain. Before this method is called, you must call the X-Chain’s [`avm.export`](x-chain.md#avmexport) or P-Chain’s [`platform.exportAVAX`](p-chain.md#platformexportavax) with assetID `AVAX` to initiate the transfer.
+Finalize a transfer of METAL from the X-Chain or P-Chain to the C-Chain. Before this method is called, you must call the X-Chain’s [`avm.export`](x-chain.md#avmexport) or P-Chain’s [`platform.exportAVAX`](p-chain.md#platformexportavax) with assetID `METAL` to initiate the transfer.
 
 #### Signature
 
@@ -604,8 +604,8 @@ avax.importAVAX({
 
 **Request**
 
-- `to` is the address the AVAX is sent to. It should be in hex format.
-- `sourceChain` is the ID or alias of the chain the AVAX is being imported from. To import funds from the X-Chain, use `"X"`; for the P-Chain, use `"P"`.
+- `to` is the address the METAL is sent to. It should be in hex format.
+- `sourceChain` is the ID or alias of the chain the METAL is being imported from. To import funds from the X-Chain, use `"X"`; for the P-Chain, use `"P"`.
 - `baseFee` is the base fee that should be used when creating the transaction. If omitted, a suggested fee will be used.
 - `username` is the user that controls the address that transaction will be sent from.
 - `password` is `username`‘s password.

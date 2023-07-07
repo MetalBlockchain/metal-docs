@@ -8,7 +8,7 @@ We have a shell (bash) script that installs MetalGo on your computer. This scrip
 
 ## Before You Start
 
-Metal is an incredibly lightweight protocol, so nodes can run on commodity hardware with the following mimimum specifications. Note that as network usage increases, hardware requirements may change.
+Metal is an incredibly lightweight protocol, so nodes can run on commodity hardware with the following minimum specifications. Note that as network usage increases, hardware requirements may change.
 
 - CPU: Equivalent of 8 AWS vCPU
 - RAM: 16 GiB
@@ -282,7 +282,7 @@ If you want to use the script in an automated environment where you cannot enter
 
 ### Usage Examples
 
-To run a Tahoe node with indexing enabled and autodetected static IP:
+To run a Tahoe node with indexing enabled and auto-detected static IP:
 
 ```bash
 ./metalgo-installer.sh --tahoe --ip static --index

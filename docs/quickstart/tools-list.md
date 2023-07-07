@@ -75,10 +75,10 @@ GitHub: [https://github.com/MetalBlockchain/metal-plugins-core](https://github.c
 ## Metal Ops
 
 A single command to launch and configure network infrastructure (virtual
-machines or cloud instances) and installs Avalanche nodes from scratch allowing
+machines or cloud instances) and installs Metal Blockchain nodes from scratch allowing
 for various configuration requirements. Provisions all resources required to run
 a node or network with recommended setups (configurable). This tool is intended
-for quickly creating, testing and iterating over various Avalanche network
+for quickly creating, testing and iterating over various Metal Blockchain
 infrastructure configurations for testing and simulation purposes. Use this to
 play with various setups and reproduce potential problems and issues with
 possible configurations.

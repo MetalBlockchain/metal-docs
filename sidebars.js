@@ -341,7 +341,7 @@ const sidebars = {
   ],
 
   specs: [
-    'specs/coreth-arc20s',
+   // 'specs/coreth-arc20s',
     'specs/avm-transaction-serialization',
     'specs/coreth-atomic-transaction-serialization',
     'specs/cryptographic-primitives',

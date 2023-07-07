@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-decription: In this doc, learn how to run offline pruning on your node to reduce its disk usage.
+description: In this doc, learn how to run offline pruning on your node to reduce its disk usage.
 ---
 
 # Run C-Chain Offline Pruning
@@ -11,7 +11,7 @@ Offline Pruning is ported from go-ethereum to reduce the amount of disk space ta
 
 Offline pruning creates a bloom filter and adds all trie nodes in the active state to the bloom filter to mark the data as protected. This ensures that any part of the active state will not be removed during offline pruning.
 
-After generating the bloom filter, offline pruning itererates over the database and searches for trie nodes that are safe to be removed from disk.
+After generating the bloom filter, offline pruning iterates over the database and searches for trie nodes that are safe to be removed from disk.
 
 A bloom filter is a probabilistic data structure that reports whether an item is definitely not in a set or possibly in a set. Therefore, for each key we iterate, we check if it is in the bloom filter. If the key is definitely not in the bloom filter, then it is not in the active state and we can safely delete it. If the key is possibly in the set, then we skip over it to ensure we do not delete any active state.
 
@@ -23,7 +23,7 @@ After iterating over the database and deleting any old trie nodes that it can, o
 
 In order to enable offline pruning, you need to update the C-Chain config file to include the parameters `offline-pruning-enabled` and `offline-pruning-data-directory`.
 
-The default location of the C-Chain config file is `~/.metalgogo/configs/chains/C/config.json`. **Please note that by default, this file does not exist. You would need to create it manually.** You can update the directory for chain configs by passing in the directory of your choice via the CLI arg: `chain-config-dir`. See [this](./chain-config-flags.md) for more info. For example, if you start your node with:
+The default location of the C-Chain config file is `~/.metalgo/configs/chains/C/config.json`. **Please note that by default, this file does not exist. You would need to create it manually.** You can update the directory for chain configs by passing in the directory of your choice via the CLI arg: `chain-config-dir`. See [this](./chain-config-flags.md) for more info. For example, if you start your node with:
 
 ```
 ./build/metalgo --chain-config-dir=/home/ubuntu/chain-configs

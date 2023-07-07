@@ -56,7 +56,7 @@ export PATH=$PWD:$PATH
 
 :::note
 
-This command will add avalanche-cli to the PATH temporarily, which means that, when you reopen your terminal you would not be able to run 'avalanche' command. So, to add it permanantly refer to [Add Avalanche Command Permanently](#add-avalanche-command-permanently) section.
+This command will add avalanche-cli to the PATH temporarily, which means that, when you reopen your terminal you would not be able to run 'avalanche' command. So, to add it permanently refer to [Add Avalanche Command Permanently](#add-avalanche-command-permanently) section.
 
 :::
 
@@ -343,7 +343,7 @@ To check the role of an address run `readAllowList` function. It returns 0, 1 or
 - `ChainId`: You want your `ChainId` parameter to be unique. To make sure that your Subnet is secure against replay attacks. To see registered `ChainIds` you can check [chainlist.org](https://chainlist.org/). At the top right of the site make sure to turn on the button to include testnets.
 - `Gas Parameters`: Ava Labs recommends the low-low option and C-Chain currently uses this option. But, if you know what you are doing you are free to customize. Note that higher disk usage has some trade offs, it would require more processing power and cause it to be more expensive to maintain.
 - `Airdrop Address`: You would not like to use the default address in production, that is receiving the 1 million tokens. Because, it is a compromised wallet, which means that its private key is well known by others. If you add a custom address to receive airdrop. Avalanche-cli will ask you to give an amount in AVAX, in that case do not enter the value thinking as in `ether` but in `gwei` to correctly airdrop the amount you want. As an example, to airdrop `1` whole token, as in one ether, you would enter the value `1000000000`.
-- `Precompiles`: You can learn what precompiles are by refering to [this](https://docs.avax.network/subnets/customize-a-subnet#precompiles).
+- `Precompiles`: You can learn what precompiles are by referring to [this](https://docs.avax.network/subnets/customize-a-subnet#precompiles).
 
 ## Troubleshoot Common Issues
 
@@ -369,7 +369,7 @@ To check the role of an address run `readAllowList` function. It returns 0, 1 or
 - `avalanche subnet deploy <subnetName> -l`
 
   - `"Subnet <subnetName> has already been deployed"`
-    As it says, it means that your Subnet has already been deployed. To check currently running blockchains run `avalanche network status`. If it provides network information, try to connect to your Subnet using metamask to check if everythings all right. If it does not provide network information or you are having problems with interacting with your Subnet. Run `avalanche network clean`, this command will stop the local network and delete the state. Then, run `avalanche subnet deploy <subnetName> -l` again.
+    As it says, it means that your Subnet has already been deployed. To check currently running blockchains run `avalanche network status`. If it provides network information, try to connect to your Subnet using metamask to check if everything's all right. If it does not provide network information or you are having problems with interacting with your Subnet. Run `avalanche network clean`, this command will stop the local network and delete the state. Then, run `avalanche subnet deploy <subnetName> -l` again.
 
   - `"Error: failed to query network health: ..."`
     You can check logs which are located at `$HOME/.avalanche-cli` or try to run the command once more.

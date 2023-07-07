@@ -10,7 +10,7 @@ Because the node operator has access to your plaintext password, you should only
 
 Every node has a built-in keystore. Clients create users on the keystore, which act as identities to be used when interacting with blockchains. A keystore exists at the node level, so if you create a user on a node it exists _only_ on that node. However, users may be imported and exported using this API.
 
-For validation and cross-chain transfer on the Mainnet, you should issue transactions through AvalancheJS. That way control keys for your funds won't be stored on the node, which significantly lowers the risk should a computer running a node be compromised.
+For validation and cross-chain transfer on the Mainnet, you should issue transactions through MetalJS. That way control keys for your funds won't be stored on the node, which significantly lowers the risk should a computer running a node be compromised.
 
 :::info
 
