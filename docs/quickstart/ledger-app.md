@@ -81,51 +81,17 @@ Once the Ledger device is connected and ready, we’re going to do one last Term
 For the **Ledger Nano S** execute the following command:
 
 ```sh
-wget https://github.com/MetalBlockchain/ledger-app-metal/releases/download/v0.6.0/ledger_nanos.zip
-unzip ledger_nanos.zip
-```
-
-```sh
-python -m ledgerblue.loadApp \
---appFlags 0x00 \
---dataSize $((0x`cat debug/app.map |grep _envram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x'` - 0x`cat debug/app.map |grep _nvram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x'`)) \
---tlv \
---curve ed25519 \
---curve secp256k1 \
---curve secp256r1 \
---targetId 0x31100004 \
---delete \
---path '44'\''/60'\''' \
---path '44'\''/9000'\''' \
---fileName bin/app.hex \
---appName Metal \
---appVersion 0.6.0 \
---icon 0100000000ffffff00ffffffffffffffffcff38ff18ff10ff04ff24ffecff3cff3ffffffffffffffff
+wget https://github.com/MetalBlockchain/ledger-metal/releases/download/v0.7.1-hotfix/installer_s.sh
+chmod +x installer_s.sh
+./installer_s.sh load
 ```
 
 For the **Ledger Nano S Plus** execute the following command:
 
 ```sh
-wget https://github.com/MetalBlockchain/ledger-app-metal/releases/download/v0.6.0/ledger_nanos_plus.zip
-unzip ledger_nanos_plus.zip
-```
-
-```sh
-python -m ledgerblue.loadApp \
---appFlags 0x00 \
---dataSize $((0x`cat debug/app.map |grep _envram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x'` - 0x`cat debug/app.map |grep _nvram_data | tr -s ' ' | cut -f2 -d' '|cut -f2 -d'x'`)) \
---tlv \
---curve ed25519 \
---curve secp256k1 \
---curve secp256r1 \
---targetId 0x33100004 \
---delete \
---path '44'\''/60'\''' \
---path '44'\''/9000'\''' \
---fileName bin/app.hex \
---appName Metal \
---appVersion 0.6.0 \
---icon 0100000000ffffff00000000000060183807ce817f601bd800868161000000000000
+wget https://github.com/MetalBlockchain/ledger-metal/releases/download/v0.7.1-hotfix/installer_sp.sh
+chmod +x installer_sp.sh
+./installer_sp.sh load
 ```
 
 #### Steps to follow on the Ledger
