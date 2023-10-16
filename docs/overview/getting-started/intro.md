@@ -14,15 +14,15 @@ The Metal Blockchain's design enables an infinite number of subnets to be deploy
 
 This unique approach to scalability ensures that the Metal Blockchain can handle a massive volume of transactions, making it a highly efficient and scalable solution for decentralized applications and enterprise blockchain deployments.
 
-In addition, developers familiar with Ethereum and Antelope (formerly EOSIO) will find it easy to build on Metal Blockchain, as it supports popular programming languages such as Solidity on the Contract Chain (EVM), C++, and Typescript on the Proton Chain (AVM), out-of-the-box, for smart contract deployments. This allows developers to leverage their existing knowledge and expertise to create DApps on Metal Blockchain seamlessly.
+In addition, developers familiar with Ethereum and Antelope (formerly EOSIO) will find it easy to build on Metal Blockchain, as it supports popular programming languages such as Solidity on the Contract Chain (EVM), C++, and Typescript on the XPR Network (AVM), out-of-the-box, for smart contract deployments. This allows developers to leverage their existing knowledge and expertise to create DApps on Metal Blockchain seamlessly.
 
 With its robust smart contracts platform, Metal Blockchain offers a decentralized and secure environment for building a wide range of DApps, from financial applications to supply chain management solutions and beyond. Its scalable ecosystem enables efficient transaction processing, making it suitable for both small-scale and large-scale deployments.
 
 Metal Blockchain is not only a powerful platform for DApps, but it also prioritizes security, reliability, and sustainability. Its innovative consensus mechanism ensures the integrity of transactions and data, while its energy-efficient design makes it a greener alternative to traditional blockchain platforms.
 
-One of Metal's key advancements is the addition of a fourth subchain called Proton (A Chain) which offers a more optimized layer for payments and decentralized finance.
+One of Metal's key advancements is the addition of a fourth subchain called XPR Network (A Chain) which offers a more optimized layer for payments and decentralized finance.
 
-Proton is based on the cutting-edge EOSIO protocol and incorporates WebAssembly (WASM) to enhance its performance. This makes Metal Blockchain a more scalable and resource-efficient platform for facilitating transactions and powering DeFi applications.
+XPR Network is based on the cutting-edge EOSIO protocol and incorporates WebAssembly (WASM) to enhance its performance. This makes Metal Blockchain a more scalable and resource-efficient platform for facilitating transactions and powering DeFi applications.
 
 Metal Blockchain aims to provide a seamless and user-friendly experience for Web3 adoption by eliminating the need for external wallet software outside of the browser. Metal Blockchain plans to achieve this by incorporating Web Authentication (WebAuthn) support for Ethereum Virtual Machine (EVM), making it more convenient and secure for users to interact with the blockchain using their browsers. 
 
@@ -35,14 +35,14 @@ Metal Blockchain will uphold the same level of compliance on the blockchain as c
 
 # Metal Platform
 
-Metal features 4 built-in blockchains: [**Proton Chain (A-Chain)**](#proton-chain-a-chain), [**Exchange Chain (X-Chain)**](#exchange-chain-x-chain), [**Platform Chain (P-Chain)**](#platform-chain-p-chain), and [**Contract Chain (C-Chain**)](#contract-chain-c-chain). All 4 blockchains are [validated](../../nodes/validate/staking.md) and secured by all Metal validators which is also referred as the Primary Network. The Primary Network is a special subnet, and all members of all custom Subnets must also be a member of the Primary Network by staking at least 2,000 METAL.
+Metal features 4 built-in blockchains: [**XPR Network (A-Chain)**](#xpr-network-a-chain), [**Exchange Chain (X-Chain)**](#exchange-chain-x-chain), [**Platform Chain (P-Chain)**](#platform-chain-p-chain), and [**Contract Chain (C-Chain**)](#contract-chain-c-chain). All 4 blockchains are [validated](../../nodes/validate/staking.md) and secured by all Metal validators which is also referred as the Primary Network. The Primary Network is a special subnet, and all members of all custom Subnets must also be a member of the Primary Network by staking at least 2,000 METAL.
 
-## Proton Chain (A-Chain)
+## XPR Network (A-Chain)
 
-The Proton Chain (A-Chain) allows for the creation and use of smart contracts. It implements the Antelope Virtual Machine (AVM), allowing developers to easily deploy Proton-based dApps on the Metal Blockchain. The A-Chain uses the Snowman consensus protocol.
+The XPR Network (A-Chain) allows for the creation and use of smart contracts. It implements the Antelope Virtual Machine (AVM), allowing developers to easily deploy Proton-based dApps on the Metal Blockchain. The A-Chain uses the Snowman consensus protocol.
 
-Proton is built to handle payments, decentralized finance, dApps, DAOs, payment messaging (Banks, PSPs, Fintechs) with a higher resource efficiency.
- For more information about Proton, [click here](https://proton.org).
+XPR Network is built to handle payments, decentralized finance, dApps, DAOs, payment messaging (Banks, PSPs, Fintechs) with a higher resource efficiency.
+ For more information about XPR Network, [click here](https://xprnetwork.org).
 
 ## Contract Chain (C-Chain)
 
