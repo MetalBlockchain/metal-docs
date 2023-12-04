@@ -22,10 +22,11 @@ If more than one running nodes share the same NodeID, the communications from ot
 
 :::
 
-NodeID is a unique identifier that differentiates your node from all the other peers on the network. It's a string formatted like `NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD`. You can look up the technical background of how the NodeID is constructed [here](../../specs/cryptographic-primitives.md#tls-addresses). In essence, NodeID is defined by two files:
+NodeID is a unique identifier that differentiates your node from all the other peers on the network. It's a string formatted like `NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD`. You can look up the technical background of how the NodeID is constructed [here](../../specs/cryptographic-primitives.md#tls-addresses). In essence, NodeID is defined by three files:
 
 - `staker.crt`
 - `staker.key`
+- `signer.key`
 
 In the default installation, they can be found in the working directory, specifically in `~/.metalgo/staking/`. All we need to do to recreate the node on another machine is to run a new installation with those same two files.
 
@@ -35,7 +36,7 @@ If you have users defined in the keystore of your node, then you need to back up
 
 ### Backup
 
-To back up your node, we need to store `staker.crt` and `staker.key` files somewhere safe and private, preferably to a different computer, to your private storage in the cloud, a USB stick or similar. Storing them to a couple of different, secure locations increases the safety.
+To back up your node, we need to store `staker.crt`, `staker.key` and `signer.key`files somewhere safe and private, preferably to a different computer, to your private storage in the cloud, a USB stick or similar. Storing them to a couple of different, secure locations increases the safety.
 
 :::caution
 If someone gets a hold of your staker files, they still cannot get to your funds, as they are controlled by the wallet private keys, not by the node. But, they could re-create your node somewhere else, and depending on the circumstances make you lose the staking rewards. So make sure your staker files are secure.
@@ -87,7 +88,7 @@ If you're running the node locally, just copy the `staker.key` and `staker.crt` 
 
 #### To Remote Node Using `scp`
 
-Again, the process is just the reverse operation. Using `scp` we need to copy the `staker.key` and `staker.crt` files from the backup location into the remote working directory. Assuming the backed up files are located in the directory where the above backup procedure placed them:
+Again, the process is just the reverse operation. Using `scp` we need to copy the `staker.crt`, `staker.key` and `signer.key` files from the backup location into the remote working directory. Assuming the backed up files are located in the directory where the above backup procedure placed them:
 
 ```text
 scp ~/metal_backup/staker.* ubuntu@PUBLICIP:/home/ubuntu/.metalgo/staking
