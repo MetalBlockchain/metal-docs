@@ -61,9 +61,7 @@ If `false`, this node will not enable the indexer and the Index API will not be 
 
 If set to `true`, this node will expose the Info API. Defaults to `true`. See [here](../../apis/metalgo/apis/info.md) for more information.
 
-#### `--api-ipcs-enabled` (boolean):
 
-If set to `true`, this node will expose the IPCs API. Defaults to `false`. See [here](../../apis/metalgo/apis/ipc.md) for more information.
 
 #### `--api-keystore-enabled` (boolean):
 
