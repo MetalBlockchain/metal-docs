@@ -17,7 +17,7 @@ function Home() {
           <div className="container">
             <div className="row cards__container">
 
-            {/* <Card
+            {<Card
               to="dapps/launch"
               header={{
                 label: "🚀 Launch Your Dapp",
@@ -26,10 +26,10 @@ function Home() {
                 label:
                   "Learn everything you need to deploy an EVM-compatible smart contract on the Metal Blockchain",
               }}
-            /> */}
+            /> }
 
 
-              {/* <Card
+              {<Card
                 to="subnets/build-first-subnet"
                 header={{
                   label: "🛠️ Build Your First Subnet",
@@ -38,7 +38,7 @@ function Home() {
                   label:
                     "Start your Subnet development journey by creating a subnet in under five minutes",
                 }}
-              /> */}
+              /> }
 
               <Card
                 to="intro"
