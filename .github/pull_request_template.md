@@ -25,11 +25,11 @@
 - [] the path to that doc must be redirected to a valid URL via the
   `_redirects` file
 - [] `_redirects` were manually verified with the cloudflare preview link
-- [] `sidebars.json` reflects all changes made to file path
+- [] `sidebars.js` reflects all changes made to file path
 
 ### If a document was moved
 
 - [] all files that were moved from their current directory to a new path have had their paths
   redirected via the `_redirects` file
 - [] `_redirects` were manually verified with the cloudflare preview link
-- [] `sidebars.json` reflects all changes made to file path
+- [] `sidebars.js` reflects all changes made to file path
