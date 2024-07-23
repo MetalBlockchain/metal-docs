@@ -12,7 +12,7 @@ Sideloading means directly downloading the Metal Ledger app to your computer, an
 
 Ledger HQ provides a method for sideloading apps onto Ledger devices – but it is a very manual process using unix-based tools that require a bit of getting “under the hood” of your computer. The process will probably feel comfortable to a software developer, but for others it will feel a bit strange. We’ll do our best, however, to lead you through it step by step. And in the end, you can rest assured that once the app is loaded onto your Ledger, it will not brick your Ledger and it will be just as secure as installing via Ledger Live.
 
-:::warning
+:::danger
 
 Sideloading is **only possible for a Ledger Nano S and Ledger Nano S Plus**. The Ledger Nano X doesn't allow sideloading unfortunately.
 

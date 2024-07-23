@@ -44,19 +44,19 @@ const sidebars = {
   ],
 
   quickStart: [
-     'quickstart/README',
-     'quickstart/create-a-local-test-network',
-     'quickstart/fund-a-local-test-network',
-     'quickstart/tahoe-workflow',
-    'quickstart/cross-chain-transfers',
-     'quickstart/multisig-utxos-with-metaljs',
-    'quickstart/transaction-fees',
-   'quickstart/adjusting-gas-price-during-high-network-activity',
-     'quickstart/sending-transactions-with-dynamic-fees-using-javascript',
-     'quickstart/tools-list',
-     'quickstart/integrate-exchange-with-metal',
-     'quickstart/blockchain-flow',
-    'quickstart/ledger-app',
+      'quickstart/README',
+      'quickstart/create-a-local-test-network',
+      'quickstart/fund-a-local-test-network',
+      'quickstart/tahoe-workflow',
+      'quickstart/cross-chain-transfers',
+      'quickstart/multisig-utxos-with-metaljs',
+      'quickstart/transaction-fees',
+      'quickstart/adjusting-gas-price-during-high-network-activity',
+      'quickstart/sending-transactions-with-dynamic-fees-using-javascript',
+      'quickstart/tools-list',
+      'quickstart/integrate-exchange-with-metal',
+      'quickstart/blockchain-flow',
+      'quickstart/ledger-app',
   ],
 
     dapps: [
@@ -341,35 +341,14 @@ const sidebars = {
   ],
 
   specs: [
-   // 'specs/coreth-arc20s',
-    'specs/avm-transaction-serialization',
-    'specs/coreth-atomic-transaction-serialization',
+    'reference/metalgo/x-chain/txn-format',
+    'reference/metalgo/c-chain/txn-format',
+    'reference/metalgo/p-chain/txn-format',
     'specs/cryptographic-primitives',
     'specs/network-protocol',
-    'specs/serialization-primitives',
-    'specs/platform-transaction-serialization',
-    'specs/abigen',
-  ],
-
-
-  community: [
-    'community/README',
-    'community/bug-bounty',
-    {
-      type: 'link',
-      label: 'Product Support',
-      href: 'https://support.avax.network/en/',
-    },
-    {
-      type: 'category',
-      label: 'Tutorials Contest',
-      collapsed: false,
-      items: [
-        'community/tutorials-contest/2022',
-        'community/tutorials-contest/2021'
-      ]
-    },
-  ],
+    'reference/standards/serialization-primitives',
+    'build/dapp/smart-contracts/abigen',
+  ]
 };
 
 module.exports = sidebars;

@@ -1,5 +1,9 @@
 ---
+tags: [Build, Dapps]
 description: This tutorial will help users to send transactions with dynamic fee settings to adjust their priority fee and max fee cap during high network activity using javascript.
+sidebar_label: Dynamic Gas Fees
+pagination_label: Sending Transactions with Dynamic Fees using JavaScript
+sidebar_position: 1
 ---
 
 # Sending Transactions with Dynamic Fees using JavaScript
@@ -55,11 +59,11 @@ file.
 ## Importing Dependencies and Private Key
 
 ```javascript
-const ethers = require("ethers")
-const Avalanche = require("avalanche").Avalanche
-require("dotenv").config()
+const ethers = require("ethers");
+const Avalanche = require("avalanche").Avalanche;
+require("dotenv").config();
 
-const privateKey = process.env.PRIVATEKEY
+const privateKey = process.env.PRIVATEKEY;
 ```
 
 ## Setting up HTTP Provider Connected with Tahoe Network
@@ -89,8 +93,8 @@ const avalanche = new Avalanche(
   undefined,
   "https",
   chainId
-)
-const cchain = avalanche.CChain()
+);
+const cchain = avalanche.CChain();
 ```
 
 ## Setting up Wallet
@@ -99,8 +103,8 @@ A wallet is required for signing transactions with your private key and thus mak
 
 ```javascript
 // For signing an unsigned transaction
-const wallet = new ethers.Wallet(privateKey)
-const address = wallet.address
+const wallet = new ethers.Wallet(privateKey);
+const address = wallet.address;
 ```
 
 ## Function for Estimating Max Fee and Max Priority Fee
@@ -116,23 +120,23 @@ const calcFeeData = async (
   maxFeePerGas = undefined,
   maxPriorityFeePerGas = undefined
 ) => {
-  const baseFee = parseInt(await cchain.getBaseFee(), 16) / 1e9
+  const baseFee = parseInt(await cchain.getBaseFee(), 16) / 1e9;
   maxPriorityFeePerGas =
     maxPriorityFeePerGas == undefined
       ? parseInt(await cchain.getMaxPriorityFeePerGas(), 16) / 1e9
-      : maxPriorityFeePerGas
+      : maxPriorityFeePerGas;
   maxFeePerGas =
-    maxFeePerGas == undefined ? baseFee + maxPriorityFeePerGas : maxFeePerGas
+    maxFeePerGas == undefined ? baseFee + maxPriorityFeePerGas : maxFeePerGas;
 
   if (maxFeePerGas < maxPriorityFeePerGas) {
-    throw "Error: Max fee per gas cannot be less than max priority fee per gas"
+    throw "Error: Max fee per gas cannot be less than max priority fee per gas";
   }
 
   return {
     maxFeePerGas: maxFeePerGas.toString(),
     maxPriorityFeePerGas: maxPriorityFeePerGas.toString(),
-  }
-}
+  };
+};
 ```
 
 Actual API returns base fee and priority fee in units of `wei` which is
@@ -142,8 +146,8 @@ one-billionth of a billionth of `METAL` (1 METAL = 10^18 wei).
 
 The function `sendAvax()` takes 4 arguments -
 
-- `amount` - Amount of AVAX to send in the transaction
-- `address` - Destination address to which we want to send AVAX
+- `amount` - Amount of METAL to send in the transaction
+- `address` - Destination address to which we want to send METAL
 - `maxFeePerGas` - Desired maximum fee per gas you want to pay in nAVAX
 - `maxPriorityFeePerGas` - Desired maximum priority fee per gas you want to pay in nAVAX
 - `nonce` - Used as a differentiator for more than 1 transaction with same signer
@@ -166,17 +170,17 @@ const sendAvax = async (
   nonce = undefined
 ) => {
   if (nonce == undefined) {
-    nonce = await HTTPSProvider.getTransactionCount(address)
+    nonce = await HTTPSProvider.getTransactionCount(address);
   }
 
   // If the max fee or max priority fee is not provided, then it will automatically calculate using CChain APIs
-  ;({ maxFeePerGas, maxPriorityFeePerGas } = await calcFeeData(
+  ({ maxFeePerGas, maxPriorityFeePerGas } = await calcFeeData(
     maxFeePerGas,
     maxPriorityFeePerGas
-  ))
+  ));
 
-  maxFeePerGas = ethers.utils.parseUnits(maxFeePerGas, "gwei")
-  maxPriorityFeePerGas = ethers.utils.parseUnits(maxPriorityFeePerGas, "gwei")
+  maxFeePerGas = ethers.utils.parseUnits(maxFeePerGas, "gwei");
+  maxPriorityFeePerGas = ethers.utils.parseUnits(maxPriorityFeePerGas, "gwei");
 
   // Type 2 transaction is for EIP1559
   const tx = {
@@ -187,17 +191,17 @@ const sendAvax = async (
     maxFeePerGas,
     value: ethers.utils.parseEther(amount),
     chainId,
-  }
+  };
 
-  tx.gasLimit = await HTTPSProvider.estimateGas(tx)
+  tx.gasLimit = await HTTPSProvider.estimateGas(tx);
 
-  const signedTx = await wallet.signTransaction(tx)
-  const txHash = ethers.utils.keccak256(signedTx)
+  const signedTx = await wallet.signTransaction(tx);
+  const txHash = ethers.utils.keccak256(signedTx);
 
-  console.log("Sending signed transaction")
+  console.log("Sending signed transaction");
 
   // Sending a signed transaction and waiting for its inclusion
-  await (await HTTPSProvider.sendTransaction(signedTx)).wait()
+  await (await HTTPSProvider.sendTransaction(signedTx)).wait();
 
   console.log(
     `View transaction with nonce ${nonce}: https://testnet.metalscan.io/tx/${txHash}`
@@ -224,7 +228,7 @@ the following function.
 
 ```javascript
 // setting max fee as 100 and priority fee as 2
-sendAvax("0.01", "0x856EA4B78947c3A5CD2256F85B2B147fEBDb7124", 100, 2)
+sendAvax("0.01", "0x856EA4B78947c3A5CD2256F85B2B147fEBDb7124", 100, 2);
 ```
 
 **This function should not be used without a max fee per gas. As you will have
@@ -262,10 +266,10 @@ a new transaction with same nonce, but higher priority fee this time.
 
 ```javascript
 // reissuing transaction with nonce 25
-sendAvax("0.01", "0x856EA4B78947c3A5CD2256F85B2B147fEBDb7124", 100, 10, 25)
+sendAvax("0.01", "0x856EA4B78947c3A5CD2256F85B2B147fEBDb7124", 100, 10, 25);
 
 // cancelling transaction with nonce 25
-sendAvax("0", "0x856EA4B78947c3A5CD2256F85B2B147fEBDb7124", 100, 10, 25)
+sendAvax("0", "0x856EA4B78947c3A5CD2256F85B2B147fEBDb7124", 100, 10, 25);
 ```
 
 ## Conclusion

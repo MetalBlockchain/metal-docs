@@ -4,7 +4,7 @@ description: There is a public API server that allows developers to access the M
 
 # Public API Server
 
-There is a public API server that allows developers to access the Metal network without having to run a node themselves. The public API server is actually several [MetalGo](https://github.com/MetalBlockchain/metalgo) nodes behind a load balancer to ensure high availability and high request throughput.
+There is a public API server that allows developers to access the Metal Blockchain network without having to run a node themselves. The public API server is actually several [MetalGo](https://github.com/MetalBlockchain/metalgo) nodes behind a load balancer to ensure high availability and high request throughput.
 
 ## Using the Public API nodes
 

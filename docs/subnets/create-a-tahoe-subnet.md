@@ -47,7 +47,7 @@ and this step below particularly to start your node on `Tahoe`:
 _To connect to the Tahoe Testnet instead of the main net, use argument `--network-id=Tahoe`_
 
 Also it's worth pointing out that
-[it only needs 1 AVAX to become a validator on the Tahoe Testnet](../nodes/validate/staking.md#tahoe-testnet)
+[it only needs 1 METAL to become a validator on the Tahoe Testnet](../nodes/validate/staking.md#tahoe-testnet)
 and you can get the test token from the [faucet](https://faucet.avax.network/).
 
 To get the NodeID of this `Tahoe` node, call the following curl command to [info.getNodeID](../apis/metalgo/apis/info.md#infogetnodeid):

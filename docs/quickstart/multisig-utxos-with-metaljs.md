@@ -169,7 +169,7 @@ const bintools = BinTools.getInstance()
 
 ### Setup Metal APIs
 
-To make API calls to the Metal network and different blockchains like
+To make API calls to the Metal Blockchain network and different blockchains like
 X-Chain, P-Chain and C-Chain, let's set up these by adding the following code
 snippet.
 
@@ -563,7 +563,7 @@ const updateInputs = async (
 
 Only those UTXOs will be included whose output ID is `7` representing
 `SECPTransferOutput`. These outputs are used for transferring assets. Also, we
-are only including outputs containing `AVAX` assets. These conditions are
+are only including outputs containing `METAL` assets. These conditions are
 checked in the following line -
 
 ```javascript
@@ -839,7 +839,7 @@ async function sendBaseTx() {
   // unlock amount = sum(output amounts) + fee
   let fee = new BN(1e6)
 
-  // creating outputs of 0.5 (multisig) and 0.1 AVAX - change output will be added by the function in the last
+  // creating outputs of 0.5 (multisig) and 0.1 METAL - change output will be added by the function in the last
   let outputConfig = [
     {
       amount: new BN(5e8),
@@ -924,7 +924,7 @@ by signature indexes.
 
 Once the multi-sig UTXO is created, this UTXO can only be used if we have the
 threshold signers in our keychain. The `util` functions can be tweaked a little
-bit to create and return inputs with a part number of signers (<threshold). We
+bit to create and return inputs with a part number of signers (&lt;threshold&gt;). We
 can then partially sign the inputs and ask other owners to add signature index
 and sign.
 
@@ -986,7 +986,7 @@ async function exportXP() {
   // consuming amount = sum(output amount) + fee
   let fee = new BN(1e6)
 
-  // creates mutlti-sig (0.1 METAL) and single-sig (0.03 METAL) output for exporting to P Address (0.001 AVAX will be fees)
+  // creates mutlti-sig (0.1 METAL) and single-sig (0.03 METAL) output for exporting to P Address (0.001 METAL will be fees)
   let outputConfig = [
     {
       amount: new BN(3e6),

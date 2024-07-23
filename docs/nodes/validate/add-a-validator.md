@@ -1,4 +1,8 @@
 ---
+tags: [Nodes]
+description: This section provides documents on how to build and maintain an AvalancheGo node, and then validate the Avalanche network using an AvalancheGo node.
+sidebar_label: Node ➡️ Validator
+pagination_label: Add a Node to the Validator Set
 sidebar_position: 3
 ---
 
@@ -18,13 +22,18 @@ Note that once you issue the transaction to add a node as a validator, there is 
 
 You've completed [Run an Metal Node](../build/run-metal-node-manually.md) and are familiar with [Metal Blockchain's architecture](../../overview/getting-started/intro.md).
 
-In order to ensure your node is well-connected, make sure that your node can receive and send TCP traffic on the staking port (`9651` by default) and that you started your node with config flag `--public-ip=[YOUR NODE'S PUBLIC IP HERE]`. Failing to do either of these may jeopardize your staking reward.
+In order to ensure your node is well-connected, make sure that your node can
+receive and send TCP traffic on the staking port (`9651` by default) and your node
+has a public IP address(it's optional to set --public-ip=[YOUR NODE'S PUBLIC IP HERE]
+when executing the AvalancheGo binary, as by default, the node will attempt to perform
+NAT traversal to get the node's IP according to its router). Failing to do either of
+these may jeopardize your staking reward.
 
 ## Add a Validator with Metal Wallet
 
 First, we show you how to add your node as a validator by using [Metal Wallet](https://wallet.metalblockchain.org).
 
-### Retrieve the Node ID
+### Retrieve the Node ID, the BLS signature and the BLS key
 
 Get your node’s ID by calling [`info.getNodeID`](../../apis/metalgo/apis/info.md#infogetnodeid):
 
@@ -36,13 +45,17 @@ curl -X POST --data '{
 }' -H 'content-type:application/json' 127.0.0.1:9650/ext/info
 ```
 
-The response has your node’s ID:
+The response has your node’s ID, the BLS key (public key) and the BLS signature (proof of possession):
 
 ```json
 {
   "jsonrpc": "2.0",
   "result": {
-    "nodeID": "NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD"
+    "nodeID": "NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD",
+    "nodePOP": {
+      "publicKey": "0x8f95423f7142d00a48e1014a3de8d28907d420dc33b3052a6dee03a3f2941a393c2351e354704ca66a3fc29870282e15",
+      "proofOfPossession": "0x86a3ab4c45cfe31cae34c1d06f212434ac71b1be6cfe046c80c162e057614a94a5bc9f1ded1a7029deb0ba4ca7c9b71411e293438691be79c2dbf19d1ca7c3eadb9c756246fc5de5b7b89511c7d7302ae051d9e03d7991138299b5ed6a570a98"
+    }
   },
   "id": 1
 }
@@ -54,13 +67,17 @@ Open [the wallet](https://wallet.metalblockchain.org/), and go the `Earn` tab. C
 
 Fill out the staking parameters. They are explained in more detail in [this doc](../validate/staking.md). When you’ve filled in all the staking parameters and double-checked them, click `Confirm`. Make sure the staking period is at least 2 weeks, the delegation fee rate is at least 2%, and you’re staking at least 2,000 METAL on Mainnet (1 METAL on Tahoe Testnet).
 
-You should a success message, and your balance should be updated.
+You should see a success message, and your balance should be updated.
 
 Calling [`platform.getPendingValidators`](../../apis/metalgo/apis/p-chain.md#platformgetpendingvalidators) verifies that your transaction was accepted. Note that this API call should be made before your node's validation start time, otherwise, the return will not include your node's id as it is no longer pending.
 
-Go back to the `Earn` tab, and click `Estimated Rewards`.
+![Staking Overview](/img/staking-overview.png)
 
-Once your validator’s start time has passed, you will see the rewards it may earn, as well as its start time, end time, and the percentage of its validation period that has passed.
+Calling
+[`platform.getPendingValidators`](/reference/avalanchego/p-chain/api.md#platformgetpendingvalidators)
+verifies that your transaction was accepted. Note that this API call should be
+made before your node's validation start time, otherwise, the return will not
+include your node's id as it is no longer pending.
 
 You can also call [`platform.getCurrentValidators`](../../apis/metalgo/apis/p-chain.md#platformgetcurrentvalidators) to check that your node's id is included in the response.
 
@@ -78,13 +95,23 @@ To use MetalJS, you can clone the repo:
 git clone https://github.com/MetalBlockchain/metaljs.git
 ```
 
+:::info
+The repository cloning method used is HTTPS, but SSH can be used too:
+
+`git clone git@github.com:ava-labs/avalanchejs.git`
+
+You can find more about SSH and how to use it
+[here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
+:::
+
 or add it to an existing project:
 
 ```zsh
-yarn add avalanche
+yarn add @avalabs/avalanchejs
 ```
 
-For this tutorial we will use [`ts-node`](https://www.npmjs.com/package/ts-node) to run the example scripts directly from an MetalJS directory.
+For this tutorial we will use [`ts-node`](https://www.npmjs.com/package/ts-node)
+to run the example scripts directly from an AvalancheJS directory.
 
 ### Tahoe Workflow
 
@@ -94,30 +121,50 @@ Open your MetalJS directory and select the [**`examples/platformvm`**](https://g
 
 We will use the [**`buildAddValidatorTx.ts`**](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/buildAddValidatorTx.ts) script to add a validator. To learn more about the `buildAddValidatorTx` API, please click [here](https://github.com/MetalBlockchain/metaljs-docs/blob/main/classes/api_platformvm.platformvmapi.md#buildaddvalidatortx).
 
-#### Private Key
+#### Add Necessary Environment Variables
 
-Locate this line in the file
+Locate the `.env.example` file at the root of AvalancheJS, and remove `.example`
+from the title. Now, this will be the `.env` file for global variables.
 
-```js
-const privKey: string = `${PrivateKeyPrefix}${DefaultLocalGenesisPrivateKey}`
+Add the private key and the P-Chain address associated with it.
+The API URL is already set to Fuji (`https://api.avax-test.network/`).
+
+![env Variables](/img/validator-avalanchejs-1.png)
+
+#### Retrieve the Node ID, the BLS signature and the BLS key
+
+Get this info by calling [`info.getNodeID`](/reference/avalanchego/info-api.md#infogetnodeid):
+
+```sh
+curl -X POST --data '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"info.getNodeID"
+}' -H 'content-type:application/json' 127.0.0.1:9650/ext/info
 ```
 
 and replace this with a private key that you control. You can use [this code to generate a new key](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/createKeypair.ts).
 
-```js
-const privKey: string = "<YOUR-PRIVATE-KEY-HERE>"
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "nodeID": "NodeID-JXJNyJXhgXzvVGisLkrDiZvF938zJxnT5",
+    "nodePOP": {
+      "publicKey": "0xb982b485916c1d74e3b749e7ce49730ac0e52d28279ce4c5c989d75a43256d3012e04b1de0561276631ea6c2c8dc4429",
+      "proofOfPossession": "0xb6cdf3927783dba3245565bd9451b0c2a39af2087fdf401956489b42461452ec7639b9082195b7181907177b1ea09a6200a0d32ebbc668d9c1e9156872633cfb7e161fbd0e75943034d28b25ec9d9cdf2edad4aaf010adf804af8f6d0d5440c5"
+    }
+  },
+  "id": 1
+}
 ```
 
-#### Network Setting
+#### Fill in the Node ID, the BLS signature and the BLS key
 
 The following settings work when using a local node started with [`--network-id=tahoe`](../../nodes/maintain/metalgo-config-flags.md#network-id):
 
-```js
-const ip: string = "localhost"
-const port: number = 9650
-const protocol: string = "http"
-const networkID: number = 5
-```
+Replace the `nodeID`, `blsPublicKey` and `blsSignature` with your 
+own node's values.
 
 However, to connect directly to the [Metal Tahoe Testnet API server](../../apis/metalgo/public-api-server.md), the following changes are needed:
 
@@ -138,11 +185,22 @@ For Tahoe Testnet, 5 is the correct value to use.
 
 Next we need to specify the node's validation period and delegation fee.
 
-```ts
-const nodeID: string = "NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg"
-const startTime: BN = UnixNow().add(new BN(60 * 1))
-const endTime: BN = startTime.add(new BN(26300000))
-const delegationFee: number = 10
+
+#### Validation Period
+
+The validation period is set by default to 21 days, the start date
+being the date and time the transaction is issued. The start date
+cannot be modified.
+
+The end date can be adjusted in the code.
+
+Let's say we want the validation period to end after 50 days.
+You can achieve this by adding the number of desired days to
+`endTime.getDate()`, in this case `50`.
+
+``` ts
+// move ending date 50 days into the future
+endTime.setDate(endTime.getDate() + 50);
 ```
 
 #### Node ID
@@ -165,15 +223,13 @@ To create your own start times, please follow the steps below:
 Locate this line in the file
 
 ```ts
-const startTime: BN = UnixNow().add(new BN(60 * 1))
-const endTime: BN = startTime.add(new BN(26300000))
-```
+const startTime = await new PVMApi().getTimestamp();
+const startDate = new Date(startTime.timestamp);
+const start = BigInt(startDate.getTime() / 1000);
 
-Change `startTime` and `endTime` to new `BN` values, for example:
-
-```ts
-const startTime: BN = new BN(1654656829) // Wed Jun 08 2022 02:53:49 GMT+0000
-const endTime: BN = new BN(1662602029) // Thu Sep 08 2022 01:53:49 GMT+0000
+// Set the end time to a specific date and time
+const endTime = new Date('2024-05-15T11:20:00'); // May 15, 2024, at 11:20 AM
+const end = BigInt(endTime.getTime() / 1000);
 ```
 
 #### Delegation Fee Rate
@@ -184,17 +240,26 @@ Metal Blockchain allows for delegation of stake. This parameter is the percent f
 
 Set the the proper staking amount in calling `pchain.buildAddValidatorTx` by replacing `stakeAmount.minValidatorStake` with a number in the unit of gwei, for example, `BN(1e12)` which is 10,000 METAL.
 
-#### Addresses
-
-By default, the example uses the variable `pAddressStrings` to define `toAddresses`, `fromAddresses`, `changeAddresses` and `rewardAddresses`:
-
-```js
-const pAddressStrings: string[] = pchain.keyChain().getAddressStrings()
+``` ts
+  const tx = newAddPermissionlessValidatorTx(
+    context,
+    utxos,
+    [bech32ToBytes(P_CHAIN_ADDRESS)],
+    nodeID,
+    PrimaryNetworkID.toString(),
+    start,
+    end,
+    BigInt(2e9), // the amount to stake
+    [bech32ToBytes(P_CHAIN_ADDRESS)],
+    [bech32ToBytes(P_CHAIN_ADDRESS)],
+    1e4 * 10,
+    undefined,
+    1,
+    0n,
+    blsPublicKey,
+    blsSignature,
+  );
 ```
-
-This retrieves the P-Chain addresses that belong to the `private key` that appears earlier in the example.
-
-No change is needed in the addresses for the default action. For customization, please refer to [this section](#customizing-addresses).
 
 #### Execute the Code
 
@@ -203,18 +268,22 @@ Now that we have made all of the necessary changes to the example script, it's t
 Run the command:
 
 ```zsh
-ts-node examples/platformvm/buildAddValidatorTx.ts
+node --loader ts-node/esm examples/p-chain/validate.ts
 ```
 
-The response has the transaction ID.
+The response:
 
-```
-Success! TXID: 2ftDVwmss5eJk8HFsNVi6a3vWK9s3szZFhEeSY2HCS8xDb8Cra
+```zsh
+laviniatalpas@Lavinias-MacBook-Pro avalanchejs % node --loader ts-node/esm examples/p-chain/validate.ts
+(node:87616) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+{ txID: 'RVe3CFRieRbBvKXKPu24Zbt1QehdyGVT6X4tPWVBeACPX3Ab8' }
 ```
 
 We can check the transaction’s status by running the example script: [`getTxStatus.ts`](https://github.com/MetalBlockchain/metaljs/blob/master/examples/platformvm/getTxStatus.ts) following the steps below:
 
-1. Ensure that your [network settings](#network-setting) are correct before running the script.
+![Added Validator](/img/validator-avalanchejs-3.png)
 
 2. Locate this line in the file
 
@@ -348,3 +417,5 @@ The Tahoe workflow above can be adapted to Mainnet with the following modificati
 - Network setting should be to a Mainnet node, either [a local node on Mainnet](../../nodes/maintain/metalgo-config-flags.md#network-id) or [Metal Mainnet API server](../../apis/metalgo/public-api-server.md#using-the-public-api-nodes) where `api.metalblockchain.org` should be used for the `ip`.
 - `const networkID: number = 1`.
 - Set the correct amount to stake.
+- The `blsPublicKey`, `blsSignature` and `nodeID` need to be the ones
+for your Mainnet Node.

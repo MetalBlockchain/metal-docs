@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import Card from "../components/Card";
+import { translate } from "@docusaurus/Translate";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -43,11 +44,13 @@ function Home() {
               <Card
                 to="intro"
                 header={{
-                  label: "🎓 Learn about Metal",
+                  label: translate({ message: "🔺 Learn about Metal Blockchain" }),
                 }}
                 body={{
-                  label:
-                    "Discover how Subnets and Avalanche Consensus are revolutionizing Web3",
+                  label: translate({
+                    message:
+                      "Discover how Subnets and Avalanche Consensus are revolutionizing Web3",
+                  }),
                 }}
               />
 

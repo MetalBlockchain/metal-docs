@@ -42,7 +42,7 @@ export const METAL_TESTNET_PARAMS = {
   chainName: "Metal Tahoe C-Chain",
   nativeCurrency: {
     name: "Avalanche",
-    symbol: "AVAX",
+    symbol: "METAL",
     decimals: 18,
   },
   rpcUrls: ["https://tahoe.metalblockchain.org/ext/bc/C/rpc"],

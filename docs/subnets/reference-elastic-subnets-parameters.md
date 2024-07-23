@@ -154,11 +154,11 @@ receives a reward calculated as follows:
 <!-- markdownlint-disable MD013 -->
 <!-- vale off -->
 $$
-Reward = \left(MaximumSupply - Supply \right) \times \frac{Stake}{Supply} \times \frac{Staking Period}{Minting Period} \times EffectiveConsumptionRate
+Reward = \left(MaximumSupply - Supply \right) \times \frac{Stake}{Supply} \times \frac{"Staking Period"}{"Minting Period"} \times EffectiveConsumptionRate
 $$
 where
 $$
-EffectiveConsumptionRate = \frac{MinConsumptionRate}{PercentDenominator} \times \left(1- \frac{Staking Period}{Minting Period}\right) + \frac{MaxConsumptionRate}{PercentDenominator} \times \frac{Staking Period}{Minting Period}
+EffectiveConsumptionRate = \frac{MinConsumptionRate}{PercentDenominator} \times \left(1- \frac{"Staking Period"}{"Minting Period"}\right) + \frac{MaxConsumptionRate}{PercentDenominator} \times \frac{"Staking Period"}{"Minting Period"}
 $$
 <!-- vale on -->
 <!-- markdownlint-enable MD013 -->

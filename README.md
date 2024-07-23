@@ -1,3 +1,5 @@
+# Avalanche Docs
+
 <div align="center">
   <img src="static/logo.png?raw=true">
 </div>

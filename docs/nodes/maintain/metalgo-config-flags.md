@@ -240,7 +240,7 @@ The address that HTTP APIs listen on. Defaults to `127.0.0.1`. This means that b
 
 #### `--http-port` (int):
 
-Each node runs an HTTP server that provides the APIs for interacting with the node and the Metal network. This argument specifies the port that the HTTP server will listen on. The default value is `9650`.
+Each node runs an HTTP server that provides the APIs for interacting with the node and the Metal Blockchain network. This argument specifies the port that the HTTP server will listen on. The default value is `9650`.
 
 #### `--http-tls-cert-file` (string, file path):
 
@@ -632,11 +632,11 @@ Maximum amount of time an item should be processing and still be healthy. Report
 
 #### `snow-mixed-query-num-push-vdr` (uint):
 
-If this node is a validator, when a container is inserted into consensus, send a Push Query to this many validators and a Pull Query to the others. Must be <= k. Defaults to `10`.
+If this node is a validator, when a container is inserted into consensus, send a Push Query to this many validators and a Pull Query to the others. Must be &lt;= k. Defaults to `10`.
 
 #### `snow-mixed-query-num-push-non-vdr` (uint):
 
-fmt.Sprintf("If this node is not a validator, when a container is inserted into consensus, send a Push Query to %s validators and a Pull Query to the others. Must be <= k. Defaults to `0`.
+fmt.Sprintf("If this node is not a validator, when a container is inserted into consensus, send a Push Query to %s validators and a Pull Query to the others. Must be &lt;= k. Defaults to `0`.
 
 ### Continuous Profiling
 

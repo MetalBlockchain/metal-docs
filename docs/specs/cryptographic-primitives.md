@@ -118,7 +118,7 @@ As an example we will sign the message "Through consensus to the stars"
 
 After hashing with `sha256` and signing the pre-image we return the value [cb58](https://support.avalabs.org/en/articles/4587395-what-is-cb58) encoded: `4Eb2zAHF4JjZFJmp4usSokTGqq9mEGwVMY2WZzzCmu657SNFZhndsiS8TvL32n3bexd8emUwiXs8XqKjhqzvoRFvghnvSN`. Here's an example using the [Metal Web Wallet](https://wallet.metalblockchain.org/wallet/advanced).
 
-![Sign message](/img/sign-message.png)
+![Sign message](/img/signed-message.png)
 
 ## Cryptography in Ethereum Virtual Machine
 

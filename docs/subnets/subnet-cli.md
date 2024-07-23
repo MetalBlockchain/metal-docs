@@ -342,7 +342,7 @@ created subnet "24tZhrm8j8GCJRE9PomW8FaeqbgGS4UAQjJnqqn8pq5NwYSYV1" (took 1.0011
 ```bash
 subnet-cli add validator \
 --node-ids="[YOUR-NODE-ID]" \
---stake-amount=[STAKE-AMOUNT-IN-NANO-AVAX] \
+--stake-amount=[STAKE-AMOUNT-IN-NANO-METAL] \
 --validate-reward-fee-percent=2
 ```
 

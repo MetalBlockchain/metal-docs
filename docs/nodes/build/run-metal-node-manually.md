@@ -1,6 +1,9 @@
 ---
-sidebar_position: 2
+tags: [Nodes]
 description: The quickest way to learn about Metal is to run a node and interact with the network and geared toward people interested in how the Metal Platform works.
+sidebar_label: "Run a Metal Node Manually"
+pagination_label: Run a Metal Node Manually
+sidebar_position: 2
 ---
 
 # Run a Metal Node Manually

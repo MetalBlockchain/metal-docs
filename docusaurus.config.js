@@ -1,14 +1,135 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require("prism-react-renderer");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
+const math = require("remark-math");
+const katex = require("rehype-katex");
+const remoteContent = require("./configs/remoteContent");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  plugins: [...remoteContent],
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: [
+      // "de",
+      "en",
+      // "es",
+      // "fa",
+      // "fr",
+      // "hi",
+      // "it",
+      // "ja",
+      // "ko",
+      // "ru",
+      // "tu",
+      // "vi",
+      // "zh-CN",
+      // "zh-TW",
+    ],
+    path: "i18n",
+    localeConfigs: {
+      en: {
+        label: "English",
+        direction: "ltr",
+        htmlLang: "en-US",
+        calendar: "gregory",
+        path: "en",
+      },
+      fr: {
+        label: "French",
+        direction: "ltr",
+        htmlLang: "fr-FR",
+        calendar: "gregory",
+        path: "fr",
+      },
+      es: {
+        label: "Español",
+        direction: "ltr",
+        htmlLang: "es-ES",
+        calendar: "gregory",
+        path: "es",
+      },
+      ja: {
+        label: "Japanese",
+        direction: "ltr",
+        htmlLang: "ja-JP",
+        calendar: "gregory",
+        path: "ja",
+      },
+      ko: {
+        label: "Korean",
+        direction: "ltr",
+        htmlLang: "ko-KR",
+        calendar: "gregory",
+        path: "ko",
+      },
+      ru: {
+        label: "Russian",
+        direction: "ltr",
+        htmlLang: "ru-RU",
+        calendar: "gregory",
+        path: "ru",
+      },
+      "zh-CN": {
+        label: "Chinese (Simplified)",
+        direction: "ltr",
+        htmlLang: "zh-CN",
+        calendar: "gregory",
+        path: "zh-CN",
+      },
+      "zh-TW": {
+        label: "Chinese (Traditional)",
+        direction: "ltr",
+        htmlLang: "zh-TW",
+        calendar: "gregory",
+        path: "zh-TW",
+      },
+      vi: {
+        label: "Vietnamese",
+        direction: "ltr",
+        htmlLang: "vi-VI",
+        calendar: "gregory",
+        path: "vi",
+      },
+      tu: {
+        label: "Turkish",
+        direction: "ltr",
+        htmlLang: "tu-TU",
+        calendar: "gregory",
+        path: "tu",
+      },
+      it: {
+        label: "Italian",
+        direction: "ltr",
+        htmlLang: "it-IT",
+        calendar: "gregory",
+        path: "it",
+      },
+      de: {
+        label: "German",
+        direction: "ltr",
+        htmlLang: "de-DE",
+        calendar: "gregory",
+        path: "de",
+      },
+      fa: {
+        label: "Persian",
+        direction: "ltr",
+        htmlLang: "fa-FA",
+        calendar: "gregory",
+        path: "fa",
+      },
+      hi: {
+        label: "Hindi",
+        direction: "ltr",
+        htmlLang: "hi-HI",
+        calendar: "gregory",
+        path: "hi",
+      },
+    },
   },
 
   title: 'Metal Docs',
@@ -26,7 +147,7 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -34,12 +155,24 @@ const config = {
           routeBasePath: '/',
           // Please change this to your repo.
           editUrl: 'https://github.com/MetalBlockchain/metal-docs/edit/master/',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
+  ],
+
+  stylesheets: [
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
+      integrity:
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
+    },
   ],
 
   themeConfig:
@@ -53,17 +186,17 @@ const config = {
         {name: 'keywords', content: 'Developer Documentation and Tutorials for Metal Blockchain'}
       ],
       navbar: {
-        title: '',
+        title: "",
         logo: {
           alt: 'Metal Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'overview',
-            label: 'Overview',
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "overview",
+            label: "Overview",
           },
           {
             type: 'docSidebar',

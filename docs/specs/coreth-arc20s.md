@@ -133,7 +133,7 @@ curl --location --request POST 'https://api.metalblockchain.org:443/ext/bc/C/rpc
 
 ## ARC-20s
 
-An ARC-20 is an ERC-20 token that wraps an underlying Avalanche Native Token, similar to how WAVAX wraps AVAX.
+An ARC-20 is an ERC-20 token that wraps an underlying Avalanche Native Token, similar to how WAVAX wraps METAL.
 
 ### What is an ERC-20
 

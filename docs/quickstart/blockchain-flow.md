@@ -13,7 +13,7 @@ makes up a Subnet. Subnets can validate 1 or more chains. It is a common
 misconception that 1 Subnet = 1 chain and this is shown by the primary Subnet of
 Metal which is made up of the X-Chain, C-Chain, and P-Chain.
 
-A node in the Metal network can either be a validator or a non-validator. A
+A node in the Metal Blockchain network can either be a validator or a non-validator. A
 validator stakes METAL tokens and participates in consensus to earn rewards. A
 non-validator does not participate in consensus or have any METAL staked but can
 be used as an API server. Both validators and non-validators need to have their
@@ -120,7 +120,7 @@ rewards (as a validator).
 ## Consensus Engine
 
 Consensus is defined as getting a group of distributed systems to agree on an
-outcome. In the case of the Metal network, consensus is achieved when
+outcome. In the case of the Metal Blockchain network, consensus is achieved when
 validators are in agreement with the state of the blockchain. The novel
 consensus algorithm is documented [here](/overview/getting-started/avalanche-consensus.md).
 There are two main consensus algorithms: Avalanche and

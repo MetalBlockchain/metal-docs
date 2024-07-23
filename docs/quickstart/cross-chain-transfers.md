@@ -81,7 +81,7 @@ transferred.
 
 ## Tahoe Workflow
 
-This tutorial uses [**X-Chain <->
+This tutorial uses [**X-Chain < -- >
 C-Chain**](https://github.com/MetalBlockchain/metaljs/blob/master/examples/avm/buildExportTx-cchain-avax.ts)
 transfers as an example. Transferring between other chains are very similar.
 

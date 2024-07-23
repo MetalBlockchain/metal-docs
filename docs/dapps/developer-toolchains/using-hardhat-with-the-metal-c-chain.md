@@ -98,7 +98,7 @@ scripts in
 ```
 
 `yarn accounts` prints the list of accounts. `yarn balances` prints the list of
-AVAX account balances. As with other `yarn` scripts you can pass in a
+METAL account balances. As with other `yarn` scripts you can pass in a
 `--network` flag to hardhat tasks.
 
 ### Accounts
