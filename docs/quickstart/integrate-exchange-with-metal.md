@@ -157,4 +157,4 @@ you shouldn't have any issues!
 ## Support
 
 If you have any problems or questions, reach out either directly to our
-developers, or on our public [Telegram](https://t.me/metaldevelopers) server.
+developers, or on our public [Telegram](https://t.me/MetalBlockchain/24276) server.
