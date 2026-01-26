@@ -126,10 +126,6 @@ const config = {
               {
                 label: 'Telegram',
                 href: 'https://t.me/metalblockchain',
-              },
-              {
-                label: 'Developer Telegram',
-                href: 'https://t.me/metaldevelopers',
               }
             ],
           },
