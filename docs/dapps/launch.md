@@ -53,7 +53,7 @@ In your application's web interface, you can [add Metal Blockchain programmatica
 
 ### Using the Public API Nodes
 
-Instead of proxying network operations through MetaMask, you can use the public API, which consists of a number of AvalancheGo nodes behind a load balancer.
+Instead of proxying network operations through MetaMask, you can use the public API, which consists of a number of MetalGo nodes behind a load balancer.
 
 The C-Chain API endpoint is [https://api.metalblockchain.org/ext/bc/C/rpc](https://api.metalblockchain.org/ext/bc/C/rpc) for the mainnet and [https://tahoe.metalblockchain.org/ext/bc/C/rpc](https://tahoe.metalblockchain.org/ext/bc/C/rpc) for the testnet.
 
@@ -127,7 +127,7 @@ Being an Ethereum-compatible blockchain, all of the usual Ethereum developer too
 
 ### Remix
 
-There is a [tutorial](../dapps/smart-contracts-ethereum/deploy-a-smart-contract-on-metal-using-remix-and-metamask.md) for using Remix to deploy smart contracts on Metal Blockchain. It relies on MetaMask for access to the Avalanche network.
+There is a [tutorial](../dapps/smart-contracts-ethereum/deploy-a-smart-contract-on-metal-using-remix-and-metamask.md) for using Remix to deploy smart contracts on Metal Blockchain. It relies on MetaMask for access to the Metal network.
 
 ### Truffle
 

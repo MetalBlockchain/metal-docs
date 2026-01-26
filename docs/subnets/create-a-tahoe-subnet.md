@@ -47,8 +47,8 @@ and this step below particularly to start your node on `Tahoe`:
 _To connect to the Tahoe Testnet instead of the main net, use argument `--network-id=Tahoe`_
 
 Also it's worth pointing out that
-[it only needs 1 AVAX to become a validator on the Tahoe Testnet](../nodes/validate/staking.md#tahoe-testnet)
-and you can get the test token from the [faucet](https://faucet.avax.network/).
+[it only needs 1 METAL to become a validator on the Tahoe Testnet](../nodes/validate/staking.md#tahoe-testnet)
+and you can get the test token from the [faucet](https://faucet.metalblockchain.org/).
 
 To get the NodeID of this `Tahoe` node, call the following curl command to [info.getNodeID](../apis/metalgo/apis/info.md#infogetnodeid):
 
@@ -140,7 +140,7 @@ Key created
 <!-- markdownlint-enable MD013 -->
 
 You may use the C-Chain address (`0x86BB07a534ADF43786ECA5Dd34A97e3F96927e4F`) to
-fund your key from the [faucet](https://faucet.avax.network/). The command also prints P-Chain
+fund your key from the [faucet](https://faucet.metalblockchain.org/). The command also prints P-Chain
 addresses for both the default local network and `Tahoe`. The latter
 (`P-tahoe1a3azftqvygc4tlqsdvd82wks2u7nx85rhk6zqh`) is the one needed for this tutorial.
 
@@ -208,14 +208,13 @@ the use of a ledger device is strongly recommended.
 
 1. A newly created key has no funds on it. Send funds via transfer to its correspondent addresses
 if you already have funds on a different address, or get it from the faucet at
-[`https://faucet.avax.network`](https://faucet.avax.network/) using your **C-Chain address**.
+[`https://faucet.metalblockchain.org`](https://faucet.metalblockchain.org/) using your **C-Chain address**.
 
 2. **Export** your key via the `metal key export` command, then paste the output when selecting
-"Private key" while accessing the [web wallet](https://wallet.avax.network). (Private Key is the
-first option on the [web wallet](https://wallet.avax.network)).
+"Private key" while accessing the [web wallet](https://wallet.metalblockchain.org). (Private Key is the
+first option on the [web wallet](https://wallet.metalblockchain.org)).
 3. Move the test funds from the C-Chain to the P-Chain by clicking on the `Cross Chain` on the left
-side of the web wallet (find more details on
-[this tutorial](https://support.avax.network/en/articles/6169872-how-to-make-a-cross-chain-transfer-in-the-avalanche-wallet)).
+side of the web wallet.
 
 After following these 3 steps, your test key should now have a balance on the P-Chain on `Tahoe` Testnet.
 

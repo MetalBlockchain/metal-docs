@@ -35,12 +35,12 @@ npm install -g yarn
 
 ### MetalGo and Metal Network Runner
 
-[AvalancheGo](https://github.com/MetalBlockchain/metalgo) is an Metal node
+[MetalGo](https://github.com/MetalBlockchain/metalgo) is a Metal node
 implementation written in Go. [Metal Network
 Runner](../../subnets/network-runner.md) is a tool to quickly deploy local test
 networks. Together, you can deploy local test networks and run tests on them.
 
-### Solidity and Avalanche
+### Solidity and Metal Blockchain
 
 It is also helpful to have a basic understanding of [Solidity](https://docs.soliditylang.org) and Metal Blockchain.
 
@@ -162,7 +162,7 @@ git checkout master
 ./scripts/build.sh
 ```
 
-(Note that you can also [download pre-compiled AvalancheGo
+(Note that you can also [download pre-compiled MetalGo
 binaries](https://github.com/MetalBlockchain/metalgo/releases) rather than building
 from source.)
 
