@@ -489,7 +489,7 @@ platform.exportAVAX(
 }
 ```
 
-- `amount` is the amount of nAVAX to send.
+- `amount` is the amount of nMETAL to send.
 - `to` is the address on the X-Chain or C-Chain to send the METAL to.
 - `from` are the addresses that you want to use for this operation. If omitted, uses any of your addresses as needed.
 - `changeAddr` is the address any change will be sent to. If omitted, change is sent to one of the addresses controlled by the user.

@@ -9,7 +9,7 @@ The Etna upgrade was activated on Metal Mainnet on February 25, 2025, and implem
 - **ACP-77**: Reinventing Subnets
 - **ACP-103**: Dynamic Fees on the P-Chain
 - **ACP-118**: Warp Signature Interface Standard for Arbitrary Message Signing
-- **ACP-125**: Reduce C-Chain Minimum Base Fee from 25 nAVAX to 1 nAVAX
+- **ACP-125**: Reduce C-Chain Minimum Base Fee from 25 nMETAL to 1 nMETAL
 - **ACP-131**: Activate Cancun EIPs on C-Chain and Subnet-EVM
 - **ACP-151**: Use Current P-Chain Height as Context for State Verification
 
@@ -54,7 +54,7 @@ Static fee configuration flags have been removed. Nodes must now use the dynamic
 
 ## ACP-125: C-Chain Base Fee Reduction
 
-The minimum base fee on the C-Chain has been reduced from 25 nAVAX to 1 nAVAX.
+The minimum base fee on the C-Chain has been reduced from 25 nMETAL to 1 nMETAL.
 
 ### Benefits
 

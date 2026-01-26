@@ -1,10 +1,10 @@
 # Add Metal Blockchain Programmatically
 
-This document shows how to integrate Avalanche Network with your dApp, by Metamask.
+This document shows how to integrate Metal Blockchain with your dApp using MetaMask.
 
 ## MetaMask
 
-Adding new networks to Metamask is not a trivial task for people that are not technically savvy, and it can be error prone. To help easier onboarding of users to your application it is useful to simplify that process as much as possible. This tutorial will show how to build a simple button in your front-end application that will automate the process of adding the Avalanche network to MetaMask.
+Adding new networks to MetaMask is not a trivial task for people that are not technically savvy, and it can be error prone. To help easier onboarding of users to your application it is useful to simplify that process as much as possible. This tutorial will show how to build a simple button in your front-end application that will automate the process of adding the Metal Blockchain network to MetaMask.
 
 ### EIP-3035 & MetaMask
 
@@ -41,8 +41,8 @@ export const METAL_TESTNET_PARAMS = {
   chainId: "381932",
   chainName: "Metal Tahoe C-Chain",
   nativeCurrency: {
-    name: "Avalanche",
-    symbol: "AVAX",
+    name: "Metal",
+    symbol: "METAL",
     decimals: 18,
   },
   rpcUrls: ["https://tahoe.metalblockchain.org/ext/bc/C/rpc"],

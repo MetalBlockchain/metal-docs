@@ -142,10 +142,10 @@ one-billionth of a billionth of `METAL` (1 METAL = 10^18 wei).
 
 The function `sendAvax()` takes 4 arguments -
 
-- `amount` - Amount of AVAX to send in the transaction
-- `address` - Destination address to which we want to send AVAX
-- `maxFeePerGas` - Desired maximum fee per gas you want to pay in nAVAX
-- `maxPriorityFeePerGas` - Desired maximum priority fee per gas you want to pay in nAVAX
+- `amount` - Amount of METAL to send in the transaction
+- `address` - Destination address to which we want to send METAL
+- `maxFeePerGas` - Desired maximum fee per gas you want to pay in nMETAL
+- `maxPriorityFeePerGas` - Desired maximum priority fee per gas you want to pay in nMETAL
 - `nonce` - Used as a differentiator for more than 1 transaction with same signer
 
 The last 3 arguments are optional, and if `undefined` is passed, then it will

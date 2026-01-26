@@ -30,7 +30,7 @@ The Etna upgrade represents a major evolution in subnet architecture, implementi
 - **ACP-77**: Reinventing Subnets - foundational restructuring of subnet architecture
 - **ACP-103**: Dynamic fee mechanisms for the P-Chain
 - **ACP-118**: Warp signature interface standardization
-- **ACP-125**: C-Chain base fee reduction (25 nAVAX → 1 nAVAX)
+- **ACP-125**: C-Chain base fee reduction (25 nMETAL → 1 nMETAL)
 - **ACP-131**: Cancun EIP activation on C-Chain and Subnet-EVM
 - **ACP-151**: P-Chain height context for state verification
 
