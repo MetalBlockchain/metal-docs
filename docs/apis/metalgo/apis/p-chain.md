@@ -6,6 +6,14 @@ sidebar_position: 3
 
 This API allows clients to interact with the [P-Chain](../../../overview/getting-started/intro.md#platform-chain-p-chain), which maintains Metal's [validator](../../../nodes/validate/staking.md#validators) set and handles blockchain creation.
 
+:::info Etna Upgrade (v1.12.x)
+The Etna upgrade introduces dynamic fees on the P-Chain (ACP-103). New API endpoints `platform.getValidatorFeeConfig` and `platform.getValidatorFeeState` are available for fee management. The following APIs have been removed:
+- `platform.getPendingValidators` (removed in v1.11.3)
+- `platform.getMaxStakeAmount` (removed in v1.11.3)
+
+See [Etna Changes](../../../specs/etna-changes.md) for full details.
+:::
+
 ## Endpoint
 
 ```sh
@@ -2254,6 +2262,100 @@ curl -X POST --data '{
       "KDYHHKjM4yTJTT8H8qPs5KXzE6gQH5TZrmP1qVr1P6qECj3XN",
       "2TtHFqEAAJ6b33dromYMqfgavGPF3iCpdG3hwNMiart2aB5QHi"
     ]
+  },
+  "id": 1
+}
+```
+
+### platform.getValidatorFeeConfig
+
+:::info New in Etna (v1.12.x)
+This endpoint was added in the Etna upgrade as part of ACP-103 (Dynamic Fees on P-Chain).
+:::
+
+Get the current validator fee configuration.
+
+#### **Signature**
+
+```sh
+platform.getValidatorFeeConfig() -> {
+    capacity: uint64,
+    target: uint64,
+    minPrice: uint64,
+    excessConversionConstant: uint64
+}
+```
+
+- `capacity` is the maximum gas capacity per block
+- `target` is the target gas usage per block
+- `minPrice` is the minimum gas price
+- `excessConversionConstant` is used in fee calculation
+
+#### **Example Call**
+
+```sh
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "method": "platform.getValidatorFeeConfig",
+    "params": {},
+    "id": 1
+}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/bc/P
+```
+
+#### **Example Response**
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "capacity": "1000000",
+    "target": "500000",
+    "minPrice": "1",
+    "excessConversionConstant": "5000"
+  },
+  "id": 1
+}
+```
+
+### platform.getValidatorFeeState
+
+:::info New in Etna (v1.12.x)
+This endpoint was added in the Etna upgrade as part of ACP-103 (Dynamic Fees on P-Chain).
+:::
+
+Get the current validator fee state, including the current excess gas and computed gas price.
+
+#### **Signature**
+
+```sh
+platform.getValidatorFeeState() -> {
+    excess: uint64,
+    price: uint64
+}
+```
+
+- `excess` is the current excess gas accumulated
+- `price` is the current gas price based on excess
+
+#### **Example Call**
+
+```sh
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "method": "platform.getValidatorFeeState",
+    "params": {},
+    "id": 1
+}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/bc/P
+```
+
+#### **Example Response**
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "excess": "10000",
+    "price": "25"
   },
   "id": 1
 }

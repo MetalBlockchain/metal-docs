@@ -13,7 +13,7 @@ Metal is an incredibly lightweight protocol, so nodes can run on commodity hardw
 - CPU: Equivalent of 8 AWS vCPU
 - RAM: 16 GiB
 - Storage: 250 GiB
-- OS: Ubuntu 18.04/20.04 or MacOS &gt;= Catalina
+- OS: Ubuntu 22.04+ or MacOS >= Monterey (12+)
 - Network: sustained 5Mbps up/down bandwidth
 
 Please note that HW requirements shall scale with the amount of METAL staked on the node. Nodes with big stakes (100k+ METAL) will need more powerful machines than listed, and will use more bandwidth as well.
@@ -91,13 +91,12 @@ Preparing environment...
 Found arm64 architecture...
 Looking for the latest arm64 build...
 Will attempt to download:
- https://github.com/MetalBlockchain/metalgo/releases/download/v1.1.1/metalgo-linux-arm64-v1.1.1.tar.gz
-metalgo-linux-arm64-v1.1.1.tar.gz 100%[=========================================================================>]  29.83M  75.8MB/s    in 0.4s
-2020-12-28 14:57:47 URL:https://github-production-release-asset-2e65be.s3.amazonaws.com/246387644/f4d27b00-4161-11eb-8fb2-156a992fd2c8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20201228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201228T145747Z&X-Amz-Expires=300&X-Amz-Signature=ea838877f39ae940a37a076137c4c2689494c7e683cb95a5a4714c062e6ba018&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=246387644&response-content-disposition=attachment%3B%20filename%3Dmetalgo-linux-arm64-v1.1.1.tar.gz&response-content-type=application%2Foctet-stream [31283052/31283052] -> "metalgo-linux-arm64-v1.1.1.tar.gz" [1]
+ https://github.com/MetalBlockchain/metalgo/releases/download/v1.12.2/metalgo-linux-arm64-v1.12.2.tar.gz
+metalgo-linux-arm64-v1.12.2.tar.gz 100%[=========================================================================>]  35.5M  80.2MB/s    in 0.4s
 Unpacking node files...
-metalgo-v1.1.1/plugins/
-metalgo-v1.1.1/plugins/evm
-metalgo-v1.1.1/metalgo
+metalgo-v1.12.2/plugins/
+metalgo-v1.12.2/plugins/evm
+metalgo-v1.12.2/metalgo
 Node files unpacked into /home/ubuntu/metal-node
 ```
 
@@ -220,7 +219,7 @@ sudo systemctl start metalgo
 MetalGo is an ongoing project and there are regular version upgrades. Most upgrades are recommended but not required. Advance notice will be given for upgrades that are not backwards compatible. When a new version of the node is released, you will notice log lines like:
 
 ```text
-Jan 08 10:26:45 ip-172-31-16-229 metalgo[6335]: INFO [01-08|10:26:45] metalgo/network/peer.go#526: beacon 9CkG9MBNavnw7EVSRsuFr7ws9gascDQy3 attempting to connect with newer version metalgo/1.1.1. You may want to update your client
+Jan 08 10:26:45 ip-172-31-16-229 metalgo[6335]: INFO [01-08|10:26:45] metalgo/network/peer.go#526: beacon 9CkG9MBNavnw7EVSRsuFr7ws9gascDQy3 attempting to connect with newer version metalgo/1.12.2. You may want to update your client
 ```
 
 It is recommended to always upgrade to the latest version, because new versions bring bug fixes, new features and upgrades.
@@ -247,7 +246,7 @@ It will then upgrade your node to the latest version, and after it's done, start
 ```text
 Node upgraded, starting service...
 New node version:
-metalgo/1.1.1 [network=mainnet, database=v1.0.0, commit=f76f1fd5f99736cf468413bbac158d6626f712d2]
+metalgo/1.12.2 [network=mainnet, database=v1.4.5, commit=abc123...]
 Done!
 ```
 
@@ -294,10 +293,10 @@ To run an archival mainnet node with dynamic IP and database located at `/home/n
 ./metalgo-installer.sh --archival --ip dynamic --db-dir /home/node/db
 ```
 
-To reinstall the node using node version 1.7.10 and use specific IP and local RPC only:
+To reinstall the node using node version 1.11.13 and use specific IP and local RPC only:
 
 ```bash
-./metalgo-installer.sh --reinstall --ip 1.2.3.4 --version v1.7.10 --rpc local
+./metalgo-installer.sh --reinstall --ip 1.2.3.4 --version v1.11.13 --rpc local
 ```
 
 ## Node Configuration
@@ -331,22 +330,22 @@ It will print out a list, something like:
 MetalGo installer
 ---------------------
 Available versions:
-v1.3.2
-v1.3.1
-v1.3.0
-v1.2.4-arm-fix
-v1.2.4
-v1.2.3-signed
-v1.2.3
-v1.2.2
-v1.2.1
-v1.2.0
+v1.12.2
+v1.12.0
+v1.11.13
+v1.11.12
+v1.11.9
+v1.11.3
+v1.11.2
+v1.11.1
+v1.10.17
+...
 ```
 
 To install a specific version, run the script with `--version` followed by the tag of the version. For example:
 
 ```bash
-./metalgo-installer.sh --version v1.3.1
+./metalgo-installer.sh --version v1.12.0
 ```
 
 :::danger

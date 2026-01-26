@@ -227,13 +227,13 @@ curl -X POST --data '{
 {
   "jsonrpc": "2.0",
   "result": {
-    "version": "metal/1.4.10",
+    "version": "metal/1.12.2",
     "databaseVersion": "v1.4.5",
-    "gitCommit": "a3930fe3fa115c018e71eb1e97ca8cec34db67f1",
+    "gitCommit": "abc123def456...",
     "vmVersions": {
-      "avm": "v1.4.10",
-      "evm": "v0.5.5-rc.1",
-      "platform": "v1.4.10"
+      "avm": "v1.12.2",
+      "evm": "v0.13.8",
+      "platform": "v1.12.2"
     }
   },
   "id": 1
@@ -380,7 +380,7 @@ curl -X POST --data '{
         "ip": "206.189.137.87:9651",
         "publicIP": "206.189.137.87:9651",
         "nodeID": "NodeID-8PYXX47kqLDe2wD4oPbvRRchcnSzMA4J4",
-        "version": "metal/0.5.0",
+        "version": "metal/1.12.2",
         "lastSent": "2020-06-01T15:23:02Z",
         "lastReceived": "2020-06-01T15:22:57Z",
         "benched": [],
@@ -390,7 +390,7 @@ curl -X POST --data '{
         "ip": "158.255.67.151:9651",
         "publicIP": "158.255.67.151:9651",
         "nodeID": "NodeID-C14fr1n8EYNKyDfYixJ3rxSAVqTY3a8BP",
-        "version": "metal/0.5.0",
+        "version": "metal/1.12.2",
         "lastSent": "2020-06-01T15:23:02Z",
         "lastReceived": "2020-06-01T15:22:34Z",
         "benched": [],
@@ -400,7 +400,7 @@ curl -X POST --data '{
         "ip": "83.42.13.44:9651",
         "publicIP": "83.42.13.44:9651",
         "nodeID": "NodeID-LPbcSMGJ4yocxYxvS2kBJ6umWeeFbctYZ",
-        "version": "metal/0.5.0",
+        "version": "metal/1.12.2",
         "lastSent": "2020-06-01T15:23:02Z",
         "lastReceived": "2020-06-01T15:22:55Z",
         "benched": [],

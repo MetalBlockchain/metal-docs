@@ -341,6 +341,15 @@ const sidebars = {
   ],
 
   specs: [
+    {
+      type: 'category',
+      label: 'Network Upgrades',
+      collapsed: false,
+      items: [
+        'specs/etna-changes',
+        'specs/banff-changes',
+      ],
+    },
    // 'specs/coreth-arc20s',
     'specs/avm-transaction-serialization',
     'specs/coreth-atomic-transaction-serialization',
