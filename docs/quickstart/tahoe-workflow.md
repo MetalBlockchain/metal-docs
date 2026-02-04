@@ -204,7 +204,7 @@ let privateKey =
 let wallet = new ethers.Wallet(privateKey, provider)
 // Receiver Address
 let receiverAddress = "0x25d83F090D842c1b4645c1EFA46B15093d4CaC7C"
-// AVAX amount to send
+// METAL amount to send
 let amountInMetal = "0.01"
 // Create a transaction object
 let tx = {

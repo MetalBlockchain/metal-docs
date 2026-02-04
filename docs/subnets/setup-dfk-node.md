@@ -45,7 +45,7 @@ MetalGo, which was created when building MetalGo from source.
 ```
 
 The long string `mDV3QWRXfwgKUWb9sggkv4vQxAQR4y2CyKrt5pLZ5SzQ7EHBv` is the CB58 encoded VMID of the
-DFK Subnet-EVM. AvalancheGo will use the name of this file to determine what VMs are available to
+DFK Subnet-EVM. MetalGo will use the name of this file to determine what VMs are available to
 run from the `plugins` directory.
 
 ## Whitelisting DFK Subnet and Restarting the Node

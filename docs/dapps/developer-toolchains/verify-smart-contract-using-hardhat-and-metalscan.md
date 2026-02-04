@@ -118,7 +118,7 @@ task(
 
 task(
   "balances",
-  "Prints the list of AVAX account balances",
+  "Prints the list of METAL account balances",
   async (args, hre): Promise<void> => {
     const accounts: SignerWithAddress[] = await hre.ethers.getSigners()
     for (const account of accounts) {

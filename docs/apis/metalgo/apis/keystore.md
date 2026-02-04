@@ -4,7 +4,13 @@ sidebar_position: 13
 
 # Keystore API
 
-:::warning
+:::danger Removed in MetalGo v1.12.2
+**The Keystore API has been removed in MetalGo v1.12.2 (Etna.2).** Nodes running v1.12.2 or later will not have access to this API. Users must migrate to wallet-based key management before upgrading.
+
+For production use, issue transactions through MetalJS or other wallet solutions where control keys are not stored on the node.
+:::
+
+:::warning Deprecated
 Because the node operator has access to your plaintext password, you should only create a keystore user on a node that you operate. If that node is breached, you could lose all your tokens. Keystore APIs are not recommended for use on Mainnet.
 :::
 

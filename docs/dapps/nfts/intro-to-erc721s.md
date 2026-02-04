@@ -1,8 +1,8 @@
 # Introduction to ERC-721 (NFT) Smart Contracts
 
 This tutorial will start you with a basic [ERC-721
-(NFT)](https://eips.ethereum.org/EIPS/eip-721) smart contract on the Avalanche
-Network, regardless of your previous development experience. We'll deploy our
+(NFT)](https://eips.ethereum.org/EIPS/eip-721) smart contract on Metal
+Blockchain, regardless of your previous development experience. We'll deploy our
 NFT on the Metal Tahoe Testnet and view it on the MetalScan Testnet Explorer.
 Note that these aren't transferable to the Mainnet. However, once you feel
 comfortable launching your project, you can do so on Metal Mainnet and list
@@ -57,7 +57,7 @@ network. If you visit the [Metal Faucet](https://faucet.metalblockchain.org/), y
 can request up to 2 Tahoe METAL per day. Please enter the C Chain address of the
 account linked to your MetaMask in the previous step.
 
-![Avalanche Faucet](intro-to-erc721s/1-faucet.png)
+![Metal Faucet](intro-to-erc721s/1-faucet.png)
 
 ## Creating the Smart Contract
 

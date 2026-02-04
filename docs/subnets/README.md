@@ -1,5 +1,9 @@
 # Subnets Overview
 
+:::info Etna Upgrade
+The **Etna upgrade** (MetalGo v1.12.x) introduces significant changes to subnet architecture through ACP-77 "Reinventing Subnets". Key improvements include greater subnet sovereignty, flexible validator management, and reduced coupling with the Primary Network. See [Etna Changes](../specs/etna-changes.md) for details.
+:::
+
 A **Subnet** is a sovereign network which defines its own rules regarding its
 membership and token economics. It is composed of a dynamic subset of Metal
 validators working together to achieve consensus on the state of one or more
